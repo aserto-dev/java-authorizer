@@ -1,0 +1,13 @@
+version: v1
+
+managed:
+  enabled: true
+  cc_enable_arenas: false
+  java_multiple_files: true
+  java_package_prefix: com
+  java_string_check_utf8: false
+  optimize_for: CODE_SIZE
+
+plugins:
+  - name: java
+    out: .
