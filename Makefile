@@ -11,7 +11,7 @@ COMMIT     ?= $(shell giet rev-parse --short HEAD 2>/dev/null)
 DATE       ?= $(shell date "+%FT%T%z")
 LATEST 	   := $(shell buf beta registry tag list buf.build/aserto-dev/authorizer --format json --reverse | jq -r '.results | .[0].name')
 
-GEN_DIR    := $(PWD)/gen
+GEN_DIR    := $(PWD)/com
 
 ${GEN_DIR}:
 	@echo -e "${ATTN_COLOR}==> create GEN_DIR ${GEN_DIR} ${NO_COLOR}"
