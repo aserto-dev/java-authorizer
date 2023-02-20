@@ -46,7 +46,8 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
-  private volatile java.lang.Object name_;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object name_ = "";
   /**
    * <pre>
    * policy name
@@ -92,7 +93,8 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int INSTANCE_LABEL_FIELD_NUMBER = 2;
-  private volatile java.lang.Object instanceLabel_;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object instanceLabel_ = "";
   /**
    * <pre>
    * label identifying the instance of the policy
@@ -260,10 +262,9 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       name_ = "";
-
       instanceLabel_ = "";
-
       return this;
     }
 
@@ -290,10 +291,19 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.aserto.authorizer.v2.api.PolicyInstance buildPartial() {
       com.aserto.authorizer.v2.api.PolicyInstance result = new com.aserto.authorizer.v2.api.PolicyInstance(this);
-      result.name_ = name_;
-      result.instanceLabel_ = instanceLabel_;
+      if (bitField0_ != 0) { buildPartial0(result); }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.aserto.authorizer.v2.api.PolicyInstance result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.instanceLabel_ = instanceLabel_;
+      }
     }
 
     @java.lang.Override
@@ -328,6 +338,7 @@ private static final long serialVersionUID = 0L;
         java.lang.Object value) {
       return super.addRepeatedField(field, value);
     }
+    private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
@@ -382,11 +393,9 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setName(
         java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      if (value == null) { throw new NullPointerException(); }
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -399,8 +408,8 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearName() {
-      
       name_ = getDefaultInstance().getName();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -415,12 +424,10 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setNameBytes(
         com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
       name_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -478,11 +485,9 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setInstanceLabel(
         java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      if (value == null) { throw new NullPointerException(); }
       instanceLabel_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -495,8 +500,8 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearInstanceLabel() {
-      
       instanceLabel_ = getDefaultInstance().getInstanceLabel();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -511,12 +516,10 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setInstanceLabelBytes(
         com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
       instanceLabel_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

@@ -49,7 +49,8 @@ private static final long serialVersionUID = 0L;
 
   private int bitField0_;
   public static final int ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object id_;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object id_ = "";
   /**
    * <code>optional string id = 1 [json_name = "id"];</code>
    * @return Whether the id field is set.
@@ -95,7 +96,8 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int RAW_FIELD_NUMBER = 2;
-  private volatile java.lang.Object raw_;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object raw_ = "";
   /**
    * <code>optional string raw = 2 [json_name = "raw"];</code>
    * @return Whether the raw field is set.
@@ -141,7 +143,8 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int PACKAGE_PATH_FIELD_NUMBER = 3;
-  private volatile java.lang.Object packagePath_;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object packagePath_ = "";
   /**
    * <code>optional string package_path = 3 [json_name = "packagePath"];</code>
    * @return Whether the packagePath field is set.
@@ -213,7 +216,8 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int PACKAGE_ROOT_FIELD_NUMBER = 5;
-  private volatile java.lang.Object packageRoot_;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object packageRoot_ = "";
   /**
    * <code>optional string package_root = 5 [json_name = "packageRoot"];</code>
    * @return Whether the packageRoot field is set.
@@ -387,20 +391,16 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       id_ = "";
-      bitField0_ = (bitField0_ & ~0x00000001);
       raw_ = "";
-      bitField0_ = (bitField0_ & ~0x00000002);
       packagePath_ = "";
-      bitField0_ = (bitField0_ & ~0x00000004);
-      if (astBuilder_ == null) {
-        ast_ = null;
-      } else {
-        astBuilder_.clear();
+      ast_ = null;
+      if (astBuilder_ != null) {
+        astBuilder_.dispose();
+        astBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000008);
       packageRoot_ = "";
-      bitField0_ = (bitField0_ & ~0x00000010);
       return this;
     }
 
@@ -427,35 +427,37 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.aserto.authorizer.v2.api.Module buildPartial() {
       com.aserto.authorizer.v2.api.Module result = new com.aserto.authorizer.v2.api.Module(this);
+      if (bitField0_ != 0) { buildPartial0(result); }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartial0(com.aserto.authorizer.v2.api.Module result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.id_ = id_;
         to_bitField0_ |= 0x00000001;
       }
-      result.id_ = id_;
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.raw_ = raw_;
         to_bitField0_ |= 0x00000002;
       }
-      result.raw_ = raw_;
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.packagePath_ = packagePath_;
         to_bitField0_ |= 0x00000004;
       }
-      result.packagePath_ = packagePath_;
       if (((from_bitField0_ & 0x00000008) != 0)) {
-        if (astBuilder_ == null) {
-          result.ast_ = ast_;
-        } else {
-          result.ast_ = astBuilder_.build();
-        }
+        result.ast_ = astBuilder_ == null
+            ? ast_
+            : astBuilder_.build();
         to_bitField0_ |= 0x00000008;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.packageRoot_ = packageRoot_;
         to_bitField0_ |= 0x00000010;
       }
-      result.packageRoot_ = packageRoot_;
-      result.bitField0_ = to_bitField0_;
-      onBuilt();
-      return result;
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -540,11 +542,9 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setId(
         java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000001;
+      if (value == null) { throw new NullPointerException(); }
       id_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -553,8 +553,8 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearId() {
-      bitField0_ = (bitField0_ & ~0x00000001);
       id_ = getDefaultInstance().getId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -565,12 +565,10 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setIdBytes(
         com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000001;
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
       id_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -623,11 +621,9 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setRaw(
         java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000002;
+      if (value == null) { throw new NullPointerException(); }
       raw_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -636,8 +632,8 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearRaw() {
-      bitField0_ = (bitField0_ & ~0x00000002);
       raw_ = getDefaultInstance().getRaw();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -648,12 +644,10 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setRawBytes(
         com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000002;
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
       raw_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -706,11 +700,9 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setPackagePath(
         java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000004;
+      if (value == null) { throw new NullPointerException(); }
       packagePath_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -719,8 +711,8 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearPackagePath() {
-      bitField0_ = (bitField0_ & ~0x00000004);
       packagePath_ = getDefaultInstance().getPackagePath();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -731,12 +723,10 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setPackagePathBytes(
         com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000004;
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
       packagePath_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -771,11 +761,11 @@ private static final long serialVersionUID = 0L;
           throw new NullPointerException();
         }
         ast_ = value;
-        onChanged();
       } else {
         astBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -785,11 +775,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.Value.Builder builderForValue) {
       if (astBuilder_ == null) {
         ast_ = builderForValue.build();
-        onChanged();
       } else {
         astBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -798,31 +788,30 @@ private static final long serialVersionUID = 0L;
     public Builder mergeAst(com.google.protobuf.Value value) {
       if (astBuilder_ == null) {
         if (((bitField0_ & 0x00000008) != 0) &&
-            ast_ != null &&
-            ast_ != com.google.protobuf.Value.getDefaultInstance()) {
-          ast_ =
-            com.google.protobuf.Value.newBuilder(ast_).mergeFrom(value).buildPartial();
+          ast_ != null &&
+          ast_ != com.google.protobuf.Value.getDefaultInstance()) {
+          getAstBuilder().mergeFrom(value);
         } else {
           ast_ = value;
         }
-        onChanged();
       } else {
         astBuilder_.mergeFrom(value);
       }
       bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
      * <code>optional .google.protobuf.Value ast = 4 [json_name = "ast"];</code>
      */
     public Builder clearAst() {
-      if (astBuilder_ == null) {
-        ast_ = null;
-        onChanged();
-      } else {
-        astBuilder_.clear();
-      }
       bitField0_ = (bitField0_ & ~0x00000008);
+      ast_ = null;
+      if (astBuilder_ != null) {
+        astBuilder_.dispose();
+        astBuilder_ = null;
+      }
+      onChanged();
       return this;
     }
     /**
@@ -909,11 +898,9 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setPackageRoot(
         java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000010;
+      if (value == null) { throw new NullPointerException(); }
       packageRoot_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -922,8 +909,8 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearPackageRoot() {
-      bitField0_ = (bitField0_ & ~0x00000010);
       packageRoot_ = getDefaultInstance().getPackageRoot();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -934,12 +921,10 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setPackageRootBytes(
         com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      bitField0_ |= 0x00000010;
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
       packageRoot_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

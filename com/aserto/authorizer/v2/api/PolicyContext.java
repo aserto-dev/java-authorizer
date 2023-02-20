@@ -46,7 +46,8 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int PATH_FIELD_NUMBER = 1;
-  private volatile java.lang.Object path_;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object path_ = "";
   /**
    * <pre>
    * policy path aka package name
@@ -92,6 +93,7 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int DECISIONS_FIELD_NUMBER = 2;
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList decisions_;
   /**
    * <pre>
@@ -265,10 +267,10 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       path_ = "";
-
       decisions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
 
@@ -295,15 +297,25 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.aserto.authorizer.v2.api.PolicyContext buildPartial() {
       com.aserto.authorizer.v2.api.PolicyContext result = new com.aserto.authorizer.v2.api.PolicyContext(this);
-      int from_bitField0_ = bitField0_;
-      result.path_ = path_;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        decisions_ = decisions_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000001);
-      }
-      result.decisions_ = decisions_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) { buildPartial0(result); }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(com.aserto.authorizer.v2.api.PolicyContext result) {
+      if (((bitField0_ & 0x00000002) != 0)) {
+        decisions_ = decisions_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000002);
+      }
+      result.decisions_ = decisions_;
+    }
+
+    private void buildPartial0(com.aserto.authorizer.v2.api.PolicyContext result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.path_ = path_;
+      }
     }
 
     @java.lang.Override
@@ -393,11 +405,9 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setPath(
         java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      if (value == null) { throw new NullPointerException(); }
       path_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -410,8 +420,8 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearPath() {
-      
       path_ = getDefaultInstance().getPath();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -426,21 +436,19 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setPathBytes(
         com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
       path_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
 
     private com.google.protobuf.LazyStringList decisions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     private void ensureDecisionsIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000002) != 0)) {
         decisions_ = new com.google.protobuf.LazyStringArrayList(decisions_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
        }
     }
     /**
@@ -503,10 +511,8 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setDecisions(
         int index, java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureDecisionsIsMutable();
+      if (value == null) { throw new NullPointerException(); }
+      ensureDecisionsIsMutable();
       decisions_.set(index, value);
       onChanged();
       return this;
@@ -522,10 +528,8 @@ private static final long serialVersionUID = 0L;
      */
     public Builder addDecisions(
         java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureDecisionsIsMutable();
+      if (value == null) { throw new NullPointerException(); }
+      ensureDecisionsIsMutable();
       decisions_.add(value);
       onChanged();
       return this;
@@ -557,7 +561,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearDecisions() {
       decisions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -572,10 +576,8 @@ private static final long serialVersionUID = 0L;
      */
     public Builder addDecisionsBytes(
         com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
       ensureDecisionsIsMutable();
       decisions_.add(value);
       onChanged();

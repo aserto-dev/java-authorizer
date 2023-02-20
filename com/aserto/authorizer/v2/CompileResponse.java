@@ -68,7 +68,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public com.google.protobuf.StructOrBuilder getResultOrBuilder() {
-    return getResult();
+    return result_ == null ? com.google.protobuf.Struct.getDefaultInstance() : result_;
   }
 
   public static final int METRICS_FIELD_NUMBER = 2;
@@ -94,10 +94,11 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public com.google.protobuf.StructOrBuilder getMetricsOrBuilder() {
-    return getMetrics();
+    return metrics_ == null ? com.google.protobuf.Struct.getDefaultInstance() : metrics_;
   }
 
   public static final int TRACE_FIELD_NUMBER = 3;
+  @SuppressWarnings("serial")
   private java.util.List<com.google.protobuf.Struct> trace_;
   /**
    * <code>repeated .google.protobuf.Struct trace = 3 [json_name = "trace"];</code>
@@ -138,6 +139,7 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int TRACE_SUMMARY_FIELD_NUMBER = 4;
+  @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringList traceSummary_;
   /**
    * <code>repeated string trace_summary = 4 [json_name = "traceSummary"];</code>
@@ -295,16 +297,15 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (resultBuilder_ == null) {
-        result_ = null;
-      } else {
-        result_ = null;
+      bitField0_ = 0;
+      result_ = null;
+      if (resultBuilder_ != null) {
+        resultBuilder_.dispose();
         resultBuilder_ = null;
       }
-      if (metricsBuilder_ == null) {
-        metrics_ = null;
-      } else {
-        metrics_ = null;
+      metrics_ = null;
+      if (metricsBuilder_ != null) {
+        metricsBuilder_.dispose();
         metricsBuilder_ = null;
       }
       if (traceBuilder_ == null) {
@@ -313,9 +314,9 @@ private static final long serialVersionUID = 0L;
         trace_ = null;
         traceBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000004);
       traceSummary_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
 
@@ -342,33 +343,41 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.aserto.authorizer.v2.CompileResponse buildPartial() {
       com.aserto.authorizer.v2.CompileResponse result = new com.aserto.authorizer.v2.CompileResponse(this);
-      int from_bitField0_ = bitField0_;
-      if (resultBuilder_ == null) {
-        result.result_ = result_;
-      } else {
-        result.result_ = resultBuilder_.build();
-      }
-      if (metricsBuilder_ == null) {
-        result.metrics_ = metrics_;
-      } else {
-        result.metrics_ = metricsBuilder_.build();
-      }
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) { buildPartial0(result); }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.aserto.authorizer.v2.CompileResponse result) {
       if (traceBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           trace_ = java.util.Collections.unmodifiableList(trace_);
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.trace_ = trace_;
       } else {
         result.trace_ = traceBuilder_.build();
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000008) != 0)) {
         traceSummary_ = traceSummary_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000008);
       }
       result.traceSummary_ = traceSummary_;
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.aserto.authorizer.v2.CompileResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.result_ = resultBuilder_ == null
+            ? result_
+            : resultBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.metrics_ = metricsBuilder_ == null
+            ? metrics_
+            : metricsBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -413,7 +422,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the result field is set.
      */
     public boolean hasResult() {
-      return resultBuilder_ != null || result_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      * <code>.google.protobuf.Struct result = 1 [json_name = "result"];</code>
@@ -435,11 +444,11 @@ private static final long serialVersionUID = 0L;
           throw new NullPointerException();
         }
         result_ = value;
-        onChanged();
       } else {
         resultBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -449,11 +458,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.Struct.Builder builderForValue) {
       if (resultBuilder_ == null) {
         result_ = builderForValue.build();
-        onChanged();
       } else {
         resultBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -461,38 +470,38 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeResult(com.google.protobuf.Struct value) {
       if (resultBuilder_ == null) {
-        if (result_ != null) {
-          result_ =
-            com.google.protobuf.Struct.newBuilder(result_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000001) != 0) &&
+          result_ != null &&
+          result_ != com.google.protobuf.Struct.getDefaultInstance()) {
+          getResultBuilder().mergeFrom(value);
         } else {
           result_ = value;
         }
-        onChanged();
       } else {
         resultBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
      * <code>.google.protobuf.Struct result = 1 [json_name = "result"];</code>
      */
     public Builder clearResult() {
-      if (resultBuilder_ == null) {
-        result_ = null;
-        onChanged();
-      } else {
-        result_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      result_ = null;
+      if (resultBuilder_ != null) {
+        resultBuilder_.dispose();
         resultBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
      * <code>.google.protobuf.Struct result = 1 [json_name = "result"];</code>
      */
     public com.google.protobuf.Struct.Builder getResultBuilder() {
-      
+      bitField0_ |= 0x00000001;
       onChanged();
       return getResultFieldBuilder().getBuilder();
     }
@@ -532,7 +541,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the metrics field is set.
      */
     public boolean hasMetrics() {
-      return metricsBuilder_ != null || metrics_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      * <code>.google.protobuf.Struct metrics = 2 [json_name = "metrics"];</code>
@@ -554,11 +563,11 @@ private static final long serialVersionUID = 0L;
           throw new NullPointerException();
         }
         metrics_ = value;
-        onChanged();
       } else {
         metricsBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -568,11 +577,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.Struct.Builder builderForValue) {
       if (metricsBuilder_ == null) {
         metrics_ = builderForValue.build();
-        onChanged();
       } else {
         metricsBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -580,38 +589,38 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeMetrics(com.google.protobuf.Struct value) {
       if (metricsBuilder_ == null) {
-        if (metrics_ != null) {
-          metrics_ =
-            com.google.protobuf.Struct.newBuilder(metrics_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0) &&
+          metrics_ != null &&
+          metrics_ != com.google.protobuf.Struct.getDefaultInstance()) {
+          getMetricsBuilder().mergeFrom(value);
         } else {
           metrics_ = value;
         }
-        onChanged();
       } else {
         metricsBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
      * <code>.google.protobuf.Struct metrics = 2 [json_name = "metrics"];</code>
      */
     public Builder clearMetrics() {
-      if (metricsBuilder_ == null) {
-        metrics_ = null;
-        onChanged();
-      } else {
-        metrics_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      metrics_ = null;
+      if (metricsBuilder_ != null) {
+        metricsBuilder_.dispose();
         metricsBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
      * <code>.google.protobuf.Struct metrics = 2 [json_name = "metrics"];</code>
      */
     public com.google.protobuf.Struct.Builder getMetricsBuilder() {
-      
+      bitField0_ |= 0x00000002;
       onChanged();
       return getMetricsFieldBuilder().getBuilder();
     }
@@ -646,9 +655,9 @@ private static final long serialVersionUID = 0L;
     private java.util.List<com.google.protobuf.Struct> trace_ =
       java.util.Collections.emptyList();
     private void ensureTraceIsMutable() {
-      if (!((bitField0_ & 0x00000001) != 0)) {
+      if (!((bitField0_ & 0x00000004) != 0)) {
         trace_ = new java.util.ArrayList<com.google.protobuf.Struct>(trace_);
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
        }
     }
 
@@ -798,7 +807,7 @@ private static final long serialVersionUID = 0L;
     public Builder clearTrace() {
       if (traceBuilder_ == null) {
         trace_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
       } else {
         traceBuilder_.clear();
@@ -875,7 +884,7 @@ private static final long serialVersionUID = 0L;
         traceBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
             com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder>(
                 trace_,
-                ((bitField0_ & 0x00000001) != 0),
+                ((bitField0_ & 0x00000004) != 0),
                 getParentForChildren(),
                 isClean());
         trace_ = null;
@@ -885,9 +894,9 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.LazyStringList traceSummary_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     private void ensureTraceSummaryIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         traceSummary_ = new com.google.protobuf.LazyStringArrayList(traceSummary_);
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000008;
        }
     }
     /**
@@ -930,10 +939,8 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setTraceSummary(
         int index, java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureTraceSummaryIsMutable();
+      if (value == null) { throw new NullPointerException(); }
+      ensureTraceSummaryIsMutable();
       traceSummary_.set(index, value);
       onChanged();
       return this;
@@ -945,10 +952,8 @@ private static final long serialVersionUID = 0L;
      */
     public Builder addTraceSummary(
         java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureTraceSummaryIsMutable();
+      if (value == null) { throw new NullPointerException(); }
+      ensureTraceSummaryIsMutable();
       traceSummary_.add(value);
       onChanged();
       return this;
@@ -972,7 +977,7 @@ private static final long serialVersionUID = 0L;
      */
     public Builder clearTraceSummary() {
       traceSummary_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -983,10 +988,8 @@ private static final long serialVersionUID = 0L;
      */
     public Builder addTraceSummaryBytes(
         com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
       ensureTraceSummaryIsMutable();
       traceSummary_.add(value);
       onChanged();

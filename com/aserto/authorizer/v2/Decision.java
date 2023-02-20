@@ -45,7 +45,8 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int DECISION_FIELD_NUMBER = 1;
-  private volatile java.lang.Object decision_;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object decision_ = "";
   /**
    * <code>string decision = 1 [json_name = "decision"];</code>
    * @return The decision.
@@ -83,7 +84,7 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int IS_FIELD_NUMBER = 2;
-  private boolean is_;
+  private boolean is_ = false;
   /**
    * <code>bool is = 2 [json_name = "is"];</code>
    * @return The is.
@@ -216,10 +217,9 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       decision_ = "";
-
       is_ = false;
-
       return this;
     }
 
@@ -246,10 +246,19 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.aserto.authorizer.v2.Decision buildPartial() {
       com.aserto.authorizer.v2.Decision result = new com.aserto.authorizer.v2.Decision(this);
-      result.decision_ = decision_;
-      result.is_ = is_;
+      if (bitField0_ != 0) { buildPartial0(result); }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.aserto.authorizer.v2.Decision result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.decision_ = decision_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.is_ = is_;
+      }
     }
 
     @java.lang.Override
@@ -284,6 +293,7 @@ private static final long serialVersionUID = 0L;
         java.lang.Object value) {
       return super.addRepeatedField(field, value);
     }
+    private int bitField0_;
 
     private java.lang.Object decision_ = "";
     /**
@@ -326,11 +336,9 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setDecision(
         java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      if (value == null) { throw new NullPointerException(); }
       decision_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -339,8 +347,8 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearDecision() {
-      
       decision_ = getDefaultInstance().getDecision();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -351,12 +359,10 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setDecisionBytes(
         com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
       decision_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -378,6 +384,7 @@ private static final long serialVersionUID = 0L;
     public Builder setIs(boolean value) {
       
       is_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -386,7 +393,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearIs() {
-      
+      bitField0_ = (bitField0_ & ~0x00000002);
       is_ = false;
       onChanged();
       return this;

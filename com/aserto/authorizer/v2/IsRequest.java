@@ -67,7 +67,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public com.aserto.authorizer.v2.api.PolicyContextOrBuilder getPolicyContextOrBuilder() {
-    return getPolicyContext();
+    return policyContext_ == null ? com.aserto.authorizer.v2.api.PolicyContext.getDefaultInstance() : policyContext_;
   }
 
   public static final int IDENTITY_CONTEXT_FIELD_NUMBER = 2;
@@ -93,7 +93,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public com.aserto.authorizer.v2.api.IdentityContextOrBuilder getIdentityContextOrBuilder() {
-    return getIdentityContext();
+    return identityContext_ == null ? com.aserto.authorizer.v2.api.IdentityContext.getDefaultInstance() : identityContext_;
   }
 
   public static final int RESOURCE_CONTEXT_FIELD_NUMBER = 3;
@@ -119,7 +119,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public com.google.protobuf.StructOrBuilder getResourceContextOrBuilder() {
-    return getResourceContext();
+    return resourceContext_ == null ? com.google.protobuf.Struct.getDefaultInstance() : resourceContext_;
   }
 
   public static final int POLICY_INSTANCE_FIELD_NUMBER = 4;
@@ -271,36 +271,36 @@ private static final long serialVersionUID = 0L;
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
+        getPolicyContextFieldBuilder();
+        getIdentityContextFieldBuilder();
+        getResourceContextFieldBuilder();
         getPolicyInstanceFieldBuilder();
       }
     }
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (policyContextBuilder_ == null) {
-        policyContext_ = null;
-      } else {
-        policyContext_ = null;
+      bitField0_ = 0;
+      policyContext_ = null;
+      if (policyContextBuilder_ != null) {
+        policyContextBuilder_.dispose();
         policyContextBuilder_ = null;
       }
-      if (identityContextBuilder_ == null) {
-        identityContext_ = null;
-      } else {
-        identityContext_ = null;
+      identityContext_ = null;
+      if (identityContextBuilder_ != null) {
+        identityContextBuilder_.dispose();
         identityContextBuilder_ = null;
       }
-      if (resourceContextBuilder_ == null) {
-        resourceContext_ = null;
-      } else {
-        resourceContext_ = null;
+      resourceContext_ = null;
+      if (resourceContextBuilder_ != null) {
+        resourceContextBuilder_.dispose();
         resourceContextBuilder_ = null;
       }
-      if (policyInstanceBuilder_ == null) {
-        policyInstance_ = null;
-      } else {
-        policyInstanceBuilder_.clear();
+      policyInstance_ = null;
+      if (policyInstanceBuilder_ != null) {
+        policyInstanceBuilder_.dispose();
+        policyInstanceBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
 
@@ -327,34 +327,36 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.aserto.authorizer.v2.IsRequest buildPartial() {
       com.aserto.authorizer.v2.IsRequest result = new com.aserto.authorizer.v2.IsRequest(this);
-      int from_bitField0_ = bitField0_;
-      int to_bitField0_ = 0;
-      if (policyContextBuilder_ == null) {
-        result.policyContext_ = policyContext_;
-      } else {
-        result.policyContext_ = policyContextBuilder_.build();
-      }
-      if (identityContextBuilder_ == null) {
-        result.identityContext_ = identityContext_;
-      } else {
-        result.identityContext_ = identityContextBuilder_.build();
-      }
-      if (resourceContextBuilder_ == null) {
-        result.resourceContext_ = resourceContext_;
-      } else {
-        result.resourceContext_ = resourceContextBuilder_.build();
-      }
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        if (policyInstanceBuilder_ == null) {
-          result.policyInstance_ = policyInstance_;
-        } else {
-          result.policyInstance_ = policyInstanceBuilder_.build();
-        }
-        to_bitField0_ |= 0x00000001;
-      }
-      result.bitField0_ = to_bitField0_;
+      if (bitField0_ != 0) { buildPartial0(result); }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.aserto.authorizer.v2.IsRequest result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.policyContext_ = policyContextBuilder_ == null
+            ? policyContext_
+            : policyContextBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.identityContext_ = identityContextBuilder_ == null
+            ? identityContext_
+            : identityContextBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.resourceContext_ = resourceContextBuilder_ == null
+            ? resourceContext_
+            : resourceContextBuilder_.build();
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.policyInstance_ = policyInstanceBuilder_ == null
+            ? policyInstance_
+            : policyInstanceBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -399,7 +401,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the policyContext field is set.
      */
     public boolean hasPolicyContext() {
-      return policyContextBuilder_ != null || policyContext_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      * <code>.aserto.authorizer.v2.api.PolicyContext policy_context = 1 [json_name = "policyContext"];</code>
@@ -421,11 +423,11 @@ private static final long serialVersionUID = 0L;
           throw new NullPointerException();
         }
         policyContext_ = value;
-        onChanged();
       } else {
         policyContextBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -435,11 +437,11 @@ private static final long serialVersionUID = 0L;
         com.aserto.authorizer.v2.api.PolicyContext.Builder builderForValue) {
       if (policyContextBuilder_ == null) {
         policyContext_ = builderForValue.build();
-        onChanged();
       } else {
         policyContextBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -447,38 +449,38 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergePolicyContext(com.aserto.authorizer.v2.api.PolicyContext value) {
       if (policyContextBuilder_ == null) {
-        if (policyContext_ != null) {
-          policyContext_ =
-            com.aserto.authorizer.v2.api.PolicyContext.newBuilder(policyContext_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000001) != 0) &&
+          policyContext_ != null &&
+          policyContext_ != com.aserto.authorizer.v2.api.PolicyContext.getDefaultInstance()) {
+          getPolicyContextBuilder().mergeFrom(value);
         } else {
           policyContext_ = value;
         }
-        onChanged();
       } else {
         policyContextBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
      * <code>.aserto.authorizer.v2.api.PolicyContext policy_context = 1 [json_name = "policyContext"];</code>
      */
     public Builder clearPolicyContext() {
-      if (policyContextBuilder_ == null) {
-        policyContext_ = null;
-        onChanged();
-      } else {
-        policyContext_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      policyContext_ = null;
+      if (policyContextBuilder_ != null) {
+        policyContextBuilder_.dispose();
         policyContextBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
      * <code>.aserto.authorizer.v2.api.PolicyContext policy_context = 1 [json_name = "policyContext"];</code>
      */
     public com.aserto.authorizer.v2.api.PolicyContext.Builder getPolicyContextBuilder() {
-      
+      bitField0_ |= 0x00000001;
       onChanged();
       return getPolicyContextFieldBuilder().getBuilder();
     }
@@ -518,7 +520,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the identityContext field is set.
      */
     public boolean hasIdentityContext() {
-      return identityContextBuilder_ != null || identityContext_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      * <code>.aserto.authorizer.v2.api.IdentityContext identity_context = 2 [json_name = "identityContext"];</code>
@@ -540,11 +542,11 @@ private static final long serialVersionUID = 0L;
           throw new NullPointerException();
         }
         identityContext_ = value;
-        onChanged();
       } else {
         identityContextBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -554,11 +556,11 @@ private static final long serialVersionUID = 0L;
         com.aserto.authorizer.v2.api.IdentityContext.Builder builderForValue) {
       if (identityContextBuilder_ == null) {
         identityContext_ = builderForValue.build();
-        onChanged();
       } else {
         identityContextBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -566,38 +568,38 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeIdentityContext(com.aserto.authorizer.v2.api.IdentityContext value) {
       if (identityContextBuilder_ == null) {
-        if (identityContext_ != null) {
-          identityContext_ =
-            com.aserto.authorizer.v2.api.IdentityContext.newBuilder(identityContext_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0) &&
+          identityContext_ != null &&
+          identityContext_ != com.aserto.authorizer.v2.api.IdentityContext.getDefaultInstance()) {
+          getIdentityContextBuilder().mergeFrom(value);
         } else {
           identityContext_ = value;
         }
-        onChanged();
       } else {
         identityContextBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
      * <code>.aserto.authorizer.v2.api.IdentityContext identity_context = 2 [json_name = "identityContext"];</code>
      */
     public Builder clearIdentityContext() {
-      if (identityContextBuilder_ == null) {
-        identityContext_ = null;
-        onChanged();
-      } else {
-        identityContext_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      identityContext_ = null;
+      if (identityContextBuilder_ != null) {
+        identityContextBuilder_.dispose();
         identityContextBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
      * <code>.aserto.authorizer.v2.api.IdentityContext identity_context = 2 [json_name = "identityContext"];</code>
      */
     public com.aserto.authorizer.v2.api.IdentityContext.Builder getIdentityContextBuilder() {
-      
+      bitField0_ |= 0x00000002;
       onChanged();
       return getIdentityContextFieldBuilder().getBuilder();
     }
@@ -637,7 +639,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the resourceContext field is set.
      */
     public boolean hasResourceContext() {
-      return resourceContextBuilder_ != null || resourceContext_ != null;
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      * <code>.google.protobuf.Struct resource_context = 3 [json_name = "resourceContext"];</code>
@@ -659,11 +661,11 @@ private static final long serialVersionUID = 0L;
           throw new NullPointerException();
         }
         resourceContext_ = value;
-        onChanged();
       } else {
         resourceContextBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -673,11 +675,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.Struct.Builder builderForValue) {
       if (resourceContextBuilder_ == null) {
         resourceContext_ = builderForValue.build();
-        onChanged();
       } else {
         resourceContextBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
@@ -685,38 +687,38 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeResourceContext(com.google.protobuf.Struct value) {
       if (resourceContextBuilder_ == null) {
-        if (resourceContext_ != null) {
-          resourceContext_ =
-            com.google.protobuf.Struct.newBuilder(resourceContext_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000004) != 0) &&
+          resourceContext_ != null &&
+          resourceContext_ != com.google.protobuf.Struct.getDefaultInstance()) {
+          getResourceContextBuilder().mergeFrom(value);
         } else {
           resourceContext_ = value;
         }
-        onChanged();
       } else {
         resourceContextBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
     /**
      * <code>.google.protobuf.Struct resource_context = 3 [json_name = "resourceContext"];</code>
      */
     public Builder clearResourceContext() {
-      if (resourceContextBuilder_ == null) {
-        resourceContext_ = null;
-        onChanged();
-      } else {
-        resourceContext_ = null;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      resourceContext_ = null;
+      if (resourceContextBuilder_ != null) {
+        resourceContextBuilder_.dispose();
         resourceContextBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
      * <code>.google.protobuf.Struct resource_context = 3 [json_name = "resourceContext"];</code>
      */
     public com.google.protobuf.Struct.Builder getResourceContextBuilder() {
-      
+      bitField0_ |= 0x00000004;
       onChanged();
       return getResourceContextFieldBuilder().getBuilder();
     }
@@ -756,7 +758,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the policyInstance field is set.
      */
     public boolean hasPolicyInstance() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      * <code>optional .aserto.authorizer.v2.api.PolicyInstance policy_instance = 4 [json_name = "policyInstance"];</code>
@@ -778,11 +780,11 @@ private static final long serialVersionUID = 0L;
           throw new NullPointerException();
         }
         policyInstance_ = value;
-        onChanged();
       } else {
         policyInstanceBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -792,11 +794,11 @@ private static final long serialVersionUID = 0L;
         com.aserto.authorizer.v2.api.PolicyInstance.Builder builderForValue) {
       if (policyInstanceBuilder_ == null) {
         policyInstance_ = builderForValue.build();
-        onChanged();
       } else {
         policyInstanceBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -804,39 +806,38 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergePolicyInstance(com.aserto.authorizer.v2.api.PolicyInstance value) {
       if (policyInstanceBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0) &&
-            policyInstance_ != null &&
-            policyInstance_ != com.aserto.authorizer.v2.api.PolicyInstance.getDefaultInstance()) {
-          policyInstance_ =
-            com.aserto.authorizer.v2.api.PolicyInstance.newBuilder(policyInstance_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000008) != 0) &&
+          policyInstance_ != null &&
+          policyInstance_ != com.aserto.authorizer.v2.api.PolicyInstance.getDefaultInstance()) {
+          getPolicyInstanceBuilder().mergeFrom(value);
         } else {
           policyInstance_ = value;
         }
-        onChanged();
       } else {
         policyInstanceBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
      * <code>optional .aserto.authorizer.v2.api.PolicyInstance policy_instance = 4 [json_name = "policyInstance"];</code>
      */
     public Builder clearPolicyInstance() {
-      if (policyInstanceBuilder_ == null) {
-        policyInstance_ = null;
-        onChanged();
-      } else {
-        policyInstanceBuilder_.clear();
+      bitField0_ = (bitField0_ & ~0x00000008);
+      policyInstance_ = null;
+      if (policyInstanceBuilder_ != null) {
+        policyInstanceBuilder_.dispose();
+        policyInstanceBuilder_ = null;
       }
-      bitField0_ = (bitField0_ & ~0x00000001);
+      onChanged();
       return this;
     }
     /**
      * <code>optional .aserto.authorizer.v2.api.PolicyInstance policy_instance = 4 [json_name = "policyInstance"];</code>
      */
     public com.aserto.authorizer.v2.api.PolicyInstance.Builder getPolicyInstanceBuilder() {
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000008;
       onChanged();
       return getPolicyInstanceFieldBuilder().getBuilder();
     }

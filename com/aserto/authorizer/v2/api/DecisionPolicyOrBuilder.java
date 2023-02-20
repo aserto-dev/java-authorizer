@@ -113,4 +113,31 @@ public interface DecisionPolicyOrBuilder extends
    */
   com.google.protobuf.ByteString
       getRegistryDigestBytes();
+
+  /**
+   * <pre>
+   * policy instance used in decision
+   * </pre>
+   *
+   * <code>.aserto.authorizer.v2.api.PolicyInstance policy_instance = 6 [json_name = "policyInstance"];</code>
+   * @return Whether the policyInstance field is set.
+   */
+  boolean hasPolicyInstance();
+  /**
+   * <pre>
+   * policy instance used in decision
+   * </pre>
+   *
+   * <code>.aserto.authorizer.v2.api.PolicyInstance policy_instance = 6 [json_name = "policyInstance"];</code>
+   * @return The policyInstance.
+   */
+  com.aserto.authorizer.v2.api.PolicyInstance getPolicyInstance();
+  /**
+   * <pre>
+   * policy instance used in decision
+   * </pre>
+   *
+   * <code>.aserto.authorizer.v2.api.PolicyInstance policy_instance = 6 [json_name = "policyInstance"];</code>
+   */
+  com.aserto.authorizer.v2.api.PolicyInstanceOrBuilder getPolicyInstanceOrBuilder();
 }

@@ -49,7 +49,8 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int VERSION_FIELD_NUMBER = 1;
-  private volatile java.lang.Object version_;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object version_ = "";
   /**
    * <code>string version = 1 [json_name = "version"];</code>
    * @return The version.
@@ -87,7 +88,8 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int COMMIT_FIELD_NUMBER = 2;
-  private volatile java.lang.Object commit_;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object commit_ = "";
   /**
    * <code>string commit = 2 [json_name = "commit"];</code>
    * @return The commit.
@@ -125,7 +127,8 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int DATE_FIELD_NUMBER = 3;
-  private volatile java.lang.Object date_;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object date_ = "";
   /**
    * <code>string date = 3 [json_name = "date"];</code>
    * @return The date.
@@ -163,7 +166,8 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int OS_FIELD_NUMBER = 4;
-  private volatile java.lang.Object os_;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object os_ = "";
   /**
    * <code>string os = 4 [json_name = "os"];</code>
    * @return The os.
@@ -201,7 +205,8 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int ARCH_FIELD_NUMBER = 5;
-  private volatile java.lang.Object arch_;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object arch_ = "";
   /**
    * <code>string arch = 5 [json_name = "arch"];</code>
    * @return The arch.
@@ -361,16 +366,12 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       version_ = "";
-
       commit_ = "";
-
       date_ = "";
-
       os_ = "";
-
       arch_ = "";
-
       return this;
     }
 
@@ -397,13 +398,28 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.aserto.authorizer.v2.InfoResponse buildPartial() {
       com.aserto.authorizer.v2.InfoResponse result = new com.aserto.authorizer.v2.InfoResponse(this);
-      result.version_ = version_;
-      result.commit_ = commit_;
-      result.date_ = date_;
-      result.os_ = os_;
-      result.arch_ = arch_;
+      if (bitField0_ != 0) { buildPartial0(result); }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.aserto.authorizer.v2.InfoResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.version_ = version_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.commit_ = commit_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.date_ = date_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.os_ = os_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.arch_ = arch_;
+      }
     }
 
     @java.lang.Override
@@ -438,6 +454,7 @@ private static final long serialVersionUID = 0L;
         java.lang.Object value) {
       return super.addRepeatedField(field, value);
     }
+    private int bitField0_;
 
     private java.lang.Object version_ = "";
     /**
@@ -480,11 +497,9 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setVersion(
         java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      if (value == null) { throw new NullPointerException(); }
       version_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -493,8 +508,8 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearVersion() {
-      
       version_ = getDefaultInstance().getVersion();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -505,12 +520,10 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setVersionBytes(
         com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
       version_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -556,11 +569,9 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setCommit(
         java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      if (value == null) { throw new NullPointerException(); }
       commit_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -569,8 +580,8 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearCommit() {
-      
       commit_ = getDefaultInstance().getCommit();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -581,12 +592,10 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setCommitBytes(
         com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
       commit_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -632,11 +641,9 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setDate(
         java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      if (value == null) { throw new NullPointerException(); }
       date_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -645,8 +652,8 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearDate() {
-      
       date_ = getDefaultInstance().getDate();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -657,12 +664,10 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setDateBytes(
         com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
       date_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -708,11 +713,9 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setOs(
         java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      if (value == null) { throw new NullPointerException(); }
       os_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -721,8 +724,8 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearOs() {
-      
       os_ = getDefaultInstance().getOs();
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -733,12 +736,10 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setOsBytes(
         com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
       os_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -784,11 +785,9 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setArch(
         java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      if (value == null) { throw new NullPointerException(); }
       arch_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -797,8 +796,8 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearArch() {
-      
       arch_ = getDefaultInstance().getArch();
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -809,12 +808,10 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setArchBytes(
         com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
       arch_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

@@ -45,6 +45,7 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int DECISIONS_FIELD_NUMBER = 1;
+  @SuppressWarnings("serial")
   private java.util.List<com.aserto.authorizer.v2.Decision> decisions_;
   /**
    * <code>repeated .aserto.authorizer.v2.Decision decisions = 1 [json_name = "decisions"];</code>
@@ -207,6 +208,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       if (decisionsBuilder_ == null) {
         decisions_ = java.util.Collections.emptyList();
       } else {
@@ -240,7 +242,13 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.aserto.authorizer.v2.IsResponse buildPartial() {
       com.aserto.authorizer.v2.IsResponse result = new com.aserto.authorizer.v2.IsResponse(this);
-      int from_bitField0_ = bitField0_;
+      buildPartialRepeatedFields(result);
+      if (bitField0_ != 0) { buildPartial0(result); }
+      onBuilt();
+      return result;
+    }
+
+    private void buildPartialRepeatedFields(com.aserto.authorizer.v2.IsResponse result) {
       if (decisionsBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
           decisions_ = java.util.Collections.unmodifiableList(decisions_);
@@ -250,8 +258,10 @@ private static final long serialVersionUID = 0L;
       } else {
         result.decisions_ = decisionsBuilder_.build();
       }
-      onBuilt();
-      return result;
+    }
+
+    private void buildPartial0(com.aserto.authorizer.v2.IsResponse result) {
+      int from_bitField0_ = bitField0_;
     }
 
     @java.lang.Override

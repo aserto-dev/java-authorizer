@@ -167,7 +167,6 @@ public interface DecisionOrBuilder extends
    *
    * <code>map&lt;string, bool&gt; outcomes = 6 [json_name = "outcomes"];</code>
    */
-
   boolean getOutcomesOrDefault(
       java.lang.String key,
       boolean defaultValue);
@@ -178,7 +177,6 @@ public interface DecisionOrBuilder extends
    *
    * <code>map&lt;string, bool&gt; outcomes = 6 [json_name = "outcomes"];</code>
    */
-
   boolean getOutcomesOrThrow(
       java.lang.String key);
 
@@ -248,7 +246,6 @@ public interface DecisionOrBuilder extends
    *
    * <code>map&lt;string, string&gt; annotations = 8 [json_name = "annotations"];</code>
    */
-
   /* nullable */
 java.lang.String getAnnotationsOrDefault(
       java.lang.String key,
@@ -261,7 +258,35 @@ java.lang.String defaultValue);
    *
    * <code>map&lt;string, string&gt; annotations = 8 [json_name = "annotations"];</code>
    */
-
   java.lang.String getAnnotationsOrThrow(
       java.lang.String key);
+
+  /**
+   * <pre>
+   * id of the tenant that generated the decision
+   * </pre>
+   *
+   * <code>optional string tenant_id = 9 [json_name = "tenantId"];</code>
+   * @return Whether the tenantId field is set.
+   */
+  boolean hasTenantId();
+  /**
+   * <pre>
+   * id of the tenant that generated the decision
+   * </pre>
+   *
+   * <code>optional string tenant_id = 9 [json_name = "tenantId"];</code>
+   * @return The tenantId.
+   */
+  java.lang.String getTenantId();
+  /**
+   * <pre>
+   * id of the tenant that generated the decision
+   * </pre>
+   *
+   * <code>optional string tenant_id = 9 [json_name = "tenantId"];</code>
+   * @return The bytes for tenantId.
+   */
+  com.google.protobuf.ByteString
+      getTenantIdBytes();
 }

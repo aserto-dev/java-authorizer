@@ -46,7 +46,8 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int IDENTITY_FIELD_NUMBER = 1;
-  private volatile java.lang.Object identity_;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object identity_ = "";
   /**
    * <code>string identity = 1 [json_name = "identity"];</code>
    * @return The identity.
@@ -84,7 +85,7 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int TYPE_FIELD_NUMBER = 2;
-  private int type_;
+  private int type_ = 0;
   /**
    * <code>.aserto.authorizer.v2.api.IdentityType type = 2 [json_name = "type"];</code>
    * @return The enum numeric value on the wire for type.
@@ -97,8 +98,7 @@ private static final long serialVersionUID = 0L;
    * @return The type.
    */
   @java.lang.Override public com.aserto.authorizer.v2.api.IdentityType getType() {
-    @SuppressWarnings("deprecation")
-    com.aserto.authorizer.v2.api.IdentityType result = com.aserto.authorizer.v2.api.IdentityType.valueOf(type_);
+    com.aserto.authorizer.v2.api.IdentityType result = com.aserto.authorizer.v2.api.IdentityType.forNumber(type_);
     return result == null ? com.aserto.authorizer.v2.api.IdentityType.UNRECOGNIZED : result;
   }
 
@@ -225,10 +225,9 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       identity_ = "";
-
       type_ = 0;
-
       return this;
     }
 
@@ -255,10 +254,19 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.aserto.authorizer.v2.api.IdentityContext buildPartial() {
       com.aserto.authorizer.v2.api.IdentityContext result = new com.aserto.authorizer.v2.api.IdentityContext(this);
-      result.identity_ = identity_;
-      result.type_ = type_;
+      if (bitField0_ != 0) { buildPartial0(result); }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.aserto.authorizer.v2.api.IdentityContext result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.identity_ = identity_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.type_ = type_;
+      }
     }
 
     @java.lang.Override
@@ -293,6 +301,7 @@ private static final long serialVersionUID = 0L;
         java.lang.Object value) {
       return super.addRepeatedField(field, value);
     }
+    private int bitField0_;
 
     private java.lang.Object identity_ = "";
     /**
@@ -335,11 +344,9 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setIdentity(
         java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      if (value == null) { throw new NullPointerException(); }
       identity_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -348,8 +355,8 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearIdentity() {
-      
       identity_ = getDefaultInstance().getIdentity();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -360,12 +367,10 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setIdentityBytes(
         com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
       identity_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -384,8 +389,8 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder setTypeValue(int value) {
-      
       type_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -395,8 +400,7 @@ private static final long serialVersionUID = 0L;
      */
     @java.lang.Override
     public com.aserto.authorizer.v2.api.IdentityType getType() {
-      @SuppressWarnings("deprecation")
-      com.aserto.authorizer.v2.api.IdentityType result = com.aserto.authorizer.v2.api.IdentityType.valueOf(type_);
+      com.aserto.authorizer.v2.api.IdentityType result = com.aserto.authorizer.v2.api.IdentityType.forNumber(type_);
       return result == null ? com.aserto.authorizer.v2.api.IdentityType.UNRECOGNIZED : result;
     }
     /**
@@ -408,7 +412,7 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
         throw new NullPointerException();
       }
-      
+      bitField0_ |= 0x00000002;
       type_ = value.getNumber();
       onChanged();
       return this;
@@ -418,7 +422,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearType() {
-      
+      bitField0_ = (bitField0_ & ~0x00000002);
       type_ = 0;
       onChanged();
       return this;

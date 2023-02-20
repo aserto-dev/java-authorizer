@@ -22,6 +22,7 @@ private static final long serialVersionUID = 0L;
   private Decision() {
     id_ = "";
     path_ = "";
+    tenantId_ = "";
   }
 
   @java.lang.Override
@@ -63,8 +64,10 @@ private static final long serialVersionUID = 0L;
             com.aserto.authorizer.v2.api.Decision.class, com.aserto.authorizer.v2.api.Decision.Builder.class);
   }
 
+  private int bitField0_;
   public static final int ID_FIELD_NUMBER = 1;
-  private volatile java.lang.Object id_;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object id_ = "";
   /**
    * <pre>
    * unique id, replay a decision starting with this, also useful to de-dup
@@ -144,11 +147,12 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getTimestampOrBuilder() {
-    return getTimestamp();
+    return timestamp_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : timestamp_;
   }
 
   public static final int PATH_FIELD_NUMBER = 3;
-  private volatile java.lang.Object path_;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object path_ = "";
   /**
    * <pre>
    * Policy path used in decision
@@ -228,7 +232,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public com.aserto.authorizer.v2.api.DecisionUserOrBuilder getUserOrBuilder() {
-    return getUser();
+    return user_ == null ? com.aserto.authorizer.v2.api.DecisionUser.getDefaultInstance() : user_;
   }
 
   public static final int POLICY_FIELD_NUMBER = 5;
@@ -266,7 +270,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public com.aserto.authorizer.v2.api.DecisionPolicyOrBuilder getPolicyOrBuilder() {
-    return getPolicy();
+    return policy_ == null ? com.aserto.authorizer.v2.api.DecisionPolicy.getDefaultInstance() : policy_;
   }
 
   public static final int OUTCOMES_FIELD_NUMBER = 6;
@@ -281,6 +285,7 @@ private static final long serialVersionUID = 0L;
                 com.google.protobuf.WireFormat.FieldType.BOOL,
                 false);
   }
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<
       java.lang.String, java.lang.Boolean> outcomes_;
   private com.google.protobuf.MapField<java.lang.String, java.lang.Boolean>
@@ -291,7 +296,6 @@ private static final long serialVersionUID = 0L;
     }
     return outcomes_;
   }
-
   public int getOutcomesCount() {
     return internalGetOutcomes().getMap().size();
   }
@@ -302,7 +306,6 @@ private static final long serialVersionUID = 0L;
    *
    * <code>map&lt;string, bool&gt; outcomes = 6 [json_name = "outcomes"];</code>
    */
-
   @java.lang.Override
   public boolean containsOutcomes(
       java.lang.String key) {
@@ -325,7 +328,6 @@ private static final long serialVersionUID = 0L;
    * <code>map&lt;string, bool&gt; outcomes = 6 [json_name = "outcomes"];</code>
    */
   @java.lang.Override
-
   public java.util.Map<java.lang.String, java.lang.Boolean> getOutcomesMap() {
     return internalGetOutcomes().getMap();
   }
@@ -337,7 +339,6 @@ private static final long serialVersionUID = 0L;
    * <code>map&lt;string, bool&gt; outcomes = 6 [json_name = "outcomes"];</code>
    */
   @java.lang.Override
-
   public boolean getOutcomesOrDefault(
       java.lang.String key,
       boolean defaultValue) {
@@ -354,7 +355,6 @@ private static final long serialVersionUID = 0L;
    * <code>map&lt;string, bool&gt; outcomes = 6 [json_name = "outcomes"];</code>
    */
   @java.lang.Override
-
   public boolean getOutcomesOrThrow(
       java.lang.String key) {
     if (key == null) { throw new NullPointerException("map key"); }
@@ -401,7 +401,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public com.google.protobuf.StructOrBuilder getResourceOrBuilder() {
-    return getResource();
+    return resource_ == null ? com.google.protobuf.Struct.getDefaultInstance() : resource_;
   }
 
   public static final int ANNOTATIONS_FIELD_NUMBER = 8;
@@ -416,6 +416,7 @@ private static final long serialVersionUID = 0L;
                 com.google.protobuf.WireFormat.FieldType.STRING,
                 "");
   }
+  @SuppressWarnings("serial")
   private com.google.protobuf.MapField<
       java.lang.String, java.lang.String> annotations_;
   private com.google.protobuf.MapField<java.lang.String, java.lang.String>
@@ -426,7 +427,6 @@ private static final long serialVersionUID = 0L;
     }
     return annotations_;
   }
-
   public int getAnnotationsCount() {
     return internalGetAnnotations().getMap().size();
   }
@@ -437,7 +437,6 @@ private static final long serialVersionUID = 0L;
    *
    * <code>map&lt;string, string&gt; annotations = 8 [json_name = "annotations"];</code>
    */
-
   @java.lang.Override
   public boolean containsAnnotations(
       java.lang.String key) {
@@ -460,7 +459,6 @@ private static final long serialVersionUID = 0L;
    * <code>map&lt;string, string&gt; annotations = 8 [json_name = "annotations"];</code>
    */
   @java.lang.Override
-
   public java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap() {
     return internalGetAnnotations().getMap();
   }
@@ -472,10 +470,11 @@ private static final long serialVersionUID = 0L;
    * <code>map&lt;string, string&gt; annotations = 8 [json_name = "annotations"];</code>
    */
   @java.lang.Override
-
-  public java.lang.String getAnnotationsOrDefault(
+  public /* nullable */
+java.lang.String getAnnotationsOrDefault(
       java.lang.String key,
-      java.lang.String defaultValue) {
+      /* nullable */
+java.lang.String defaultValue) {
     if (key == null) { throw new NullPointerException("map key"); }
     java.util.Map<java.lang.String, java.lang.String> map =
         internalGetAnnotations().getMap();
@@ -489,7 +488,6 @@ private static final long serialVersionUID = 0L;
    * <code>map&lt;string, string&gt; annotations = 8 [json_name = "annotations"];</code>
    */
   @java.lang.Override
-
   public java.lang.String getAnnotationsOrThrow(
       java.lang.String key) {
     if (key == null) { throw new NullPointerException("map key"); }
@@ -499,6 +497,65 @@ private static final long serialVersionUID = 0L;
       throw new java.lang.IllegalArgumentException();
     }
     return map.get(key);
+  }
+
+  public static final int TENANT_ID_FIELD_NUMBER = 9;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object tenantId_ = "";
+  /**
+   * <pre>
+   * id of the tenant that generated the decision
+   * </pre>
+   *
+   * <code>optional string tenant_id = 9 [json_name = "tenantId"];</code>
+   * @return Whether the tenantId field is set.
+   */
+  @java.lang.Override
+  public boolean hasTenantId() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   * <pre>
+   * id of the tenant that generated the decision
+   * </pre>
+   *
+   * <code>optional string tenant_id = 9 [json_name = "tenantId"];</code>
+   * @return The tenantId.
+   */
+  @java.lang.Override
+  public java.lang.String getTenantId() {
+    java.lang.Object ref = tenantId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      tenantId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * id of the tenant that generated the decision
+   * </pre>
+   *
+   * <code>optional string tenant_id = 9 [json_name = "tenantId"];</code>
+   * @return The bytes for tenantId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getTenantIdBytes() {
+    java.lang.Object ref = tenantId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      tenantId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static com.aserto.authorizer.v2.api.Decision parseFrom(
@@ -654,36 +711,32 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       id_ = "";
-
-      if (timestampBuilder_ == null) {
-        timestamp_ = null;
-      } else {
-        timestamp_ = null;
+      timestamp_ = null;
+      if (timestampBuilder_ != null) {
+        timestampBuilder_.dispose();
         timestampBuilder_ = null;
       }
       path_ = "";
-
-      if (userBuilder_ == null) {
-        user_ = null;
-      } else {
-        user_ = null;
+      user_ = null;
+      if (userBuilder_ != null) {
+        userBuilder_.dispose();
         userBuilder_ = null;
       }
-      if (policyBuilder_ == null) {
-        policy_ = null;
-      } else {
-        policy_ = null;
+      policy_ = null;
+      if (policyBuilder_ != null) {
+        policyBuilder_.dispose();
         policyBuilder_ = null;
       }
       internalGetMutableOutcomes().clear();
-      if (resourceBuilder_ == null) {
-        resource_ = null;
-      } else {
-        resource_ = null;
+      resource_ = null;
+      if (resourceBuilder_ != null) {
+        resourceBuilder_.dispose();
         resourceBuilder_ = null;
       }
       internalGetMutableAnnotations().clear();
+      tenantId_ = "";
       return this;
     }
 
@@ -710,35 +763,53 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.aserto.authorizer.v2.api.Decision buildPartial() {
       com.aserto.authorizer.v2.api.Decision result = new com.aserto.authorizer.v2.api.Decision(this);
-      int from_bitField0_ = bitField0_;
-      result.id_ = id_;
-      if (timestampBuilder_ == null) {
-        result.timestamp_ = timestamp_;
-      } else {
-        result.timestamp_ = timestampBuilder_.build();
-      }
-      result.path_ = path_;
-      if (userBuilder_ == null) {
-        result.user_ = user_;
-      } else {
-        result.user_ = userBuilder_.build();
-      }
-      if (policyBuilder_ == null) {
-        result.policy_ = policy_;
-      } else {
-        result.policy_ = policyBuilder_.build();
-      }
-      result.outcomes_ = internalGetOutcomes();
-      result.outcomes_.makeImmutable();
-      if (resourceBuilder_ == null) {
-        result.resource_ = resource_;
-      } else {
-        result.resource_ = resourceBuilder_.build();
-      }
-      result.annotations_ = internalGetAnnotations();
-      result.annotations_.makeImmutable();
+      if (bitField0_ != 0) { buildPartial0(result); }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.aserto.authorizer.v2.api.Decision result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.id_ = id_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.timestamp_ = timestampBuilder_ == null
+            ? timestamp_
+            : timestampBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.path_ = path_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.user_ = userBuilder_ == null
+            ? user_
+            : userBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.policy_ = policyBuilder_ == null
+            ? policy_
+            : policyBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.outcomes_ = internalGetOutcomes();
+        result.outcomes_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.resource_ = resourceBuilder_ == null
+            ? resource_
+            : resourceBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.annotations_ = internalGetAnnotations();
+        result.annotations_.makeImmutable();
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.tenantId_ = tenantId_;
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -828,11 +899,9 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setId(
         java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      if (value == null) { throw new NullPointerException(); }
       id_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -845,8 +914,8 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearId() {
-      
       id_ = getDefaultInstance().getId();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -861,12 +930,10 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setIdBytes(
         com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
       id_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -883,7 +950,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the timestamp field is set.
      */
     public boolean hasTimestamp() {
-      return timestampBuilder_ != null || timestamp_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      * <pre>
@@ -913,11 +980,11 @@ private static final long serialVersionUID = 0L;
           throw new NullPointerException();
         }
         timestamp_ = value;
-        onChanged();
       } else {
         timestampBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -931,11 +998,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.Timestamp.Builder builderForValue) {
       if (timestampBuilder_ == null) {
         timestamp_ = builderForValue.build();
-        onChanged();
       } else {
         timestampBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -947,17 +1014,18 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeTimestamp(com.google.protobuf.Timestamp value) {
       if (timestampBuilder_ == null) {
-        if (timestamp_ != null) {
-          timestamp_ =
-            com.google.protobuf.Timestamp.newBuilder(timestamp_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0) &&
+          timestamp_ != null &&
+          timestamp_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getTimestampBuilder().mergeFrom(value);
         } else {
           timestamp_ = value;
         }
-        onChanged();
       } else {
         timestampBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -968,14 +1036,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp timestamp = 2 [json_name = "timestamp"];</code>
      */
     public Builder clearTimestamp() {
-      if (timestampBuilder_ == null) {
-        timestamp_ = null;
-        onChanged();
-      } else {
-        timestamp_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      timestamp_ = null;
+      if (timestampBuilder_ != null) {
+        timestampBuilder_.dispose();
         timestampBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -986,7 +1053,7 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp timestamp = 2 [json_name = "timestamp"];</code>
      */
     public com.google.protobuf.Timestamp.Builder getTimestampBuilder() {
-      
+      bitField0_ |= 0x00000002;
       onChanged();
       return getTimestampFieldBuilder().getBuilder();
     }
@@ -1079,11 +1146,9 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setPath(
         java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      if (value == null) { throw new NullPointerException(); }
       path_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1096,8 +1161,8 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearPath() {
-      
       path_ = getDefaultInstance().getPath();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1112,12 +1177,10 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setPathBytes(
         com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
       path_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1134,7 +1197,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the user field is set.
      */
     public boolean hasUser() {
-      return userBuilder_ != null || user_ != null;
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      * <pre>
@@ -1164,11 +1227,11 @@ private static final long serialVersionUID = 0L;
           throw new NullPointerException();
         }
         user_ = value;
-        onChanged();
       } else {
         userBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1182,11 +1245,11 @@ private static final long serialVersionUID = 0L;
         com.aserto.authorizer.v2.api.DecisionUser.Builder builderForValue) {
       if (userBuilder_ == null) {
         user_ = builderForValue.build();
-        onChanged();
       } else {
         userBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1198,17 +1261,18 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeUser(com.aserto.authorizer.v2.api.DecisionUser value) {
       if (userBuilder_ == null) {
-        if (user_ != null) {
-          user_ =
-            com.aserto.authorizer.v2.api.DecisionUser.newBuilder(user_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000008) != 0) &&
+          user_ != null &&
+          user_ != com.aserto.authorizer.v2.api.DecisionUser.getDefaultInstance()) {
+          getUserBuilder().mergeFrom(value);
         } else {
           user_ = value;
         }
-        onChanged();
       } else {
         userBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000008;
+      onChanged();
       return this;
     }
     /**
@@ -1219,14 +1283,13 @@ private static final long serialVersionUID = 0L;
      * <code>.aserto.authorizer.v2.api.DecisionUser user = 4 [json_name = "user"];</code>
      */
     public Builder clearUser() {
-      if (userBuilder_ == null) {
-        user_ = null;
-        onChanged();
-      } else {
-        user_ = null;
+      bitField0_ = (bitField0_ & ~0x00000008);
+      user_ = null;
+      if (userBuilder_ != null) {
+        userBuilder_.dispose();
         userBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1237,7 +1300,7 @@ private static final long serialVersionUID = 0L;
      * <code>.aserto.authorizer.v2.api.DecisionUser user = 4 [json_name = "user"];</code>
      */
     public com.aserto.authorizer.v2.api.DecisionUser.Builder getUserBuilder() {
-      
+      bitField0_ |= 0x00000008;
       onChanged();
       return getUserFieldBuilder().getBuilder();
     }
@@ -1289,7 +1352,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the policy field is set.
      */
     public boolean hasPolicy() {
-      return policyBuilder_ != null || policy_ != null;
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      * <pre>
@@ -1319,11 +1382,11 @@ private static final long serialVersionUID = 0L;
           throw new NullPointerException();
         }
         policy_ = value;
-        onChanged();
       } else {
         policyBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1337,11 +1400,11 @@ private static final long serialVersionUID = 0L;
         com.aserto.authorizer.v2.api.DecisionPolicy.Builder builderForValue) {
       if (policyBuilder_ == null) {
         policy_ = builderForValue.build();
-        onChanged();
       } else {
         policyBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1353,17 +1416,18 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergePolicy(com.aserto.authorizer.v2.api.DecisionPolicy value) {
       if (policyBuilder_ == null) {
-        if (policy_ != null) {
-          policy_ =
-            com.aserto.authorizer.v2.api.DecisionPolicy.newBuilder(policy_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000010) != 0) &&
+          policy_ != null &&
+          policy_ != com.aserto.authorizer.v2.api.DecisionPolicy.getDefaultInstance()) {
+          getPolicyBuilder().mergeFrom(value);
         } else {
           policy_ = value;
         }
-        onChanged();
       } else {
         policyBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000010;
+      onChanged();
       return this;
     }
     /**
@@ -1374,14 +1438,13 @@ private static final long serialVersionUID = 0L;
      * <code>.aserto.authorizer.v2.api.DecisionPolicy policy = 5 [json_name = "policy"];</code>
      */
     public Builder clearPolicy() {
-      if (policyBuilder_ == null) {
-        policy_ = null;
-        onChanged();
-      } else {
-        policy_ = null;
+      bitField0_ = (bitField0_ & ~0x00000010);
+      policy_ = null;
+      if (policyBuilder_ != null) {
+        policyBuilder_.dispose();
         policyBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1392,7 +1455,7 @@ private static final long serialVersionUID = 0L;
      * <code>.aserto.authorizer.v2.api.DecisionPolicy policy = 5 [json_name = "policy"];</code>
      */
     public com.aserto.authorizer.v2.api.DecisionPolicy.Builder getPolicyBuilder() {
-      
+      bitField0_ |= 0x00000010;
       onChanged();
       return getPolicyFieldBuilder().getBuilder();
     }
@@ -1435,7 +1498,7 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.MapField<
         java.lang.String, java.lang.Boolean> outcomes_;
     private com.google.protobuf.MapField<java.lang.String, java.lang.Boolean>
-    internalGetOutcomes() {
+        internalGetOutcomes() {
       if (outcomes_ == null) {
         return com.google.protobuf.MapField.emptyMapField(
             OutcomesDefaultEntryHolder.defaultEntry);
@@ -1443,8 +1506,7 @@ private static final long serialVersionUID = 0L;
       return outcomes_;
     }
     private com.google.protobuf.MapField<java.lang.String, java.lang.Boolean>
-    internalGetMutableOutcomes() {
-      onChanged();;
+        internalGetMutableOutcomes() {
       if (outcomes_ == null) {
         outcomes_ = com.google.protobuf.MapField.newMapField(
             OutcomesDefaultEntryHolder.defaultEntry);
@@ -1452,9 +1514,10 @@ private static final long serialVersionUID = 0L;
       if (!outcomes_.isMutable()) {
         outcomes_ = outcomes_.copy();
       }
+      bitField0_ |= 0x00000020;
+      onChanged();
       return outcomes_;
     }
-
     public int getOutcomesCount() {
       return internalGetOutcomes().getMap().size();
     }
@@ -1465,7 +1528,6 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, bool&gt; outcomes = 6 [json_name = "outcomes"];</code>
      */
-
     @java.lang.Override
     public boolean containsOutcomes(
         java.lang.String key) {
@@ -1488,7 +1550,6 @@ private static final long serialVersionUID = 0L;
      * <code>map&lt;string, bool&gt; outcomes = 6 [json_name = "outcomes"];</code>
      */
     @java.lang.Override
-
     public java.util.Map<java.lang.String, java.lang.Boolean> getOutcomesMap() {
       return internalGetOutcomes().getMap();
     }
@@ -1500,7 +1561,6 @@ private static final long serialVersionUID = 0L;
      * <code>map&lt;string, bool&gt; outcomes = 6 [json_name = "outcomes"];</code>
      */
     @java.lang.Override
-
     public boolean getOutcomesOrDefault(
         java.lang.String key,
         boolean defaultValue) {
@@ -1517,7 +1577,6 @@ private static final long serialVersionUID = 0L;
      * <code>map&lt;string, bool&gt; outcomes = 6 [json_name = "outcomes"];</code>
      */
     @java.lang.Override
-
     public boolean getOutcomesOrThrow(
         java.lang.String key) {
       if (key == null) { throw new NullPointerException("map key"); }
@@ -1528,8 +1587,8 @@ private static final long serialVersionUID = 0L;
       }
       return map.get(key);
     }
-
     public Builder clearOutcomes() {
+      bitField0_ = (bitField0_ & ~0x00000020);
       internalGetMutableOutcomes().getMutableMap()
           .clear();
       return this;
@@ -1541,7 +1600,6 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, bool&gt; outcomes = 6 [json_name = "outcomes"];</code>
      */
-
     public Builder removeOutcomes(
         java.lang.String key) {
       if (key == null) { throw new NullPointerException("map key"); }
@@ -1554,7 +1612,8 @@ private static final long serialVersionUID = 0L;
      */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.Boolean>
-    getMutableOutcomes() {
+        getMutableOutcomes() {
+      bitField0_ |= 0x00000020;
       return internalGetMutableOutcomes().getMutableMap();
     }
     /**
@@ -1571,6 +1630,7 @@ private static final long serialVersionUID = 0L;
       
       internalGetMutableOutcomes().getMutableMap()
           .put(key, value);
+      bitField0_ |= 0x00000020;
       return this;
     }
     /**
@@ -1580,11 +1640,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, bool&gt; outcomes = 6 [json_name = "outcomes"];</code>
      */
-
     public Builder putAllOutcomes(
         java.util.Map<java.lang.String, java.lang.Boolean> values) {
       internalGetMutableOutcomes().getMutableMap()
           .putAll(values);
+      bitField0_ |= 0x00000020;
       return this;
     }
 
@@ -1600,7 +1660,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the resource field is set.
      */
     public boolean hasResource() {
-      return resourceBuilder_ != null || resource_ != null;
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      * <pre>
@@ -1630,11 +1690,11 @@ private static final long serialVersionUID = 0L;
           throw new NullPointerException();
         }
         resource_ = value;
-        onChanged();
       } else {
         resourceBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -1648,11 +1708,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.Struct.Builder builderForValue) {
       if (resourceBuilder_ == null) {
         resource_ = builderForValue.build();
-        onChanged();
       } else {
         resourceBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -1664,17 +1724,18 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeResource(com.google.protobuf.Struct value) {
       if (resourceBuilder_ == null) {
-        if (resource_ != null) {
-          resource_ =
-            com.google.protobuf.Struct.newBuilder(resource_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000040) != 0) &&
+          resource_ != null &&
+          resource_ != com.google.protobuf.Struct.getDefaultInstance()) {
+          getResourceBuilder().mergeFrom(value);
         } else {
           resource_ = value;
         }
-        onChanged();
       } else {
         resourceBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000040;
+      onChanged();
       return this;
     }
     /**
@@ -1685,14 +1746,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Struct resource = 7 [json_name = "resource"];</code>
      */
     public Builder clearResource() {
-      if (resourceBuilder_ == null) {
-        resource_ = null;
-        onChanged();
-      } else {
-        resource_ = null;
+      bitField0_ = (bitField0_ & ~0x00000040);
+      resource_ = null;
+      if (resourceBuilder_ != null) {
+        resourceBuilder_.dispose();
         resourceBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -1703,7 +1763,7 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Struct resource = 7 [json_name = "resource"];</code>
      */
     public com.google.protobuf.Struct.Builder getResourceBuilder() {
-      
+      bitField0_ |= 0x00000040;
       onChanged();
       return getResourceFieldBuilder().getBuilder();
     }
@@ -1746,7 +1806,7 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.MapField<
         java.lang.String, java.lang.String> annotations_;
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-    internalGetAnnotations() {
+        internalGetAnnotations() {
       if (annotations_ == null) {
         return com.google.protobuf.MapField.emptyMapField(
             AnnotationsDefaultEntryHolder.defaultEntry);
@@ -1754,8 +1814,7 @@ private static final long serialVersionUID = 0L;
       return annotations_;
     }
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-    internalGetMutableAnnotations() {
-      onChanged();;
+        internalGetMutableAnnotations() {
       if (annotations_ == null) {
         annotations_ = com.google.protobuf.MapField.newMapField(
             AnnotationsDefaultEntryHolder.defaultEntry);
@@ -1763,9 +1822,10 @@ private static final long serialVersionUID = 0L;
       if (!annotations_.isMutable()) {
         annotations_ = annotations_.copy();
       }
+      bitField0_ |= 0x00000080;
+      onChanged();
       return annotations_;
     }
-
     public int getAnnotationsCount() {
       return internalGetAnnotations().getMap().size();
     }
@@ -1776,7 +1836,6 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; annotations = 8 [json_name = "annotations"];</code>
      */
-
     @java.lang.Override
     public boolean containsAnnotations(
         java.lang.String key) {
@@ -1799,7 +1858,6 @@ private static final long serialVersionUID = 0L;
      * <code>map&lt;string, string&gt; annotations = 8 [json_name = "annotations"];</code>
      */
     @java.lang.Override
-
     public java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap() {
       return internalGetAnnotations().getMap();
     }
@@ -1811,10 +1869,11 @@ private static final long serialVersionUID = 0L;
      * <code>map&lt;string, string&gt; annotations = 8 [json_name = "annotations"];</code>
      */
     @java.lang.Override
-
-    public java.lang.String getAnnotationsOrDefault(
+    public /* nullable */
+java.lang.String getAnnotationsOrDefault(
         java.lang.String key,
-        java.lang.String defaultValue) {
+        /* nullable */
+java.lang.String defaultValue) {
       if (key == null) { throw new NullPointerException("map key"); }
       java.util.Map<java.lang.String, java.lang.String> map =
           internalGetAnnotations().getMap();
@@ -1828,7 +1887,6 @@ private static final long serialVersionUID = 0L;
      * <code>map&lt;string, string&gt; annotations = 8 [json_name = "annotations"];</code>
      */
     @java.lang.Override
-
     public java.lang.String getAnnotationsOrThrow(
         java.lang.String key) {
       if (key == null) { throw new NullPointerException("map key"); }
@@ -1839,8 +1897,8 @@ private static final long serialVersionUID = 0L;
       }
       return map.get(key);
     }
-
     public Builder clearAnnotations() {
+      bitField0_ = (bitField0_ & ~0x00000080);
       internalGetMutableAnnotations().getMutableMap()
           .clear();
       return this;
@@ -1852,7 +1910,6 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; annotations = 8 [json_name = "annotations"];</code>
      */
-
     public Builder removeAnnotations(
         java.lang.String key) {
       if (key == null) { throw new NullPointerException("map key"); }
@@ -1865,7 +1922,8 @@ private static final long serialVersionUID = 0L;
      */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String>
-    getMutableAnnotations() {
+        getMutableAnnotations() {
+      bitField0_ |= 0x00000080;
       return internalGetMutableAnnotations().getMutableMap();
     }
     /**
@@ -1879,12 +1937,10 @@ private static final long serialVersionUID = 0L;
         java.lang.String key,
         java.lang.String value) {
       if (key == null) { throw new NullPointerException("map key"); }
-      if (value == null) {
-  throw new NullPointerException("map value");
-}
-
+      if (value == null) { throw new NullPointerException("map value"); }
       internalGetMutableAnnotations().getMutableMap()
           .put(key, value);
+      bitField0_ |= 0x00000080;
       return this;
     }
     /**
@@ -1894,11 +1950,114 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; annotations = 8 [json_name = "annotations"];</code>
      */
-
     public Builder putAllAnnotations(
         java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableAnnotations().getMutableMap()
           .putAll(values);
+      bitField0_ |= 0x00000080;
+      return this;
+    }
+
+    private java.lang.Object tenantId_ = "";
+    /**
+     * <pre>
+     * id of the tenant that generated the decision
+     * </pre>
+     *
+     * <code>optional string tenant_id = 9 [json_name = "tenantId"];</code>
+     * @return Whether the tenantId field is set.
+     */
+    public boolean hasTenantId() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
+    /**
+     * <pre>
+     * id of the tenant that generated the decision
+     * </pre>
+     *
+     * <code>optional string tenant_id = 9 [json_name = "tenantId"];</code>
+     * @return The tenantId.
+     */
+    public java.lang.String getTenantId() {
+      java.lang.Object ref = tenantId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        tenantId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * id of the tenant that generated the decision
+     * </pre>
+     *
+     * <code>optional string tenant_id = 9 [json_name = "tenantId"];</code>
+     * @return The bytes for tenantId.
+     */
+    public com.google.protobuf.ByteString
+        getTenantIdBytes() {
+      java.lang.Object ref = tenantId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        tenantId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * id of the tenant that generated the decision
+     * </pre>
+     *
+     * <code>optional string tenant_id = 9 [json_name = "tenantId"];</code>
+     * @param value The tenantId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTenantId(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      tenantId_ = value;
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * id of the tenant that generated the decision
+     * </pre>
+     *
+     * <code>optional string tenant_id = 9 [json_name = "tenantId"];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearTenantId() {
+      tenantId_ = getDefaultInstance().getTenantId();
+      bitField0_ = (bitField0_ & ~0x00000100);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * id of the tenant that generated the decision
+     * </pre>
+     *
+     * <code>optional string tenant_id = 9 [json_name = "tenantId"];</code>
+     * @param value The bytes for tenantId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTenantIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      tenantId_ = value;
+      bitField0_ |= 0x00000100;
+      onChanged();
       return this;
     }
     @java.lang.Override

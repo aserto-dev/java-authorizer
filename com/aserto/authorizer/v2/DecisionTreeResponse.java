@@ -45,7 +45,8 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int PATH_ROOT_FIELD_NUMBER = 1;
-  private volatile java.lang.Object pathRoot_;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object pathRoot_ = "";
   /**
    * <code>string path_root = 1 [json_name = "pathRoot"];</code>
    * @return The pathRoot.
@@ -105,7 +106,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public com.google.protobuf.StructOrBuilder getPathOrBuilder() {
-    return getPath();
+    return path_ == null ? com.google.protobuf.Struct.getDefaultInstance() : path_;
   }
 
   public static com.aserto.authorizer.v2.DecisionTreeResponse parseFrom(
@@ -231,12 +232,11 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       pathRoot_ = "";
-
-      if (pathBuilder_ == null) {
-        path_ = null;
-      } else {
-        path_ = null;
+      path_ = null;
+      if (pathBuilder_ != null) {
+        pathBuilder_.dispose();
         pathBuilder_ = null;
       }
       return this;
@@ -265,14 +265,21 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.aserto.authorizer.v2.DecisionTreeResponse buildPartial() {
       com.aserto.authorizer.v2.DecisionTreeResponse result = new com.aserto.authorizer.v2.DecisionTreeResponse(this);
-      result.pathRoot_ = pathRoot_;
-      if (pathBuilder_ == null) {
-        result.path_ = path_;
-      } else {
-        result.path_ = pathBuilder_.build();
-      }
+      if (bitField0_ != 0) { buildPartial0(result); }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.aserto.authorizer.v2.DecisionTreeResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.pathRoot_ = pathRoot_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.path_ = pathBuilder_ == null
+            ? path_
+            : pathBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -307,6 +314,7 @@ private static final long serialVersionUID = 0L;
         java.lang.Object value) {
       return super.addRepeatedField(field, value);
     }
+    private int bitField0_;
 
     private java.lang.Object pathRoot_ = "";
     /**
@@ -349,11 +357,9 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setPathRoot(
         java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      if (value == null) { throw new NullPointerException(); }
       pathRoot_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -362,8 +368,8 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearPathRoot() {
-      
       pathRoot_ = getDefaultInstance().getPathRoot();
+      bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
     }
@@ -374,12 +380,10 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setPathRootBytes(
         com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
       pathRoot_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -392,7 +396,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the path field is set.
      */
     public boolean hasPath() {
-      return pathBuilder_ != null || path_ != null;
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      * <code>.google.protobuf.Struct path = 3 [json_name = "path"];</code>
@@ -414,11 +418,11 @@ private static final long serialVersionUID = 0L;
           throw new NullPointerException();
         }
         path_ = value;
-        onChanged();
       } else {
         pathBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -428,11 +432,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.Struct.Builder builderForValue) {
       if (pathBuilder_ == null) {
         path_ = builderForValue.build();
-        onChanged();
       } else {
         pathBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
@@ -440,38 +444,38 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergePath(com.google.protobuf.Struct value) {
       if (pathBuilder_ == null) {
-        if (path_ != null) {
-          path_ =
-            com.google.protobuf.Struct.newBuilder(path_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000002) != 0) &&
+          path_ != null &&
+          path_ != com.google.protobuf.Struct.getDefaultInstance()) {
+          getPathBuilder().mergeFrom(value);
         } else {
           path_ = value;
         }
-        onChanged();
       } else {
         pathBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000002;
+      onChanged();
       return this;
     }
     /**
      * <code>.google.protobuf.Struct path = 3 [json_name = "path"];</code>
      */
     public Builder clearPath() {
-      if (pathBuilder_ == null) {
-        path_ = null;
-        onChanged();
-      } else {
-        path_ = null;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      path_ = null;
+      if (pathBuilder_ != null) {
+        pathBuilder_.dispose();
         pathBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
      * <code>.google.protobuf.Struct path = 3 [json_name = "path"];</code>
      */
     public com.google.protobuf.Struct.Builder getPathBuilder() {
-      
+      bitField0_ |= 0x00000002;
       onChanged();
       return getPathFieldBuilder().getBuilder();
     }

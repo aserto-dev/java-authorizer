@@ -84,11 +84,12 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public com.aserto.authorizer.v2.api.IdentityContextOrBuilder getContextOrBuilder() {
-    return getContext();
+    return context_ == null ? com.aserto.authorizer.v2.api.IdentityContext.getDefaultInstance() : context_;
   }
 
   public static final int ID_FIELD_NUMBER = 2;
-  private volatile java.lang.Object id_;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object id_ = "";
   /**
    * <pre>
    * id of the user the identity resolved to    
@@ -134,7 +135,8 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int EMAIL_FIELD_NUMBER = 3;
-  private volatile java.lang.Object email_;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object email_ = "";
   /**
    * <pre>
    * convinience human-readable identifier
@@ -306,16 +308,14 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (contextBuilder_ == null) {
-        context_ = null;
-      } else {
-        context_ = null;
+      bitField0_ = 0;
+      context_ = null;
+      if (contextBuilder_ != null) {
+        contextBuilder_.dispose();
         contextBuilder_ = null;
       }
       id_ = "";
-
       email_ = "";
-
       return this;
     }
 
@@ -342,15 +342,24 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.aserto.authorizer.v2.api.DecisionUser buildPartial() {
       com.aserto.authorizer.v2.api.DecisionUser result = new com.aserto.authorizer.v2.api.DecisionUser(this);
-      if (contextBuilder_ == null) {
-        result.context_ = context_;
-      } else {
-        result.context_ = contextBuilder_.build();
-      }
-      result.id_ = id_;
-      result.email_ = email_;
+      if (bitField0_ != 0) { buildPartial0(result); }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.aserto.authorizer.v2.api.DecisionUser result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.context_ = contextBuilder_ == null
+            ? context_
+            : contextBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.id_ = id_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.email_ = email_;
+      }
     }
 
     @java.lang.Override
@@ -385,6 +394,7 @@ private static final long serialVersionUID = 0L;
         java.lang.Object value) {
       return super.addRepeatedField(field, value);
     }
+    private int bitField0_;
 
     private com.aserto.authorizer.v2.api.IdentityContext context_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -398,7 +408,7 @@ private static final long serialVersionUID = 0L;
      * @return Whether the context field is set.
      */
     public boolean hasContext() {
-      return contextBuilder_ != null || context_ != null;
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      * <pre>
@@ -428,11 +438,11 @@ private static final long serialVersionUID = 0L;
           throw new NullPointerException();
         }
         context_ = value;
-        onChanged();
       } else {
         contextBuilder_.setMessage(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -446,11 +456,11 @@ private static final long serialVersionUID = 0L;
         com.aserto.authorizer.v2.api.IdentityContext.Builder builderForValue) {
       if (contextBuilder_ == null) {
         context_ = builderForValue.build();
-        onChanged();
       } else {
         contextBuilder_.setMessage(builderForValue.build());
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -462,17 +472,18 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeContext(com.aserto.authorizer.v2.api.IdentityContext value) {
       if (contextBuilder_ == null) {
-        if (context_ != null) {
-          context_ =
-            com.aserto.authorizer.v2.api.IdentityContext.newBuilder(context_).mergeFrom(value).buildPartial();
+        if (((bitField0_ & 0x00000001) != 0) &&
+          context_ != null &&
+          context_ != com.aserto.authorizer.v2.api.IdentityContext.getDefaultInstance()) {
+          getContextBuilder().mergeFrom(value);
         } else {
           context_ = value;
         }
-        onChanged();
       } else {
         contextBuilder_.mergeFrom(value);
       }
-
+      bitField0_ |= 0x00000001;
+      onChanged();
       return this;
     }
     /**
@@ -483,14 +494,13 @@ private static final long serialVersionUID = 0L;
      * <code>.aserto.authorizer.v2.api.IdentityContext context = 1 [json_name = "context"];</code>
      */
     public Builder clearContext() {
-      if (contextBuilder_ == null) {
-        context_ = null;
-        onChanged();
-      } else {
-        context_ = null;
+      bitField0_ = (bitField0_ & ~0x00000001);
+      context_ = null;
+      if (contextBuilder_ != null) {
+        contextBuilder_.dispose();
         contextBuilder_ = null;
       }
-
+      onChanged();
       return this;
     }
     /**
@@ -501,7 +511,7 @@ private static final long serialVersionUID = 0L;
      * <code>.aserto.authorizer.v2.api.IdentityContext context = 1 [json_name = "context"];</code>
      */
     public com.aserto.authorizer.v2.api.IdentityContext.Builder getContextBuilder() {
-      
+      bitField0_ |= 0x00000001;
       onChanged();
       return getContextFieldBuilder().getBuilder();
     }
@@ -594,11 +604,9 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setId(
         java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      if (value == null) { throw new NullPointerException(); }
       id_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -611,8 +619,8 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearId() {
-      
       id_ = getDefaultInstance().getId();
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -627,12 +635,10 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setIdBytes(
         com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
       id_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -690,11 +696,9 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setEmail(
         java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
+      if (value == null) { throw new NullPointerException(); }
       email_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -707,8 +711,8 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearEmail() {
-      
       email_ = getDefaultInstance().getEmail();
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -723,12 +727,10 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setEmailBytes(
         com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
       email_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

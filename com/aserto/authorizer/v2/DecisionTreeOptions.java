@@ -45,7 +45,7 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int PATH_SEPARATOR_FIELD_NUMBER = 1;
-  private int pathSeparator_;
+  private int pathSeparator_ = 0;
   /**
    * <code>.aserto.authorizer.v2.PathSeparator path_separator = 1 [json_name = "pathSeparator"];</code>
    * @return The enum numeric value on the wire for pathSeparator.
@@ -58,8 +58,7 @@ private static final long serialVersionUID = 0L;
    * @return The pathSeparator.
    */
   @java.lang.Override public com.aserto.authorizer.v2.PathSeparator getPathSeparator() {
-    @SuppressWarnings("deprecation")
-    com.aserto.authorizer.v2.PathSeparator result = com.aserto.authorizer.v2.PathSeparator.valueOf(pathSeparator_);
+    com.aserto.authorizer.v2.PathSeparator result = com.aserto.authorizer.v2.PathSeparator.forNumber(pathSeparator_);
     return result == null ? com.aserto.authorizer.v2.PathSeparator.UNRECOGNIZED : result;
   }
 
@@ -186,8 +185,8 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       pathSeparator_ = 0;
-
       return this;
     }
 
@@ -214,9 +213,16 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.aserto.authorizer.v2.DecisionTreeOptions buildPartial() {
       com.aserto.authorizer.v2.DecisionTreeOptions result = new com.aserto.authorizer.v2.DecisionTreeOptions(this);
-      result.pathSeparator_ = pathSeparator_;
+      if (bitField0_ != 0) { buildPartial0(result); }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.aserto.authorizer.v2.DecisionTreeOptions result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.pathSeparator_ = pathSeparator_;
+      }
     }
 
     @java.lang.Override
@@ -251,6 +257,7 @@ private static final long serialVersionUID = 0L;
         java.lang.Object value) {
       return super.addRepeatedField(field, value);
     }
+    private int bitField0_;
 
     private int pathSeparator_ = 0;
     /**
@@ -266,8 +273,8 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder setPathSeparatorValue(int value) {
-      
       pathSeparator_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -277,8 +284,7 @@ private static final long serialVersionUID = 0L;
      */
     @java.lang.Override
     public com.aserto.authorizer.v2.PathSeparator getPathSeparator() {
-      @SuppressWarnings("deprecation")
-      com.aserto.authorizer.v2.PathSeparator result = com.aserto.authorizer.v2.PathSeparator.valueOf(pathSeparator_);
+      com.aserto.authorizer.v2.PathSeparator result = com.aserto.authorizer.v2.PathSeparator.forNumber(pathSeparator_);
       return result == null ? com.aserto.authorizer.v2.PathSeparator.UNRECOGNIZED : result;
     }
     /**
@@ -290,7 +296,7 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
         throw new NullPointerException();
       }
-      
+      bitField0_ |= 0x00000001;
       pathSeparator_ = value.getNumber();
       onChanged();
       return this;
@@ -300,7 +306,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearPathSeparator() {
-      
+      bitField0_ = (bitField0_ & ~0x00000001);
       pathSeparator_ = 0;
       onChanged();
       return this;

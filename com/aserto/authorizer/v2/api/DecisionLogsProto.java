@@ -53,37 +53,42 @@ public final class DecisionLogsProto {
       "/protobuf/struct.proto\032\037google/protobuf/" +
       "timestamp.proto\032-aserto/authorizer/v2/ap" +
       "i/policy_context.proto\032/aserto/authorize" +
-      "r/v2/api/identity_context.proto\"\275\004\n\010Deci" +
-      "sion\022\016\n\002id\030\001 \001(\tR\002id\0228\n\ttimestamp\030\002 \001(\0132" +
-      "\032.google.protobuf.TimestampR\ttimestamp\022\022" +
-      "\n\004path\030\003 \001(\tR\004path\022:\n\004user\030\004 \001(\0132&.asert" +
-      "o.authorizer.v2.api.DecisionUserR\004user\022@" +
-      "\n\006policy\030\005 \001(\0132(.aserto.authorizer.v2.ap" +
-      "i.DecisionPolicyR\006policy\022L\n\010outcomes\030\006 \003" +
-      "(\01320.aserto.authorizer.v2.api.Decision.O" +
-      "utcomesEntryR\010outcomes\0223\n\010resource\030\007 \001(\013" +
-      "2\027.google.protobuf.StructR\010resource\022U\n\013a" +
-      "nnotations\030\010 \003(\01323.aserto.authorizer.v2." +
-      "api.Decision.AnnotationsEntryR\013annotatio" +
-      "ns\032;\n\rOutcomesEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n" +
-      "\005value\030\002 \001(\010R\005value:\0028\001\032>\n\020AnnotationsEn" +
-      "try\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005va" +
-      "lue:\0028\001\"y\n\014DecisionUser\022C\n\007context\030\001 \001(\013" +
-      "2).aserto.authorizer.v2.api.IdentityCont" +
-      "extR\007context\022\016\n\002id\030\002 \001(\tR\002id\022\024\n\005email\030\003 " +
-      "\001(\tR\005email\"\361\001\n\016DecisionPolicy\022A\n\007context" +
-      "\030\001 \001(\0132\'.aserto.authorizer.v2.api.Policy" +
-      "ContextR\007context\022)\n\020registry_service\030\002 \001" +
-      "(\tR\017registryService\022%\n\016registry_image\030\003 " +
-      "\001(\tR\rregistryImage\022!\n\014registry_tag\030\004 \001(\t" +
-      "R\013registryTag\022\'\n\017registry_digest\030\005 \001(\tR\016" +
-      "registryDigestB\374\001\n\034com.aserto.authorizer" +
-      ".v2.apiB\021DecisionLogsProtoH\002P\001Z@github.c" +
-      "om/aserto-dev/go-authorizer/aserto/autho" +
-      "rizer/v2/api;api\370\001\000\242\002\004AAVA\252\002\030Aserto.Auth" +
-      "orizer.V2.Api\312\002\030Aserto\\Authorizer\\V2\\Api" +
-      "\342\002$Aserto\\Authorizer\\V2\\Api\\GPBMetadata\352" +
-      "\002\033Aserto::Authorizer::V2::Apib\006proto3"
+      "r/v2/api/identity_context.proto\032.aserto/" +
+      "authorizer/v2/api/policy_instance.proto\"" +
+      "\355\004\n\010Decision\022\016\n\002id\030\001 \001(\tR\002id\0228\n\ttimestam" +
+      "p\030\002 \001(\0132\032.google.protobuf.TimestampR\ttim" +
+      "estamp\022\022\n\004path\030\003 \001(\tR\004path\022:\n\004user\030\004 \001(\013" +
+      "2&.aserto.authorizer.v2.api.DecisionUser" +
+      "R\004user\022@\n\006policy\030\005 \001(\0132(.aserto.authoriz" +
+      "er.v2.api.DecisionPolicyR\006policy\022L\n\010outc" +
+      "omes\030\006 \003(\01320.aserto.authorizer.v2.api.De" +
+      "cision.OutcomesEntryR\010outcomes\0223\n\010resour" +
+      "ce\030\007 \001(\0132\027.google.protobuf.StructR\010resou" +
+      "rce\022U\n\013annotations\030\010 \003(\01323.aserto.author" +
+      "izer.v2.api.Decision.AnnotationsEntryR\013a" +
+      "nnotations\022 \n\ttenant_id\030\t \001(\tH\000R\010tenantI" +
+      "d\210\001\001\032;\n\rOutcomesEntry\022\020\n\003key\030\001 \001(\tR\003key\022" +
+      "\024\n\005value\030\002 \001(\010R\005value:\0028\001\032>\n\020Annotations" +
+      "Entry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005" +
+      "value:\0028\001B\014\n\n_tenant_id\"y\n\014DecisionUser\022" +
+      "C\n\007context\030\001 \001(\0132).aserto.authorizer.v2." +
+      "api.IdentityContextR\007context\022\016\n\002id\030\002 \001(\t" +
+      "R\002id\022\024\n\005email\030\003 \001(\tR\005email\"\304\002\n\016DecisionP" +
+      "olicy\022A\n\007context\030\001 \001(\0132\'.aserto.authoriz" +
+      "er.v2.api.PolicyContextR\007context\022)\n\020regi" +
+      "stry_service\030\002 \001(\tR\017registryService\022%\n\016r" +
+      "egistry_image\030\003 \001(\tR\rregistryImage\022!\n\014re" +
+      "gistry_tag\030\004 \001(\tR\013registryTag\022\'\n\017registr" +
+      "y_digest\030\005 \001(\tR\016registryDigest\022Q\n\017policy" +
+      "_instance\030\006 \001(\0132(.aserto.authorizer.v2.a" +
+      "pi.PolicyInstanceR\016policyInstanceB\374\001\n\034co" +
+      "m.aserto.authorizer.v2.apiB\021DecisionLogs" +
+      "ProtoH\002P\001Z@github.com/aserto-dev/go-auth" +
+      "orizer/aserto/authorizer/v2/api;api\370\001\000\242\002" +
+      "\004AAVA\252\002\030Aserto.Authorizer.V2.Api\312\002\030Asert" +
+      "o\\Authorizer\\V2\\Api\342\002$Aserto\\Authorizer\\" +
+      "V2\\Api\\GPBMetadata\352\002\033Aserto::Authorizer:" +
+      ":V2::Apib\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -92,13 +97,14 @@ public final class DecisionLogsProto {
           com.google.protobuf.TimestampProto.getDescriptor(),
           com.aserto.authorizer.v2.api.PolicyContextProto.getDescriptor(),
           com.aserto.authorizer.v2.api.IdentityContextProto.getDescriptor(),
+          com.aserto.authorizer.v2.api.PolicyInstanceProto.getDescriptor(),
         });
     internal_static_aserto_authorizer_v2_api_Decision_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_aserto_authorizer_v2_api_Decision_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_aserto_authorizer_v2_api_Decision_descriptor,
-        new java.lang.String[] { "Id", "Timestamp", "Path", "User", "Policy", "Outcomes", "Resource", "Annotations", });
+        new java.lang.String[] { "Id", "Timestamp", "Path", "User", "Policy", "Outcomes", "Resource", "Annotations", "TenantId", "TenantId", });
     internal_static_aserto_authorizer_v2_api_Decision_OutcomesEntry_descriptor =
       internal_static_aserto_authorizer_v2_api_Decision_descriptor.getNestedTypes().get(0);
     internal_static_aserto_authorizer_v2_api_Decision_OutcomesEntry_fieldAccessorTable = new
@@ -122,11 +128,12 @@ public final class DecisionLogsProto {
     internal_static_aserto_authorizer_v2_api_DecisionPolicy_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_aserto_authorizer_v2_api_DecisionPolicy_descriptor,
-        new java.lang.String[] { "Context", "RegistryService", "RegistryImage", "RegistryTag", "RegistryDigest", });
+        new java.lang.String[] { "Context", "RegistryService", "RegistryImage", "RegistryTag", "RegistryDigest", "PolicyInstance", });
     com.google.protobuf.StructProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
     com.aserto.authorizer.v2.api.PolicyContextProto.getDescriptor();
     com.aserto.authorizer.v2.api.IdentityContextProto.getDescriptor();
+    com.aserto.authorizer.v2.api.PolicyInstanceProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

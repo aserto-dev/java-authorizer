@@ -45,7 +45,7 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int METRICS_FIELD_NUMBER = 1;
-  private boolean metrics_;
+  private boolean metrics_ = false;
   /**
    * <pre>
    * default false
@@ -60,7 +60,7 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int INSTRUMENT_FIELD_NUMBER = 2;
-  private boolean instrument_;
+  private boolean instrument_ = false;
   /**
    * <pre>
    * default false
@@ -75,7 +75,7 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int TRACE_FIELD_NUMBER = 3;
-  private int trace_;
+  private int trace_ = 0;
   /**
    * <pre>
    * default ExplainOffV1
@@ -96,13 +96,12 @@ private static final long serialVersionUID = 0L;
    * @return The trace.
    */
   @java.lang.Override public com.aserto.authorizer.v2.TraceLevel getTrace() {
-    @SuppressWarnings("deprecation")
-    com.aserto.authorizer.v2.TraceLevel result = com.aserto.authorizer.v2.TraceLevel.valueOf(trace_);
+    com.aserto.authorizer.v2.TraceLevel result = com.aserto.authorizer.v2.TraceLevel.forNumber(trace_);
     return result == null ? com.aserto.authorizer.v2.TraceLevel.UNRECOGNIZED : result;
   }
 
   public static final int TRACE_SUMMARY_FIELD_NUMBER = 4;
-  private boolean traceSummary_;
+  private boolean traceSummary_ = false;
   /**
    * <pre>
    * default false
@@ -239,14 +238,11 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
       metrics_ = false;
-
       instrument_ = false;
-
       trace_ = 0;
-
       traceSummary_ = false;
-
       return this;
     }
 
@@ -273,12 +269,25 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.aserto.authorizer.v2.QueryOptions buildPartial() {
       com.aserto.authorizer.v2.QueryOptions result = new com.aserto.authorizer.v2.QueryOptions(this);
-      result.metrics_ = metrics_;
-      result.instrument_ = instrument_;
-      result.trace_ = trace_;
-      result.traceSummary_ = traceSummary_;
+      if (bitField0_ != 0) { buildPartial0(result); }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.aserto.authorizer.v2.QueryOptions result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.metrics_ = metrics_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.instrument_ = instrument_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.trace_ = trace_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.traceSummary_ = traceSummary_;
+      }
     }
 
     @java.lang.Override
@@ -313,6 +322,7 @@ private static final long serialVersionUID = 0L;
         java.lang.Object value) {
       return super.addRepeatedField(field, value);
     }
+    private int bitField0_;
 
     private boolean metrics_ ;
     /**
@@ -339,6 +349,7 @@ private static final long serialVersionUID = 0L;
     public Builder setMetrics(boolean value) {
       
       metrics_ = value;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -351,7 +362,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearMetrics() {
-      
+      bitField0_ = (bitField0_ & ~0x00000001);
       metrics_ = false;
       onChanged();
       return this;
@@ -382,6 +393,7 @@ private static final long serialVersionUID = 0L;
     public Builder setInstrument(boolean value) {
       
       instrument_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -394,7 +406,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearInstrument() {
-      
+      bitField0_ = (bitField0_ & ~0x00000002);
       instrument_ = false;
       onChanged();
       return this;
@@ -422,8 +434,8 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder setTraceValue(int value) {
-      
       trace_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -437,8 +449,7 @@ private static final long serialVersionUID = 0L;
      */
     @java.lang.Override
     public com.aserto.authorizer.v2.TraceLevel getTrace() {
-      @SuppressWarnings("deprecation")
-      com.aserto.authorizer.v2.TraceLevel result = com.aserto.authorizer.v2.TraceLevel.valueOf(trace_);
+      com.aserto.authorizer.v2.TraceLevel result = com.aserto.authorizer.v2.TraceLevel.forNumber(trace_);
       return result == null ? com.aserto.authorizer.v2.TraceLevel.UNRECOGNIZED : result;
     }
     /**
@@ -454,7 +465,7 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
         throw new NullPointerException();
       }
-      
+      bitField0_ |= 0x00000004;
       trace_ = value.getNumber();
       onChanged();
       return this;
@@ -468,7 +479,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearTrace() {
-      
+      bitField0_ = (bitField0_ & ~0x00000004);
       trace_ = 0;
       onChanged();
       return this;
@@ -499,6 +510,7 @@ private static final long serialVersionUID = 0L;
     public Builder setTraceSummary(boolean value) {
       
       traceSummary_ = value;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -511,7 +523,7 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearTraceSummary() {
-      
+      bitField0_ = (bitField0_ & ~0x00000008);
       traceSummary_ = false;
       onChanged();
       return this;
