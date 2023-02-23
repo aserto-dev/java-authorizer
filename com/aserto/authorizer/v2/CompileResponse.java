@@ -17,7 +17,8 @@ private static final long serialVersionUID = 0L;
   }
   private CompileResponse() {
     trace_ = java.util.Collections.emptyList();
-    traceSummary_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    traceSummary_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
@@ -27,11 +28,6 @@ private static final long serialVersionUID = 0L;
     return new CompileResponse();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
-    return this.unknownFields;
-  }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
     return com.aserto.authorizer.v2.AuthorizerProto.internal_static_aserto_authorizer_v2_CompileResponse_descriptor;
@@ -140,7 +136,8 @@ private static final long serialVersionUID = 0L;
 
   public static final int TRACE_SUMMARY_FIELD_NUMBER = 4;
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList traceSummary_;
+  private com.google.protobuf.LazyStringArrayList traceSummary_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    * <code>repeated string trace_summary = 4 [json_name = "traceSummary"];</code>
    * @return A list containing the traceSummary.
@@ -315,8 +312,8 @@ private static final long serialVersionUID = 0L;
         traceBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000004);
-      traceSummary_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
+      traceSummary_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -359,11 +356,6 @@ private static final long serialVersionUID = 0L;
       } else {
         result.trace_ = traceBuilder_.build();
       }
-      if (((bitField0_ & 0x00000008) != 0)) {
-        traceSummary_ = traceSummary_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000008);
-      }
-      result.traceSummary_ = traceSummary_;
     }
 
     private void buildPartial0(com.aserto.authorizer.v2.CompileResponse result) {
@@ -378,40 +370,12 @@ private static final long serialVersionUID = 0L;
             ? metrics_
             : metricsBuilder_.build();
       }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        traceSummary_.makeImmutable();
+        result.traceSummary_ = traceSummary_;
+      }
     }
 
-    @java.lang.Override
-    public Builder clone() {
-      return super.clone();
-    }
-    @java.lang.Override
-    public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
-      return super.setField(field, value);
-    }
-    @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return super.clearField(field);
-    }
-    @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return super.clearOneof(oneof);
-    }
-    @java.lang.Override
-    public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
-      return super.setRepeatedField(field, index, value);
-    }
-    @java.lang.Override
-    public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
-      return super.addRepeatedField(field, value);
-    }
     private int bitField0_;
 
     private com.google.protobuf.Struct result_;
@@ -892,12 +856,13 @@ private static final long serialVersionUID = 0L;
       return traceBuilder_;
     }
 
-    private com.google.protobuf.LazyStringList traceSummary_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList traceSummary_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     private void ensureTraceSummaryIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!traceSummary_.isModifiable()) {
         traceSummary_ = new com.google.protobuf.LazyStringArrayList(traceSummary_);
-        bitField0_ |= 0x00000008;
-       }
+      }
+      bitField0_ |= 0x00000008;
     }
     /**
      * <code>repeated string trace_summary = 4 [json_name = "traceSummary"];</code>
@@ -905,7 +870,8 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ProtocolStringList
         getTraceSummaryList() {
-      return traceSummary_.getUnmodifiableView();
+      traceSummary_.makeImmutable();
+      return traceSummary_;
     }
     /**
      * <code>repeated string trace_summary = 4 [json_name = "traceSummary"];</code>
@@ -942,6 +908,7 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       ensureTraceSummaryIsMutable();
       traceSummary_.set(index, value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -955,6 +922,7 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       ensureTraceSummaryIsMutable();
       traceSummary_.add(value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -968,6 +936,7 @@ private static final long serialVersionUID = 0L;
       ensureTraceSummaryIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(
           values, traceSummary_);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -976,8 +945,9 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearTraceSummary() {
-      traceSummary_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
+      traceSummary_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000008);;
       onChanged();
       return this;
     }
@@ -992,6 +962,7 @@ private static final long serialVersionUID = 0L;
       checkByteStringIsUtf8(value);
       ensureTraceSummaryIsMutable();
       traceSummary_.add(value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

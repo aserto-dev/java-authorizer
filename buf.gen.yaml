@@ -1,5 +1,4 @@
 version: v1
-
 managed:
   enabled: true
   cc_enable_arenas: false
@@ -9,5 +8,8 @@ managed:
   optimize_for: CODE_SIZE
 
 plugins:
-  - name: java
+  - plugin: buf.build/grpc/java
+    out: .
+  # dependencies
+  - plugin: buf.build/protocolbuffers/java
     out: .

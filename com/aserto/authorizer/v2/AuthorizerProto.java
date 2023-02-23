@@ -219,27 +219,27 @@ public final class AuthorizerProto {
       "\"\251\001\222A\200\001\n\nAuthorizer\022\rDecision tree\0321Retu" +
       "rns decision tree for given identity con" +
       "text.*\030authorizer.decision_treeb\026\n\024\n\020Aut" +
-      "horizerAPIKey\022\000\202\323\344\223\002\037:\001*\"\032/api/v2/authz/" +
-      "decisiontree\022\217\002\n\002Is\022\037.aserto.authorizer." +
+      "horizerAPIKey\022\000\202\323\344\223\002\037\"\032/api/v2/authz/dec" +
+      "isiontree:\001*\022\217\002\n\002Is\022\037.aserto.authorizer." +
       "v2.IsRequest\032 .aserto.authorizer.v2.IsRe" +
       "sponse\"\305\001\222A\246\001\n\nAuthorizer\022\017Is (authorize" +
       "d)\032`Determines if identity context is au" +
       "thorized to access the resource guarded " +
       "by the given policy.*\rauthorizer.isb\026\n\024\n" +
-      "\020AuthorizerAPIKey\022\000\202\323\344\223\002\025:\001*\"\020/api/v2/au" +
-      "thz/is\022\363\001\n\005Query\022\".aserto.authorizer.v2." +
+      "\020AuthorizerAPIKey\022\000\202\323\344\223\002\025\"\020/api/v2/authz" +
+      "/is:\001*\022\363\001\n\005Query\022\".aserto.authorizer.v2." +
       "QueryRequest\032#.aserto.authorizer.v2.Quer" +
       "yResponse\"\240\001\222A\177\n\nAuthorizer\022\022Query (auth" +
       "orized)\0323Executes a rego query on the lo" +
       "aded policy runtime.*\020authorizer.queryb\026" +
-      "\n\024\n\020AuthorizerAPIKey\022\000\202\323\344\223\002\030:\001*\"\023/api/v2" +
-      "/authz/query\022\203\002\n\007Compile\022$.aserto.author" +
+      "\n\024\n\020AuthorizerAPIKey\022\000\202\323\344\223\002\030\"\023/api/v2/au" +
+      "thz/query:\001*\022\203\002\n\007Compile\022$.aserto.author" +
       "izer.v2.CompileRequest\032%.aserto.authoriz" +
       "er.v2.CompileResponse\"\252\001\222A\206\001\n\nAuthorizer" +
       "\022\024Compile (authorized)\0326Executes a parti" +
       "al query on the loaded policy runtime.*\022" +
       "authorizer.compileb\026\n\024\n\020AuthorizerAPIKey" +
-      "\022\000\202\323\344\223\002\032:\001*\"\025/api/v2/authz/compile\022\362\001\n\014L" +
+      "\022\000\202\323\344\223\002\032\"\025/api/v2/authz/compile:\001*\022\362\001\n\014L" +
       "istPolicies\022).aserto.authorizer.v2.ListP" +
       "oliciesRequest\032*.aserto.authorizer.v2.Li" +
       "stPoliciesResponse\"\212\001\222Ao\n\006Policy\022\rList P" +

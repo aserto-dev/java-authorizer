@@ -18,8 +18,10 @@ private static final long serialVersionUID = 0L;
   private CompileRequest() {
     query_ = "";
     input_ = "";
-    unknowns_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    disableInlining_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    unknowns_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+    disableInlining_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
@@ -29,11 +31,6 @@ private static final long serialVersionUID = 0L;
     return new CompileRequest();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
-    return this.unknownFields;
-  }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
     return com.aserto.authorizer.v2.AuthorizerProto.internal_static_aserto_authorizer_v2_CompileRequest_descriptor;
@@ -128,7 +125,8 @@ private static final long serialVersionUID = 0L;
 
   public static final int UNKNOWNS_FIELD_NUMBER = 3;
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList unknowns_;
+  private com.google.protobuf.LazyStringArrayList unknowns_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    * <code>repeated string unknowns = 3 [json_name = "unknowns"];</code>
    * @return A list containing the unknowns.
@@ -164,7 +162,8 @@ private static final long serialVersionUID = 0L;
 
   public static final int DISABLE_INLINING_FIELD_NUMBER = 4;
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList disableInlining_;
+  private com.google.protobuf.LazyStringArrayList disableInlining_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    * <code>repeated string disable_inlining = 4 [json_name = "disableInlining"];</code>
    * @return A list containing the disableInlining.
@@ -464,10 +463,10 @@ private static final long serialVersionUID = 0L;
       bitField0_ = 0;
       query_ = "";
       input_ = "";
-      unknowns_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
-      disableInlining_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
+      unknowns_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+      disableInlining_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
       options_ = null;
       if (optionsBuilder_ != null) {
         optionsBuilder_.dispose();
@@ -519,23 +518,9 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.aserto.authorizer.v2.CompileRequest buildPartial() {
       com.aserto.authorizer.v2.CompileRequest result = new com.aserto.authorizer.v2.CompileRequest(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) { buildPartial0(result); }
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(com.aserto.authorizer.v2.CompileRequest result) {
-      if (((bitField0_ & 0x00000004) != 0)) {
-        unknowns_ = unknowns_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000004);
-      }
-      result.unknowns_ = unknowns_;
-      if (((bitField0_ & 0x00000008) != 0)) {
-        disableInlining_ = disableInlining_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000008);
-      }
-      result.disableInlining_ = disableInlining_;
     }
 
     private void buildPartial0(com.aserto.authorizer.v2.CompileRequest result) {
@@ -545,6 +530,14 @@ private static final long serialVersionUID = 0L;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.input_ = input_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        unknowns_.makeImmutable();
+        result.unknowns_ = unknowns_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        disableInlining_.makeImmutable();
+        result.disableInlining_ = disableInlining_;
       }
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000010) != 0)) {
@@ -580,38 +573,6 @@ private static final long serialVersionUID = 0L;
       result.bitField0_ |= to_bitField0_;
     }
 
-    @java.lang.Override
-    public Builder clone() {
-      return super.clone();
-    }
-    @java.lang.Override
-    public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
-      return super.setField(field, value);
-    }
-    @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return super.clearField(field);
-    }
-    @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return super.clearOneof(oneof);
-    }
-    @java.lang.Override
-    public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
-      return super.setRepeatedField(field, index, value);
-    }
-    @java.lang.Override
-    public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
-      return super.addRepeatedField(field, value);
-    }
     private int bitField0_;
 
     private java.lang.Object query_ = "";
@@ -758,12 +719,13 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private com.google.protobuf.LazyStringList unknowns_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList unknowns_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     private void ensureUnknownsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!unknowns_.isModifiable()) {
         unknowns_ = new com.google.protobuf.LazyStringArrayList(unknowns_);
-        bitField0_ |= 0x00000004;
-       }
+      }
+      bitField0_ |= 0x00000004;
     }
     /**
      * <code>repeated string unknowns = 3 [json_name = "unknowns"];</code>
@@ -771,7 +733,8 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ProtocolStringList
         getUnknownsList() {
-      return unknowns_.getUnmodifiableView();
+      unknowns_.makeImmutable();
+      return unknowns_;
     }
     /**
      * <code>repeated string unknowns = 3 [json_name = "unknowns"];</code>
@@ -808,6 +771,7 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       ensureUnknownsIsMutable();
       unknowns_.set(index, value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -821,6 +785,7 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       ensureUnknownsIsMutable();
       unknowns_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -834,6 +799,7 @@ private static final long serialVersionUID = 0L;
       ensureUnknownsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(
           values, unknowns_);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -842,8 +808,9 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearUnknowns() {
-      unknowns_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000004);
+      unknowns_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000004);;
       onChanged();
       return this;
     }
@@ -858,16 +825,18 @@ private static final long serialVersionUID = 0L;
       checkByteStringIsUtf8(value);
       ensureUnknownsIsMutable();
       unknowns_.add(value);
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringList disableInlining_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList disableInlining_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     private void ensureDisableInliningIsMutable() {
-      if (!((bitField0_ & 0x00000008) != 0)) {
+      if (!disableInlining_.isModifiable()) {
         disableInlining_ = new com.google.protobuf.LazyStringArrayList(disableInlining_);
-        bitField0_ |= 0x00000008;
-       }
+      }
+      bitField0_ |= 0x00000008;
     }
     /**
      * <code>repeated string disable_inlining = 4 [json_name = "disableInlining"];</code>
@@ -875,7 +844,8 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ProtocolStringList
         getDisableInliningList() {
-      return disableInlining_.getUnmodifiableView();
+      disableInlining_.makeImmutable();
+      return disableInlining_;
     }
     /**
      * <code>repeated string disable_inlining = 4 [json_name = "disableInlining"];</code>
@@ -912,6 +882,7 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       ensureDisableInliningIsMutable();
       disableInlining_.set(index, value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -925,6 +896,7 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       ensureDisableInliningIsMutable();
       disableInlining_.add(value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -938,6 +910,7 @@ private static final long serialVersionUID = 0L;
       ensureDisableInliningIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(
           values, disableInlining_);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -946,8 +919,9 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearDisableInlining() {
-      disableInlining_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000008);
+      disableInlining_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000008);;
       onChanged();
       return this;
     }
@@ -962,6 +936,7 @@ private static final long serialVersionUID = 0L;
       checkByteStringIsUtf8(value);
       ensureDisableInliningIsMutable();
       disableInlining_.add(value);
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }

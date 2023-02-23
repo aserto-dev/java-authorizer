@@ -17,7 +17,8 @@ private static final long serialVersionUID = 0L;
   }
   private PolicyContext() {
     path_ = "";
-    decisions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    decisions_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
@@ -27,11 +28,6 @@ private static final long serialVersionUID = 0L;
     return new PolicyContext();
   }
 
-  @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
-    return this.unknownFields;
-  }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
     return com.aserto.authorizer.v2.api.PolicyContextProto.internal_static_aserto_authorizer_v2_api_PolicyContext_descriptor;
@@ -94,7 +90,8 @@ private static final long serialVersionUID = 0L;
 
   public static final int DECISIONS_FIELD_NUMBER = 2;
   @SuppressWarnings("serial")
-  private com.google.protobuf.LazyStringList decisions_;
+  private com.google.protobuf.LazyStringArrayList decisions_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
   /**
    * <pre>
    * list (1..N) of policy decisions (aka rules)
@@ -269,8 +266,8 @@ private static final long serialVersionUID = 0L;
       super.clear();
       bitField0_ = 0;
       path_ = "";
-      decisions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      decisions_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -297,18 +294,9 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.aserto.authorizer.v2.api.PolicyContext buildPartial() {
       com.aserto.authorizer.v2.api.PolicyContext result = new com.aserto.authorizer.v2.api.PolicyContext(this);
-      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) { buildPartial0(result); }
       onBuilt();
       return result;
-    }
-
-    private void buildPartialRepeatedFields(com.aserto.authorizer.v2.api.PolicyContext result) {
-      if (((bitField0_ & 0x00000002) != 0)) {
-        decisions_ = decisions_.getUnmodifiableView();
-        bitField0_ = (bitField0_ & ~0x00000002);
-      }
-      result.decisions_ = decisions_;
     }
 
     private void buildPartial0(com.aserto.authorizer.v2.api.PolicyContext result) {
@@ -316,40 +304,12 @@ private static final long serialVersionUID = 0L;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.path_ = path_;
       }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        decisions_.makeImmutable();
+        result.decisions_ = decisions_;
+      }
     }
 
-    @java.lang.Override
-    public Builder clone() {
-      return super.clone();
-    }
-    @java.lang.Override
-    public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
-      return super.setField(field, value);
-    }
-    @java.lang.Override
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
-      return super.clearField(field);
-    }
-    @java.lang.Override
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-      return super.clearOneof(oneof);
-    }
-    @java.lang.Override
-    public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
-      return super.setRepeatedField(field, index, value);
-    }
-    @java.lang.Override
-    public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
-      return super.addRepeatedField(field, value);
-    }
     private int bitField0_;
 
     private java.lang.Object path_ = "";
@@ -444,12 +404,13 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private com.google.protobuf.LazyStringList decisions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringArrayList decisions_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     private void ensureDecisionsIsMutable() {
-      if (!((bitField0_ & 0x00000002) != 0)) {
+      if (!decisions_.isModifiable()) {
         decisions_ = new com.google.protobuf.LazyStringArrayList(decisions_);
-        bitField0_ |= 0x00000002;
-       }
+      }
+      bitField0_ |= 0x00000002;
     }
     /**
      * <pre>
@@ -461,7 +422,8 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.ProtocolStringList
         getDecisionsList() {
-      return decisions_.getUnmodifiableView();
+      decisions_.makeImmutable();
+      return decisions_;
     }
     /**
      * <pre>
@@ -514,6 +476,7 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       ensureDecisionsIsMutable();
       decisions_.set(index, value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -531,6 +494,7 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       ensureDecisionsIsMutable();
       decisions_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -548,6 +512,7 @@ private static final long serialVersionUID = 0L;
       ensureDecisionsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(
           values, decisions_);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -560,8 +525,9 @@ private static final long serialVersionUID = 0L;
      * @return This builder for chaining.
      */
     public Builder clearDecisions() {
-      decisions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      bitField0_ = (bitField0_ & ~0x00000002);
+      decisions_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000002);;
       onChanged();
       return this;
     }
@@ -580,6 +546,7 @@ private static final long serialVersionUID = 0L;
       checkByteStringIsUtf8(value);
       ensureDecisionsIsMutable();
       decisions_.add(value);
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
