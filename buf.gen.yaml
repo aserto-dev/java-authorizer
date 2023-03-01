@@ -1,15 +1,10 @@
 version: v1
 managed:
   enabled: true
-  cc_enable_arenas: false
-  java_multiple_files: true
   java_package_prefix: com
-  java_string_check_utf8: false
-  optimize_for: CODE_SIZE
-
 plugins:
   - plugin: buf.build/grpc/java
-    out: .
-  # dependencies
+    out: src/main/java
+#  # dependencies
   - plugin: buf.build/protocolbuffers/java
-    out: .
+    out: src/main/java
