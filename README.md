@@ -1,4 +1,5 @@
-# java-grpc-authz
+# java-authorizer
+
 [![slack](https://img.shields.io/badge/slack-Aserto%20Community-brightgreen)](https://asertocommunity.slack.com)
 
 Java GRPC bindings for aserto-authorizer
