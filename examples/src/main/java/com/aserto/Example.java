@@ -1,4 +1,4 @@
-package org.example;
+package com.aserto;
 
 import com.aserto.authorizer.v2.*;
 import com.aserto.authorizer.v2.api.IdentityContext;
