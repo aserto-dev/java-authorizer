@@ -1,4 +1,4 @@
-# java-grpc-authz
+# java-authorizer-examples
 [![slack](https://img.shields.io/badge/slack-Aserto%20Community-brightgreen)](https://asertocommunity.slack.com)
 
 To switch between topaz and the hosted authorizer examples, just enable/disable the `IS_HOSTED_AUTHORIZER` flag

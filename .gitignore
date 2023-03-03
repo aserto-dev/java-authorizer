@@ -25,6 +25,7 @@
 hs_err_pid*
 
 target/
+.env
 
 # IDE specific
 .idea
