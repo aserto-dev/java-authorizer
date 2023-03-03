@@ -16,6 +16,8 @@ import javax.net.ssl.SSLException;
 
 
 public class Example {
+    // switch between hosted authorizer and topaz
+    private static boolean IS_HOSTED_AUTHORIZER = true;
     private static final String POLICY_NAME = "policy-peoplefinder-rbac";
     private static final String POLICY_LABEL = "policy-peoplefinder-rbac";
 
@@ -23,15 +25,11 @@ public class Example {
     private static final String AUTHORIZER_ADDRESS = "authorizer.prod.aserto.com";
     private static final Integer AUTHORIZER_PORT = 8443;
     private static final String TENANT_ID = "my-tenant-id";
-    public static final String API_KEY = "my-authorizer-api-key";
+    public static final String AUTHORIZER_API_KEY = "my-authorizer-api-key";
 
     // For local topaz connected to a hosted directory
     private static final String TOPAZ_AUTHORIZER_ADDRESS = "localhost";
     private static final Integer TOPAZ_AUTHORIZER_PORT = 8282;
-
-
-    // switch between hosted authorizer and topaz
-    private static boolean IS_HOSTED_AUTHORIZER = false;
 
     public static void main(String[] args) throws SSLException {
         AuthorizerGrpc.AuthorizerBlockingStub authzClient;
@@ -49,7 +47,7 @@ public class Example {
         Metadata.Key<String> asertoTenantId = Metadata.Key.of("aserto-tenant-id", Metadata.ASCII_STRING_MARSHALLER);
         Metadata.Key<String> authorization = Metadata.Key.of("authorization", Metadata.ASCII_STRING_MARSHALLER);
         metadata.put(asertoTenantId, TENANT_ID);
-        metadata.put(authorization, "basic " + API_KEY);
+        metadata.put(authorization, "basic " + AUTHORIZER_API_KEY);
 
         ManagedChannel channel = NettyChannelBuilder
                 .forAddress(AUTHORIZER_ADDRESS,AUTHORIZER_PORT)

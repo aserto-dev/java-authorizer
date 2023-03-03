@@ -2,13 +2,39 @@
 [![slack](https://img.shields.io/badge/slack-Aserto%20Community-brightgreen)](https://asertocommunity.slack.com)
 
 
-## Requirements
+## Hosted Authorizer example
+
+### Steps
+1. create a `policy-peoplefinder-rbac` policy
+   1. go to: https://console.aserto.com/ -> Policies -> Create an instance -> From a sample image
+   2. select `policy-peoplefinder-rbac`, select a tag (e.g. `latest`) and provide a name for the policy.
+2. set the constants in [Example](https://github.com/aserto-dev/java-authorizer/blob/5e5e2fbdc582f4bea53476cb58c7d1ef952b7319/examples/src/main/java/com/aserto/Example.java#L14) class:
+   1. `POLICY_NAME` - https://console.aserto.com/ -> Policies -> select the policy you created -> Settings -> Instance Name
+   2. `POLICY_LABEL` - https://console.aserto.com/ -> Policies -> select the policy you created -> Settings -> Instance Label
+   2. `TENANT_ID` - https://console.aserto.com/ -> Policies -> select the policy you created -> Settings -> Tenant ID
+   2. `API_KEY` - https://console.aserto.com/ -> Policies -> select the policy you created -> Settings -> Authorizer API key
+3. load data in aserto-directory
+   1. go to: https://console.aserto.com/ -> Directory -> Create an identity provider 
+   2. create a new connection: Create an identity provider  -> Demo Acmecorp IDP and provide a name for the connection
+4. build the jar
+```bash
+mvn clean && mvn package
+```
+5. run the executable jar
+```bash
+java -jar target/examples-1.0.0-SNAPSHOT-shaded.jar
+```
+
+
+## Topaz example
+
+### Requirements
 - a local/remote [topaz instance](https://github.com/aserto-dev/topaz)
 - an Aserto directory API key (https://console.aserto.com/ -> Connections -> Aserto Directory)
 - an Aserto tenant ID (https://console.aserto.com/ -> top right corner -> Account Settings)
 
 
-Steps:
+### Steps:
 1. load data in aserto-directory
    1. go to: https://console.aserto.com/ -> Directory -> Create an identity provider 
    2. create a new connection: Create an identity provider  -> Demo Acmecorp IDP and provide a name for the connection
