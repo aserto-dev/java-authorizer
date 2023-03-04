@@ -15,7 +15,7 @@ import io.grpc.stub.MetadataUtils;
 import io.netty.handler.ssl.util.InsecureTrustManagerFactory;
 
 import javax.net.ssl.SSLException;
-
+import io.github.cdimascio.dotenv.DotenvException;
 
 public class AuthzClient {
     private String policyName;
@@ -27,9 +27,10 @@ public class AuthzClient {
 
     private AuthorizerGrpc.AuthorizerBlockingStub authzClient;
 
-    public AuthzClient() throws SSLException {
+    public AuthzClient() throws SSLException, DotenvException, NumberFormatException {
         Dotenv dotenv = Dotenv.load();
-        policyName = dotenv.get("ASERTO_POLICY_INSTANCE_NAME", "dodo");
+        
+        policyName = dotenv.get("ASERTO_POLICY_INSTANCE_NAME", "todo");
         policyLabel = dotenv.get("ASERTO_POLICY_INSTANCE_LABEL", "todo");
         tenantId = dotenv.get("ASERTO_TENANT_ID", "");
         authorizerApiKey = dotenv.get("ASERTO_AUTHORIZER_API_KEY", "");
