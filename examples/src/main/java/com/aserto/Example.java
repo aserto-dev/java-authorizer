@@ -1,16 +1,10 @@
 package com.aserto;
 
-import static java.lang.System.exit;
-
 import javax.net.ssl.SSLException;
-import java.io.BufferedReader;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.nio.charset.StandardCharsets;
 import io.github.cdimascio.dotenv.DotenvException;
 
 public class Example {
-    public static void main(String[] args) throws SSLException, DotenvException {
+    public static void main(String[] args) {
         try {
             AuthzClient client = new AuthzClient();
 
