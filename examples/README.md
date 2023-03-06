@@ -20,9 +20,9 @@ mvn clean && mvn package
 
 ## 2. setup environment
 
-### Using [topaz](https://topaz.sh)
+## 2.1 using [topaz](https://topaz.sh)
 
-### 2.1 install and configure [topaz](https://topaz.sh)
+### 2.1.1 install and configure [topaz](https://topaz.sh)
 
 * Install [topaz](https://github.com/aserto-dev/topaz#installation)
 * Configure topaz to use the `todo` policy
@@ -51,27 +51,21 @@ topaz start
 topaz status
 ```
 
-### 2.2 copy the `examples/assets/.env.topaz-authorizer.example` to the examples directory
+### 2.1.2 copy the `examples/assets/.env.topaz-authorizer.example` to the `examples` directory
 
 ```bash
 cp assets/.env.topaz-authorizer.example .env
 ```
 
-### 2.3 update settings in the `examples/.env` file
+### 2.1.3 update settings in the `examples/.env` file
 
 When using a **local** topaz authorizer, **no** additional configuration settings are needed!
 
 `examples/.env`
 
 ```
-# policy settings
-# ASERTO_POLICY_INSTANCE_NAME=todo
-# ASERTO_POLICY_INSTANCE_LABEL=todo
-
 # Topaz
 ASERTO_AUTHORIZER_SERVICE_URL=localhost:8282
-# ASERTO_TENANT_ID={Tenant ID UUID}
-# ASERTO_AUTHORIZER_API_KEY={Authorizer API Key}
 ```
 
 When connecting to a **remote** topaz authorizer instance, you must update the host and port information in the `.env` file.
@@ -79,19 +73,13 @@ When connecting to a **remote** topaz authorizer instance, you must update the h
 `examples/.env` 
 
 ```
-# policy settings
-# ASERTO_POLICY_INSTANCE_NAME=todo
-# ASERTO_POLICY_INSTANCE_LABEL=todo
-
 # Topaz
 ASERTO_AUTHORIZER_SERVICE_URL={Authorizer host name}:{Authorizer port number}
-# ASERTO_TENANT_ID={Tenant ID UUID}
-# ASERTO_AUTHORIZER_API_KEY={Authorizer API Key}
 ```
 
-### Using the hosted [aserto](https://console.aserto.com) authorizer 
+## 2.2 using the hosted [aserto](https://console.aserto.com) authorizer 
 
-### 2.4 signup, create account, log in and configure
+### 2.2.1 signup, create account, log in and configure
 
 * Signup and create an account at [aserto.com](https://aserto.com)
 
@@ -100,31 +88,16 @@ ASERTO_AUTHORIZER_SERVICE_URL={Authorizer host name}:{Authorizer port number}
 * Ensure you are in your personal account; this will have a `todo` policy and accompanying directory instance configured by default, which is used by the example.
 
 
-### 2.5 copy the `examples/assets/.env.hosted-authorizer.example` to the examples directory
+### 2.2.2 copy the `examples/assets/.env.hosted-authorizer.example` to the `examples` directory
 
 ```bash
 cp assets/.env.hosted-authorizer.example .env
 ```
 
-### 2.6 update settings in the `examples/.env` file
+### 2.2.3 update settings in the `examples/.env` file
 
 When connecting to the **hosted** authorizer, you must update the `.env` file with the following configuration values.
 
-
-`examples/.env`
-
-```
-# policy settings
-# ASERTO_POLICY_INSTANCE_NAME=todo
-# ASERTO_POLICY_INSTANCE_LABEL=todo
-
-# Topaz
-ASERTO_AUTHORIZER_SERVICE_URL=localhost:8282
-# ASERTO_TENANT_ID={Tenant ID UUID}
-# ASERTO_AUTHORIZER_API_KEY={Authorizer API Key}
-```
-
-When connecting to a remote topaz authorizer instance, update the host and port information in the .env file.
 
 `examples/.env` 
 
@@ -136,7 +109,7 @@ ASERTO_POLICY_INSTANCE_LABEL=todo
 # Aserto hosted authorizer
 ASERTO_AUTHORIZER_SERVICE_URL=authorizer.prod.aserto.com:8443
 
-ASERTO_TENANT_ID={Your Tenant ID UUID}
+ASERTO_TENANT_ID={Your Tenant ID}
 ASERTO_AUTHORIZER_API_KEY={Your Authorizer API Key}
 ```
 
