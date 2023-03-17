@@ -117,4 +117,18 @@
             </plugin>
         </plugins>
     </build>
+
+    <!-- publish artifacts to github registry -->
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>GitHub Packages</name>
+            <url>https://maven.pkg.github.com/aserto-dev/java-authorizer</url>
+        </repository>
+        <snapshotRepository>
+            <id>github</id>
+            <name>GitHub Packages</name>
+            <url>https://maven.pkg.github.com/aserto-dev/java-authorizer</url>
+        </snapshotRepository>
+    </distributionManagement>
 </project>
