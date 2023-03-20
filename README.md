@@ -12,11 +12,16 @@ Java GRPC bindings for aserto-authorizer
 
 ### Building the project
 ```bash
-mvn clean && mvn package
+mvn clean package
 ```
  If you want to install the package to your local maven repository in order to include it in other projects
 ```bash
-mvn clean && mvn install
+mvn clean install
+```
+
+### Deploying to maven central
+```bash
+mvn clean deploy -Dgpg.passphrase="<gpg-passphrase>" -Pci-cd
 ```
 
 ### Quick start 
