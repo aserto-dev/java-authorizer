@@ -26,4 +26,4 @@ mvn clean deploy -Dgpg.passphrase="<gpg-passphrase>" -Pci-cd
 
 ### Quick start 
 
-See the [examples]([examples](https://github.com/aserto-dev/java-authorizer/tree/main/examples)) page for a quick start guide on how to connect to [topaz](https://github.com/aserto-dev/topaz) or to Aserto hosted authorizer.
+See the [examples](https://github.com/aserto-dev/java-authorizer/tree/main/examples) page for a quick start guide on how to connect to [topaz](https://github.com/aserto-dev/topaz) or to Aserto hosted authorizer.
