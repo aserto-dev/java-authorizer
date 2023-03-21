@@ -1,0 +1,48 @@
+name: ci
+
+on:
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+    inputs:
+      proto_ref:
+      proto_sha:
+  push:
+    branches:
+      - main
+      - v*
+    # Publish `v1.2.3` tags as releases.
+    tags:
+      - v*
+  # Run tests for PRs
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Info
+        run: echo "Using proto ${{ github.event.inputs.proto_ref }} with sha ${{ github.event.inputs.proto_sha }}"
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: Install dependencies
+        run: |
+          # Install buf cli
+          BIN="/usr/local/bin" && \
+          VERSION="1.15.1" && \
+          curl -sSL "https://github.com/bufbuild/buf/releases/download/v${VERSION}/buf-$(uname -s)-$(uname -m)" \
+          -o "${BIN}/buf" && chmod +x "${BIN}/buf"
+          
+          # Update proto to latest
+          export BUF_BETA_SUPPRESS_WARNINGS=1
+          
+          mvn versions:set-property -Dproperty=authz-proto-defintions-version -DnewVersion=$(buf beta registry tag list buf.build/aserto-dev/authorizer --format text --reverse --page-size 1 | tail -1 | awk  '{print $1}')
+          mvn versions:set-property -Dproperty=grpc-gateway-proto-defintions-version -DnewVersion=$(buf beta registry tag list buf.build/grpc-ecosystem/grpc-gateway --format text --reverse --page-size 1 | tail -1 | awk  '{print $1}')
+          mvn clean package
+      - name: Commit changes
+        if: github.event_name == 'workflow_dispatch'
+        uses: EndBug/add-and-commit@v9
+        with:
+          default_author: github_actions
+          add: 'pom.xml src'
