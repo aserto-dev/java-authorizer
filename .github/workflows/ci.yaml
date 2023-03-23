@@ -16,6 +16,9 @@ on:
   # Run tests for PRs
   pull_request:
 
+env:
+  GO_VERSION: "1.19"
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -26,19 +29,21 @@ jobs:
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
-      - name: Install dependencies
+      - name: Setup Go
+        uses: actions/setup-go@v2
+        with:
+          go-version: ${{ env.GO_VERSION }}
+      - name: Install dependencies, update proto and build
         run: |
           # Install buf cli
-          BIN="/usr/local/bin" && \
-          VERSION="1.15.1" && \
-          curl -sSL "https://github.com/bufbuild/buf/releases/download/v${VERSION}/buf-$(uname -s)-$(uname -m)" \
-          -o "${BIN}/buf" && chmod +x "${BIN}/buf"
+          go run mage.go deps
           
           # Update proto to latest
           export BUF_BETA_SUPPRESS_WARNINGS=1
-          
           mvn versions:set-property -Dproperty=authz-proto-defintions-version -DnewVersion=$(buf beta registry tag list buf.build/aserto-dev/authorizer --format text --reverse --page-size 1 | tail -1 | awk  '{print $1}')
           mvn versions:set-property -Dproperty=grpc-gateway-proto-defintions-version -DnewVersion=$(buf beta registry tag list buf.build/grpc-ecosystem/grpc-gateway --format text --reverse --page-size 1 | tail -1 | awk  '{print $1}')
+          
+          # run tests and create package
           mvn clean package
       - name: Commit changes
         if: github.event_name == 'workflow_dispatch'

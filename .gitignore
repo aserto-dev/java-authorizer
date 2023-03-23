@@ -30,3 +30,6 @@ target/
 # IDE specific
 .idea
 .vscode
+
+# External dependencies
+.ext

@@ -47,6 +47,8 @@
 
         <authz-proto-defintions>buf.build/aserto-dev/authorizer:${authz-proto-defintions-version}</authz-proto-defintions>
         <grpc-gateway-proto-defintions>buf.build/grpc-ecosystem/grpc-gateway:${grpc-gateway-proto-defintions-version}</grpc-gateway-proto-defintions>
+
+        <buf-path>.ext/gobin/buf-v1.9.0/buf</buf-path>
     </properties>
 
     <dependencies>
@@ -99,7 +101,7 @@
                             <goal>exec</goal>
                         </goals>
                         <configuration>
-                            <executable>buf</executable>
+                            <executable>${buf-path}</executable>
                             <arguments>
                                 <argument>generate</argument>
                                 <argument>${authz-proto-defintions}</argument>
@@ -113,7 +115,7 @@
                             <goal>exec</goal>
                         </goals>
                         <configuration>
-                            <executable>buf</executable>
+                            <executable>${buf-path}</executable>
                             <arguments>
                                 <argument>generate</argument>
                                 <argument>${grpc-gateway-proto-defintions}</argument>
@@ -166,7 +168,7 @@
         </plugins>
     </build>
 
-   <!-- used to sign the artifacts that will be published -->
+    <!-- used to sign the artifacts that will be published -->
     <profiles>
         <profile>
             <id>ci-cd</id>
