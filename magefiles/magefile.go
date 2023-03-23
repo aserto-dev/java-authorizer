@@ -5,7 +5,6 @@ package main
 import (
 	"fmt"
 	"os"
-	"os/exec"
 	"path"
 	"path/filepath"
 
@@ -13,7 +12,7 @@ import (
 	"github.com/aserto-dev/mage-loot/buf"
 	"github.com/aserto-dev/mage-loot/deps"
 	"github.com/aserto-dev/mage-loot/mage"
-
+	"github.com/magefile/mage/sh"
 )
 
 var (
@@ -25,21 +24,22 @@ func init() {
 	os.Setenv("GOPRIVATE", "github.com/aserto-dev")
 }
 
+func All() error {
+	Deps()
+	err := Clean()
+	if err != nil {
+		return err
+	}
+	err = Generate()
+	if err != nil {
+		return err
+	}
+	return Build()
+}
+
 // install all required dependencies.
 func Deps() {
 	deps.GetAllDeps()
-}
-
-// change maven path to external dependencies
-func UpdateMavenPathToDeps() {
-	cmd := exec.Command("mvn", "versions:set-property", "-Dproperty=buf-path", "-DnewVersion=" + deps.GoBinPath("buf"))
-
-	_, err := cmd.Output()
-
-	if err != nil {
-		fmt.Println(err.Error())
-		return
-	}
 }
 
 func Generate() error {
@@ -76,6 +76,26 @@ func GenerateDev() error {
 // Builds the aserto proto image
 func BuildDev() error {
 	return mage.RunDirs(path.Join(getProtoRepo(), "magefiles"), getProtoRepo(), mage.AddArg("build"))
+}
+
+// Builds the java project
+func Build() error {
+	err := sh.RunV("mvn", "clean", "package")
+	if err != nil {
+		return err
+	}
+
+	return nil
+}
+
+// clean generated files
+func Clean() error {
+	err := os.RemoveAll(filepath.Join("src", "main", "java", "com"))
+	if err != nil {
+		return err
+	}
+
+	return nil
 }
 
 // Builds the aserto proto image

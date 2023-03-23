@@ -35,18 +35,7 @@ jobs:
           go-version: ${{ env.GO_VERSION }}
       - name: Install dependencies, update proto and build
         run: |
-          # Install dependencies
-          go run mage.go deps
-          
-          # update maven path to new dependencies
-          go run mage.go updatemavenpathtodeps
-          
-          # Update proto to latest
-          export BUF_BETA_SUPPRESS_WARNINGS=1
-          
-          mvn versions:set-property -Dproperty=authz-proto-defintions-version -DnewVersion=$(.ext/gobin/buf-v1.9.0/buf beta registry tag list buf.build/aserto-dev/authorizer --format text --reverse --page-size 1 | tail -1 | awk  '{print $1}')
-          mvn versions:set-property -Dproperty=grpc-gateway-proto-defintions-version -DnewVersion=$(.ext/gobin/buf-v1.9.0/buf beta registry tag list buf.build/grpc-ecosystem/grpc-gateway --format text --reverse --page-size 1 | tail -1 | awk  '{print $1}')
-          mvn clean package
+          go run mage.go all
       - name: Commit changes
         if: github.event_name == 'workflow_dispatch'
         uses: EndBug/add-and-commit@v9

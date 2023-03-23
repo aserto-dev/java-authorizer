@@ -41,14 +41,6 @@
         <grpc.version>1.53.0</grpc.version>
         <protobuf.version>3.22.0</protobuf.version>
         <tomcat.annotation.api.version>6.0.53</tomcat.annotation.api.version>
-
-        <authz-proto-defintions-version>v0.20.2</authz-proto-defintions-version>
-        <grpc-gateway-proto-defintions-version>8952e38d5addd28308e29c272c696a578aa8ace8</grpc-gateway-proto-defintions-version>
-
-        <authz-proto-defintions>buf.build/aserto-dev/authorizer:${authz-proto-defintions-version}</authz-proto-defintions>
-        <grpc-gateway-proto-defintions>buf.build/grpc-ecosystem/grpc-gateway:${grpc-gateway-proto-defintions-version}</grpc-gateway-proto-defintions>
-
-        <buf-path>buf</buf-path>
     </properties>
 
     <dependencies>
@@ -88,43 +80,6 @@
 
     <build>
         <plugins>
-            <!-- generate java code from proto definitions -->
-            <plugin>
-                <artifactId>exec-maven-plugin</artifactId>
-                <groupId>org.codehaus.mojo</groupId>
-                <version>1.2.1</version>
-                <executions>
-                    <execution>
-                        <id>Generate authorization grpc code</id>
-                        <phase>generate-sources</phase>
-                        <goals>
-                            <goal>exec</goal>
-                        </goals>
-                        <configuration>
-                            <executable>${buf-path}</executable>
-                            <arguments>
-                                <argument>generate</argument>
-                                <argument>${authz-proto-defintions}</argument>
-                            </arguments>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>Generate grpc gateway code</id>
-                        <phase>generate-sources</phase>
-                        <goals>
-                            <goal>exec</goal>
-                        </goals>
-                        <configuration>
-                            <executable>${buf-path}</executable>
-                            <arguments>
-                                <argument>generate</argument>
-                                <argument>${grpc-gateway-proto-defintions}</argument>
-                            </arguments>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-
             <!-- creates a jar archive of the source files of the current project -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
