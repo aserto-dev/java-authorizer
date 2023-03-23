@@ -5,6 +5,7 @@ package main
 import (
 	"fmt"
 	"os"
+	"os/exec"
 	"path"
 	"path/filepath"
 
@@ -12,6 +13,7 @@ import (
 	"github.com/aserto-dev/mage-loot/buf"
 	"github.com/aserto-dev/mage-loot/deps"
 	"github.com/aserto-dev/mage-loot/mage"
+
 )
 
 var (
@@ -28,9 +30,21 @@ func Deps() {
 	deps.GetAllDeps()
 }
 
+// change maven path to external dependencies
+func UpdateMavenPathToDeps() {
+	cmd := exec.Command("mvn", "versions:set-property", "-Dproperty=buf-path", "-DnewVersion=" + deps.GoBinPath("buf"))
+
+	_, err := cmd.Output()
+
+	if err != nil {
+		fmt.Println(err.Error())
+		return
+	}
+}
+
 func Generate() error {
-	bufImages := []string{"buf.build/aserto-dev/authorizer",
-		"buf.build/grpc-ecosystem/grpc-gateway"}
+	bufImages := []string{ "buf.build/aserto-dev/authorizer",
+		"buf.build/grpc-ecosystem/grpc-gateway" }
 
 	for _, bufImage := range bufImages {
 		buffImgWithTag, err := addLatestTag(bufImage)

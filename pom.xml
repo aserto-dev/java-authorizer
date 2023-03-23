@@ -48,7 +48,7 @@
         <authz-proto-defintions>buf.build/aserto-dev/authorizer:${authz-proto-defintions-version}</authz-proto-defintions>
         <grpc-gateway-proto-defintions>buf.build/grpc-ecosystem/grpc-gateway:${grpc-gateway-proto-defintions-version}</grpc-gateway-proto-defintions>
 
-        <buf-path>.ext/gobin/buf-v1.9.0/buf</buf-path>
+        <buf-path>buf</buf-path>
     </properties>
 
     <dependencies>
