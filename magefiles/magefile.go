@@ -12,6 +12,7 @@ import (
 	"github.com/aserto-dev/mage-loot/buf"
 	"github.com/aserto-dev/mage-loot/deps"
 	"github.com/aserto-dev/mage-loot/mage"
+	"github.com/aserto-dev/mage-loot/common"
 	"github.com/magefile/mage/sh"
 )
 
@@ -81,11 +82,8 @@ func BuildDev() error {
 // Builds the java project
 func Build() error {
 	err := sh.RunV("mvn", "clean", "package")
-	if err != nil {
-		return err
-	}
 
-	return nil
+	return err
 }
 
 // clean generated files
@@ -96,6 +94,19 @@ func Clean() error {
 	}
 
 	return nil
+}
+
+func Bump(next string) error {
+	nextVersion, err := common.NextVersion(next)
+	if err != nil {
+		return err
+	}
+	fmt.Println("Bumping version to", nextVersion)
+
+	// write version to maven pom
+	err = sh.RunV("mvn", "versions:set", "-DnewVersion=" + nextVersion)
+
+	return err
 }
 
 // Builds the aserto proto image
