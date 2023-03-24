@@ -6,11 +6,17 @@ Java GRPC bindings for aserto-authorizer
 
 
 ## Requirements
-- [buf cli](https://docs.buf.build/installation)
+- golang 1.19
 - [maven](https://maven.apache.org/guides/introduction/introduction-to-the-pom.html)
 - java 1.8 or newer
 
 ### Building the project
+Generate the java bindings from the proto files
+```bash
+mage generate
+```
+
+Build the maven package
 ```bash
 mvn clean package
 ```
@@ -19,7 +25,7 @@ mvn clean package
 mvn clean install
 ```
 
-### Deploying to maven central
+### Manually deploying to maven central
 ```bash
 mvn clean deploy -Dgpg.passphrase="<gpg-passphrase>" -Pci-cd
 ```

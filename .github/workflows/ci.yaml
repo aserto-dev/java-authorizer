@@ -85,6 +85,7 @@ jobs:
           mvn \
             --no-transfer-progress \
             --batch-mode \
+            -Pci-cd \
             deploy
 
       - name: Bump to the next version
