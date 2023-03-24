@@ -27,7 +27,7 @@ mvn clean install
 
 ### Manually deploying to maven central
 ```bash
-mvn clean deploy -Dgpg.passphrase="<gpg-passphrase>" -Pci-cd
+mvn clean deploy -Dgpg.passphrase="<gpg-passphrase>"
 ```
 
 ### Quick start 
