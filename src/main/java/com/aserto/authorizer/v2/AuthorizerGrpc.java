@@ -5,7 +5,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
 /**
  */
 @javax.annotation.Generated(
-    value = "by gRPC proto compiler (version 1.53.0)",
+    value = "by gRPC proto compiler (version 1.54.1)",
     comments = "Source: aserto/authorizer/v2/authorizer.proto")
 @io.grpc.stub.annotations.GrpcGenerated
 public final class AuthorizerGrpc {
@@ -278,115 +278,74 @@ public final class AuthorizerGrpc {
 
   /**
    */
-  public static abstract class AuthorizerImplBase implements io.grpc.BindableService {
+  public interface AsyncService {
 
     /**
      */
-    public void decisionTree(com.aserto.authorizer.v2.DecisionTreeRequest request,
+    default void decisionTree(com.aserto.authorizer.v2.DecisionTreeRequest request,
         io.grpc.stub.StreamObserver<com.aserto.authorizer.v2.DecisionTreeResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getDecisionTreeMethod(), responseObserver);
     }
 
     /**
      */
-    public void is(com.aserto.authorizer.v2.IsRequest request,
+    default void is(com.aserto.authorizer.v2.IsRequest request,
         io.grpc.stub.StreamObserver<com.aserto.authorizer.v2.IsResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getIsMethod(), responseObserver);
     }
 
     /**
      */
-    public void query(com.aserto.authorizer.v2.QueryRequest request,
+    default void query(com.aserto.authorizer.v2.QueryRequest request,
         io.grpc.stub.StreamObserver<com.aserto.authorizer.v2.QueryResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getQueryMethod(), responseObserver);
     }
 
     /**
      */
-    public void compile(com.aserto.authorizer.v2.CompileRequest request,
+    default void compile(com.aserto.authorizer.v2.CompileRequest request,
         io.grpc.stub.StreamObserver<com.aserto.authorizer.v2.CompileResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getCompileMethod(), responseObserver);
     }
 
     /**
      */
-    public void listPolicies(com.aserto.authorizer.v2.ListPoliciesRequest request,
+    default void listPolicies(com.aserto.authorizer.v2.ListPoliciesRequest request,
         io.grpc.stub.StreamObserver<com.aserto.authorizer.v2.ListPoliciesResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListPoliciesMethod(), responseObserver);
     }
 
     /**
      */
-    public void getPolicy(com.aserto.authorizer.v2.GetPolicyRequest request,
+    default void getPolicy(com.aserto.authorizer.v2.GetPolicyRequest request,
         io.grpc.stub.StreamObserver<com.aserto.authorizer.v2.GetPolicyResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetPolicyMethod(), responseObserver);
     }
 
     /**
      */
-    public void info(com.aserto.authorizer.v2.InfoRequest request,
+    default void info(com.aserto.authorizer.v2.InfoRequest request,
         io.grpc.stub.StreamObserver<com.aserto.authorizer.v2.InfoResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getInfoMethod(), responseObserver);
-    }
-
-    @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
-      return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-            getDecisionTreeMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
-              new MethodHandlers<
-                com.aserto.authorizer.v2.DecisionTreeRequest,
-                com.aserto.authorizer.v2.DecisionTreeResponse>(
-                  this, METHODID_DECISION_TREE)))
-          .addMethod(
-            getIsMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
-              new MethodHandlers<
-                com.aserto.authorizer.v2.IsRequest,
-                com.aserto.authorizer.v2.IsResponse>(
-                  this, METHODID_IS)))
-          .addMethod(
-            getQueryMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
-              new MethodHandlers<
-                com.aserto.authorizer.v2.QueryRequest,
-                com.aserto.authorizer.v2.QueryResponse>(
-                  this, METHODID_QUERY)))
-          .addMethod(
-            getCompileMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
-              new MethodHandlers<
-                com.aserto.authorizer.v2.CompileRequest,
-                com.aserto.authorizer.v2.CompileResponse>(
-                  this, METHODID_COMPILE)))
-          .addMethod(
-            getListPoliciesMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
-              new MethodHandlers<
-                com.aserto.authorizer.v2.ListPoliciesRequest,
-                com.aserto.authorizer.v2.ListPoliciesResponse>(
-                  this, METHODID_LIST_POLICIES)))
-          .addMethod(
-            getGetPolicyMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
-              new MethodHandlers<
-                com.aserto.authorizer.v2.GetPolicyRequest,
-                com.aserto.authorizer.v2.GetPolicyResponse>(
-                  this, METHODID_GET_POLICY)))
-          .addMethod(
-            getInfoMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
-              new MethodHandlers<
-                com.aserto.authorizer.v2.InfoRequest,
-                com.aserto.authorizer.v2.InfoResponse>(
-                  this, METHODID_INFO)))
-          .build();
     }
   }
 
   /**
+   * Base class for the server implementation of the service Authorizer.
    */
-  public static final class AuthorizerStub extends io.grpc.stub.AbstractAsyncStub<AuthorizerStub> {
+  public static abstract class AuthorizerImplBase
+      implements io.grpc.BindableService, AsyncService {
+
+    @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
+      return AuthorizerGrpc.bindService(this);
+    }
+  }
+
+  /**
+   * A stub to allow clients to do asynchronous rpc calls to service Authorizer.
+   */
+  public static final class AuthorizerStub
+      extends io.grpc.stub.AbstractAsyncStub<AuthorizerStub> {
     private AuthorizerStub(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
@@ -456,8 +415,10 @@ public final class AuthorizerGrpc {
   }
 
   /**
+   * A stub to allow clients to do synchronous rpc calls to service Authorizer.
    */
-  public static final class AuthorizerBlockingStub extends io.grpc.stub.AbstractBlockingStub<AuthorizerBlockingStub> {
+  public static final class AuthorizerBlockingStub
+      extends io.grpc.stub.AbstractBlockingStub<AuthorizerBlockingStub> {
     private AuthorizerBlockingStub(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
@@ -520,8 +481,10 @@ public final class AuthorizerGrpc {
   }
 
   /**
+   * A stub to allow clients to do ListenableFuture-style rpc calls to service Authorizer.
    */
-  public static final class AuthorizerFutureStub extends io.grpc.stub.AbstractFutureStub<AuthorizerFutureStub> {
+  public static final class AuthorizerFutureStub
+      extends io.grpc.stub.AbstractFutureStub<AuthorizerFutureStub> {
     private AuthorizerFutureStub(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
@@ -603,10 +566,10 @@ public final class AuthorizerGrpc {
       io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
       io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
       io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
-    private final AuthorizerImplBase serviceImpl;
+    private final AsyncService serviceImpl;
     private final int methodId;
 
-    MethodHandlers(AuthorizerImplBase serviceImpl, int methodId) {
+    MethodHandlers(AsyncService serviceImpl, int methodId) {
       this.serviceImpl = serviceImpl;
       this.methodId = methodId;
     }
@@ -657,6 +620,60 @@ public final class AuthorizerGrpc {
           throw new AssertionError();
       }
     }
+  }
+
+  public static final io.grpc.ServerServiceDefinition bindService(AsyncService service) {
+    return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
+        .addMethod(
+          getDecisionTreeMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.aserto.authorizer.v2.DecisionTreeRequest,
+              com.aserto.authorizer.v2.DecisionTreeResponse>(
+                service, METHODID_DECISION_TREE)))
+        .addMethod(
+          getIsMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.aserto.authorizer.v2.IsRequest,
+              com.aserto.authorizer.v2.IsResponse>(
+                service, METHODID_IS)))
+        .addMethod(
+          getQueryMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.aserto.authorizer.v2.QueryRequest,
+              com.aserto.authorizer.v2.QueryResponse>(
+                service, METHODID_QUERY)))
+        .addMethod(
+          getCompileMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.aserto.authorizer.v2.CompileRequest,
+              com.aserto.authorizer.v2.CompileResponse>(
+                service, METHODID_COMPILE)))
+        .addMethod(
+          getListPoliciesMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.aserto.authorizer.v2.ListPoliciesRequest,
+              com.aserto.authorizer.v2.ListPoliciesResponse>(
+                service, METHODID_LIST_POLICIES)))
+        .addMethod(
+          getGetPolicyMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.aserto.authorizer.v2.GetPolicyRequest,
+              com.aserto.authorizer.v2.GetPolicyResponse>(
+                service, METHODID_GET_POLICY)))
+        .addMethod(
+          getInfoMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              com.aserto.authorizer.v2.InfoRequest,
+              com.aserto.authorizer.v2.InfoResponse>(
+                service, METHODID_INFO)))
+        .build();
   }
 
   private static abstract class AuthorizerBaseDescriptorSupplier

@@ -213,58 +213,62 @@ public final class AuthorizerProto {
       "ceLevel\022\027\n\023TRACE_LEVEL_UNKNOWN\020\000\022\023\n\017TRAC" +
       "E_LEVEL_OFF\020\001\022\024\n\020TRACE_LEVEL_FULL\020\002\022\025\n\021T" +
       "RACE_LEVEL_NOTES\020\003\022\025\n\021TRACE_LEVEL_FAILS\020" +
-      "\0042\264\r\n\nAuthorizer\022\221\002\n\014DecisionTree\022).aser" +
+      "\0042\211\016\n\nAuthorizer\022\237\002\n\014DecisionTree\022).aser" +
       "to.authorizer.v2.DecisionTreeRequest\032*.a" +
       "serto.authorizer.v2.DecisionTreeResponse" +
-      "\"\251\001\222A\200\001\n\nAuthorizer\022\rDecision tree\0321Retu" +
+      "\"\267\001\222A\216\001\n\nAuthorizer\022\rDecision tree\0321Retu" +
       "rns decision tree for given identity con" +
-      "text.*\030authorizer.decision_treeb\026\n\024\n\020Aut" +
-      "horizerAPIKey\022\000\202\323\344\223\002\037\"\032/api/v2/authz/dec" +
-      "isiontree:\001*\022\217\002\n\002Is\022\037.aserto.authorizer." +
-      "v2.IsRequest\032 .aserto.authorizer.v2.IsRe" +
-      "sponse\"\305\001\222A\246\001\n\nAuthorizer\022\017Is (authorize" +
-      "d)\032`Determines if identity context is au" +
-      "thorized to access the resource guarded " +
-      "by the given policy.*\rauthorizer.isb\026\n\024\n" +
-      "\020AuthorizerAPIKey\022\000\202\323\344\223\002\025\"\020/api/v2/authz" +
-      "/is:\001*\022\363\001\n\005Query\022\".aserto.authorizer.v2." +
-      "QueryRequest\032#.aserto.authorizer.v2.Quer" +
-      "yResponse\"\240\001\222A\177\n\nAuthorizer\022\022Query (auth" +
-      "orized)\0323Executes a rego query on the lo" +
-      "aded policy runtime.*\020authorizer.queryb\026" +
-      "\n\024\n\020AuthorizerAPIKey\022\000\202\323\344\223\002\030\"\023/api/v2/au" +
-      "thz/query:\001*\022\203\002\n\007Compile\022$.aserto.author" +
-      "izer.v2.CompileRequest\032%.aserto.authoriz" +
-      "er.v2.CompileResponse\"\252\001\222A\206\001\n\nAuthorizer" +
-      "\022\024Compile (authorized)\0326Executes a parti" +
-      "al query on the loaded policy runtime.*\022" +
-      "authorizer.compileb\026\n\024\n\020AuthorizerAPIKey" +
-      "\022\000\202\323\344\223\002\032\"\025/api/v2/authz/compile:\001*\022\362\001\n\014L" +
-      "istPolicies\022).aserto.authorizer.v2.ListP" +
-      "oliciesRequest\032*.aserto.authorizer.v2.Li" +
-      "stPoliciesResponse\"\212\001\222Ao\n\006Policy\022\rList P" +
-      "olicies\032/Lists the policy modules for th" +
-      "e policy bundle.*\rpolicies.listb\026\n\024\n\020Aut" +
-      "horizerAPIKey\022\000\202\323\344\223\002\022\022\020/api/v2/policies\022" +
-      "\360\001\n\tGetPolicy\022&.aserto.authorizer.v2.Get" +
-      "PolicyRequest\032\'.aserto.authorizer.v2.Get" +
-      "PolicyResponse\"\221\001\222Al\n\006Policy\022\nGet Policy" +
-      "\0320Gets the policy modules for the given " +
-      "module Id.*\014policies.getb\026\n\024\n\020Authorizer" +
-      "APIKey\022\000\202\323\344\223\002\034\022\032/api/v2/policies/{id=*/*" +
-      "*}\022\233\001\n\004Info\022!.aserto.authorizer.v2.InfoR" +
-      "equest\032\".aserto.authorizer.v2.InfoRespon" +
-      "se\"L\222A5\n\004Info\022\004Info\032\033Return version info" +
-      "rmation.*\010info.getb\000\202\323\344\223\002\016\022\014/api/v2/info" +
-      "B\317\002\n\030com.aserto.authorizer.v2B\017Authorize" +
-      "rProtoP\001ZCgithub.com/aserto-dev/go-autho" +
-      "rizer/aserto/authorizer/v2;authorizer\242\002\003" +
-      "AAX\252\002\024Aserto.Authorizer.V2\312\002\024Aserto\\Auth" +
-      "orizer\\V2\342\002 Aserto\\Authorizer\\V2\\GPBMeta" +
-      "data\352\002\026Aserto::Authorizer::V2\222Aj*\001\0022\020app" +
-      "lication/json:\020application/jsonZ)\n\'\n\020Aut" +
-      "horizerAPIKey\022\023\010\002\032\rauthorization \002b\026\n\024\n\020" +
-      "AuthorizerAPIKey\022\000b\006proto3"
+      "text.*\030authorizer.decision_treeb$\n\024\n\020Aut" +
+      "horizerAPIKey\022\000\n\014\n\010TenantID\022\000\202\323\344\223\002\037\"\032/ap" +
+      "i/v2/authz/decisiontree:\001*\022\235\002\n\002Is\022\037.aser" +
+      "to.authorizer.v2.IsRequest\032 .aserto.auth" +
+      "orizer.v2.IsResponse\"\323\001\222A\264\001\n\nAuthorizer\022" +
+      "\017Is (authorized)\032`Determines if identity" +
+      " context is authorized to access the res" +
+      "ource guarded by the given policy.*\rauth" +
+      "orizer.isb$\n\024\n\020AuthorizerAPIKey\022\000\n\014\n\010Ten" +
+      "antID\022\000\202\323\344\223\002\025\"\020/api/v2/authz/is:\001*\022\202\002\n\005Q" +
+      "uery\022\".aserto.authorizer.v2.QueryRequest" +
+      "\032#.aserto.authorizer.v2.QueryResponse\"\257\001" +
+      "\222A\215\001\n\nAuthorizer\022\022Query (authorized)\0323Ex" +
+      "ecutes a rego query on the loaded policy" +
+      " runtime.*\020authorizer.queryb$\n\024\n\020Authori" +
+      "zerAPIKey\022\000\n\014\n\010TenantID\022\000\202\323\344\223\002\030\"\023/api/v2" +
+      "/authz/query:\001*\022\221\002\n\007Compile\022$.aserto.aut" +
+      "horizer.v2.CompileRequest\032%.aserto.autho" +
+      "rizer.v2.CompileResponse\"\270\001\222A\224\001\n\nAuthori" +
+      "zer\022\024Compile (authorized)\0326Executes a pa" +
+      "rtial query on the loaded policy runtime" +
+      ".*\022authorizer.compileb$\n\024\n\020AuthorizerAPI" +
+      "Key\022\000\n\014\n\010TenantID\022\000\202\323\344\223\002\032\"\025/api/v2/authz" +
+      "/compile:\001*\022\200\002\n\014ListPolicies\022).aserto.au" +
+      "thorizer.v2.ListPoliciesRequest\032*.aserto" +
+      ".authorizer.v2.ListPoliciesResponse\"\230\001\222A" +
+      "}\n\006Policy\022\rList Policies\032/Lists the poli" +
+      "cy modules for the policy bundle.*\rpolic" +
+      "ies.listb$\n\024\n\020AuthorizerAPIKey\022\000\n\014\n\010Tena" +
+      "ntID\022\000\202\323\344\223\002\022\022\020/api/v2/policies\022\376\001\n\tGetPo" +
+      "licy\022&.aserto.authorizer.v2.GetPolicyReq" +
+      "uest\032\'.aserto.authorizer.v2.GetPolicyRes" +
+      "ponse\"\237\001\222Az\n\006Policy\022\nGet Policy\0320Gets th" +
+      "e policy modules for the given module Id" +
+      ".*\014policies.getb$\n\024\n\020AuthorizerAPIKey\022\000\n" +
+      "\014\n\010TenantID\022\000\202\323\344\223\002\034\022\032/api/v2/policies/{i" +
+      "d=*/**}\022\233\001\n\004Info\022!.aserto.authorizer.v2." +
+      "InfoRequest\032\".aserto.authorizer.v2.InfoR" +
+      "esponse\"L\222A5\n\004Info\022\004Info\032\033Return version" +
+      " information.*\010info.getb\000\202\323\344\223\002\016\022\014/api/v2" +
+      "/infoB\202\003\n\030com.aserto.authorizer.v2B\017Auth" +
+      "orizerProtoP\001ZCgithub.com/aserto-dev/go-" +
+      "authorizer/aserto/authorizer/v2;authoriz" +
+      "er\242\002\003AAX\252\002\024Aserto.Authorizer.V2\312\002\024Aserto" +
+      "\\Authorizer\\V2\342\002 Aserto\\Authorizer\\V2\\GP" +
+      "BMetadata\352\002\026Aserto::Authorizer::V2\222A\234\001*\001" +
+      "\0022\020application/json:\020application/jsonZM\n" +
+      "\'\n\020AuthorizerAPIKey\022\023\010\002\032\rauthorization \002" +
+      "\n\"\n\010TenantID\022\026\010\002\032\020aserto-tenant-id \002b$\n\024" +
+      "\n\020AuthorizerAPIKey\022\000\n\014\n\010TenantID\022\000b\006prot" +
+      "o3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
