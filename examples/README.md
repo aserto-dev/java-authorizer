@@ -123,5 +123,5 @@ Update the `examples/.env` file with the `Tenant ID` and `Authorizer API key` va
 To run the examples, execute:
 
 ```bash
-java -jar target/examples-1.0.0-SNAPSHOT-shaded.jar
+java -jar target/examples-1.0.0-shaded.jar
 ```
