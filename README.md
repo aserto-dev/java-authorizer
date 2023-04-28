@@ -4,6 +4,10 @@
 
 Java GRPC bindings for aserto-authorizer
 
+> **Warning**
+>
+> **0.20.5** is the latest version published to maven central. Versions starting with 1.0.z have been removed from maven central and are no longer available for download.
+
 
 ## Requirements
 - golang 1.19
