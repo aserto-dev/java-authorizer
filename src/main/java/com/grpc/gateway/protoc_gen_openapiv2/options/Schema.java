@@ -46,6 +46,7 @@ private static final long serialVersionUID = 0L;
             com.grpc.gateway.protoc_gen_openapiv2.options.Schema.class, com.grpc.gateway.protoc_gen_openapiv2.options.Schema.Builder.class);
   }
 
+  private int bitField0_;
   public static final int JSON_SCHEMA_FIELD_NUMBER = 1;
   private com.grpc.gateway.protoc_gen_openapiv2.options.JSONSchema jsonSchema_;
   /**
@@ -54,7 +55,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasJsonSchema() {
-    return jsonSchema_ != null;
+    return ((bitField0_ & 0x00000001) != 0);
   }
   /**
    * <code>.grpc.gateway.protoc_gen_openapiv2.options.JSONSchema json_schema = 1 [json_name = "jsonSchema"];</code>
@@ -158,7 +159,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasExternalDocs() {
-    return externalDocs_ != null;
+    return ((bitField0_ & 0x00000002) != 0);
   }
   /**
    * <pre>
@@ -247,7 +248,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (jsonSchema_ != null) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(1, getJsonSchema());
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(discriminator_)) {
@@ -256,7 +257,7 @@ private static final long serialVersionUID = 0L;
     if (readOnly_ != false) {
       output.writeBool(3, readOnly_);
     }
-    if (externalDocs_ != null) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(5, getExternalDocs());
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(example_)) {
@@ -271,7 +272,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (jsonSchema_ != null) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getJsonSchema());
     }
@@ -282,7 +283,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(3, readOnly_);
     }
-    if (externalDocs_ != null) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(5, getExternalDocs());
     }
@@ -395,11 +396,13 @@ private static final long serialVersionUID = 0L;
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
+
   public static com.grpc.gateway.protoc_gen_openapiv2.options.Schema parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
+
   public static com.grpc.gateway.protoc_gen_openapiv2.options.Schema parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -469,13 +472,20 @@ private static final long serialVersionUID = 0L;
 
     // Construct using com.grpc.gateway.protoc_gen_openapiv2.options.Schema.newBuilder()
     private Builder() {
-
+      maybeForceBuilderInitialization();
     }
 
     private Builder(
         com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-
+      maybeForceBuilderInitialization();
+    }
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3
+              .alwaysUseFieldBuilders) {
+        getJsonSchemaFieldBuilder();
+        getExternalDocsFieldBuilder();
+      }
     }
     @java.lang.Override
     public Builder clear() {
@@ -527,10 +537,12 @@ private static final long serialVersionUID = 0L;
 
     private void buildPartial0(com.grpc.gateway.protoc_gen_openapiv2.options.Schema result) {
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.jsonSchema_ = jsonSchemaBuilder_ == null
             ? jsonSchema_
             : jsonSchemaBuilder_.build();
+        to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.discriminator_ = discriminator_;
@@ -542,12 +554,46 @@ private static final long serialVersionUID = 0L;
         result.externalDocs_ = externalDocsBuilder_ == null
             ? externalDocs_
             : externalDocsBuilder_.build();
+        to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.example_ = example_;
       }
+      result.bitField0_ |= to_bitField0_;
     }
 
+    @java.lang.Override
+    public Builder clone() {
+      return super.clone();
+    }
+    @java.lang.Override
+    public Builder setField(
+        com.google.protobuf.Descriptors.FieldDescriptor field,
+        java.lang.Object value) {
+      return super.setField(field, value);
+    }
+    @java.lang.Override
+    public Builder clearField(
+        com.google.protobuf.Descriptors.FieldDescriptor field) {
+      return super.clearField(field);
+    }
+    @java.lang.Override
+    public Builder clearOneof(
+        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+      return super.clearOneof(oneof);
+    }
+    @java.lang.Override
+    public Builder setRepeatedField(
+        com.google.protobuf.Descriptors.FieldDescriptor field,
+        int index, java.lang.Object value) {
+      return super.setRepeatedField(field, index, value);
+    }
+    @java.lang.Override
+    public Builder addRepeatedField(
+        com.google.protobuf.Descriptors.FieldDescriptor field,
+        java.lang.Object value) {
+      return super.addRepeatedField(field, value);
+    }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.grpc.gateway.protoc_gen_openapiv2.options.Schema) {
@@ -717,8 +763,10 @@ private static final long serialVersionUID = 0L;
       } else {
         jsonSchemaBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000001;
-      onChanged();
+      if (jsonSchema_ != null) {
+        bitField0_ |= 0x00000001;
+        onChanged();
+      }
       return this;
     }
     /**
@@ -1024,8 +1072,10 @@ private static final long serialVersionUID = 0L;
       } else {
         externalDocsBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000008;
-      onChanged();
+      if (externalDocs_ != null) {
+        bitField0_ |= 0x00000008;
+        onChanged();
+      }
       return this;
     }
     /**

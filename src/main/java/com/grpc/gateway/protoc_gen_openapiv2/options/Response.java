@@ -61,6 +61,7 @@ private static final long serialVersionUID = 0L;
             com.grpc.gateway.protoc_gen_openapiv2.options.Response.class, com.grpc.gateway.protoc_gen_openapiv2.options.Response.Builder.class);
   }
 
+  private int bitField0_;
   public static final int DESCRIPTION_FIELD_NUMBER = 1;
   @SuppressWarnings("serial")
   private volatile java.lang.Object description_ = "";
@@ -123,7 +124,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasSchema() {
-    return schema_ != null;
+    return ((bitField0_ & 0x00000001) != 0);
   }
   /**
    * <pre>
@@ -473,7 +474,7 @@ com.google.protobuf.Value defaultValue) {
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, description_);
     }
-    if (schema_ != null) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(2, getSchema());
     }
     com.google.protobuf.GeneratedMessageV3
@@ -506,7 +507,7 @@ com.google.protobuf.Value defaultValue) {
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, description_);
     }
-    if (schema_ != null) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, getSchema());
     }
@@ -646,11 +647,13 @@ com.google.protobuf.Value defaultValue) {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
+
   public static com.grpc.gateway.protoc_gen_openapiv2.options.Response parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
+
   public static com.grpc.gateway.protoc_gen_openapiv2.options.Response parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -750,13 +753,19 @@ com.google.protobuf.Value defaultValue) {
 
     // Construct using com.grpc.gateway.protoc_gen_openapiv2.options.Response.newBuilder()
     private Builder() {
-
+      maybeForceBuilderInitialization();
     }
 
     private Builder(
         com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-
+      maybeForceBuilderInitialization();
+    }
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3
+              .alwaysUseFieldBuilders) {
+        getSchemaFieldBuilder();
+      }
     }
     @java.lang.Override
     public Builder clear() {
@@ -807,10 +816,12 @@ com.google.protobuf.Value defaultValue) {
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.description_ = description_;
       }
+      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.schema_ = schemaBuilder_ == null
             ? schema_
             : schemaBuilder_.build();
+        to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.headers_ = internalGetHeaders();
@@ -824,8 +835,41 @@ com.google.protobuf.Value defaultValue) {
         result.extensions_ = internalGetExtensions();
         result.extensions_.makeImmutable();
       }
+      result.bitField0_ |= to_bitField0_;
     }
 
+    @java.lang.Override
+    public Builder clone() {
+      return super.clone();
+    }
+    @java.lang.Override
+    public Builder setField(
+        com.google.protobuf.Descriptors.FieldDescriptor field,
+        java.lang.Object value) {
+      return super.setField(field, value);
+    }
+    @java.lang.Override
+    public Builder clearField(
+        com.google.protobuf.Descriptors.FieldDescriptor field) {
+      return super.clearField(field);
+    }
+    @java.lang.Override
+    public Builder clearOneof(
+        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+      return super.clearOneof(oneof);
+    }
+    @java.lang.Override
+    public Builder setRepeatedField(
+        com.google.protobuf.Descriptors.FieldDescriptor field,
+        int index, java.lang.Object value) {
+      return super.setRepeatedField(field, index, value);
+    }
+    @java.lang.Override
+    public Builder addRepeatedField(
+        com.google.protobuf.Descriptors.FieldDescriptor field,
+        java.lang.Object value) {
+      return super.addRepeatedField(field, value);
+    }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.grpc.gateway.protoc_gen_openapiv2.options.Response) {
@@ -1125,8 +1169,10 @@ com.google.protobuf.Value defaultValue) {
       } else {
         schemaBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000002;
-      onChanged();
+      if (schema_ != null) {
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
       return this;
     }
     /**

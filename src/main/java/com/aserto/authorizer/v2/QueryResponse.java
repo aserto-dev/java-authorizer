@@ -41,6 +41,7 @@ private static final long serialVersionUID = 0L;
             com.aserto.authorizer.v2.QueryResponse.class, com.aserto.authorizer.v2.QueryResponse.Builder.class);
   }
 
+  private int bitField0_;
   public static final int RESPONSE_FIELD_NUMBER = 1;
   private com.google.protobuf.Struct response_;
   /**
@@ -49,7 +50,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasResponse() {
-    return response_ != null;
+    return ((bitField0_ & 0x00000001) != 0);
   }
   /**
    * <code>.google.protobuf.Struct response = 1 [json_name = "response"];</code>
@@ -75,7 +76,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasMetrics() {
-    return metrics_ != null;
+    return ((bitField0_ & 0x00000002) != 0);
   }
   /**
    * <code>.google.protobuf.Struct metrics = 2 [json_name = "metrics"];</code>
@@ -185,10 +186,10 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (response_ != null) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(1, getResponse());
     }
-    if (metrics_ != null) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(2, getMetrics());
     }
     for (int i = 0; i < trace_.size(); i++) {
@@ -206,11 +207,11 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (response_ != null) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getResponse());
     }
-    if (metrics_ != null) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, getMetrics());
     }
@@ -331,11 +332,13 @@ private static final long serialVersionUID = 0L;
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
+
   public static com.aserto.authorizer.v2.QueryResponse parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
+
   public static com.aserto.authorizer.v2.QueryResponse parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -399,13 +402,21 @@ private static final long serialVersionUID = 0L;
 
     // Construct using com.aserto.authorizer.v2.QueryResponse.newBuilder()
     private Builder() {
-
+      maybeForceBuilderInitialization();
     }
 
     private Builder(
         com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-
+      maybeForceBuilderInitialization();
+    }
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3
+              .alwaysUseFieldBuilders) {
+        getResponseFieldBuilder();
+        getMetricsFieldBuilder();
+        getTraceFieldBuilder();
+      }
     }
     @java.lang.Override
     public Builder clear() {
@@ -476,22 +487,58 @@ private static final long serialVersionUID = 0L;
 
     private void buildPartial0(com.aserto.authorizer.v2.QueryResponse result) {
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.response_ = responseBuilder_ == null
             ? response_
             : responseBuilder_.build();
+        to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.metrics_ = metricsBuilder_ == null
             ? metrics_
             : metricsBuilder_.build();
+        to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         traceSummary_.makeImmutable();
         result.traceSummary_ = traceSummary_;
       }
+      result.bitField0_ |= to_bitField0_;
     }
 
+    @java.lang.Override
+    public Builder clone() {
+      return super.clone();
+    }
+    @java.lang.Override
+    public Builder setField(
+        com.google.protobuf.Descriptors.FieldDescriptor field,
+        java.lang.Object value) {
+      return super.setField(field, value);
+    }
+    @java.lang.Override
+    public Builder clearField(
+        com.google.protobuf.Descriptors.FieldDescriptor field) {
+      return super.clearField(field);
+    }
+    @java.lang.Override
+    public Builder clearOneof(
+        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+      return super.clearOneof(oneof);
+    }
+    @java.lang.Override
+    public Builder setRepeatedField(
+        com.google.protobuf.Descriptors.FieldDescriptor field,
+        int index, java.lang.Object value) {
+      return super.setRepeatedField(field, index, value);
+    }
+    @java.lang.Override
+    public Builder addRepeatedField(
+        com.google.protobuf.Descriptors.FieldDescriptor field,
+        java.lang.Object value) {
+      return super.addRepeatedField(field, value);
+    }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.aserto.authorizer.v2.QueryResponse) {
@@ -688,8 +735,10 @@ private static final long serialVersionUID = 0L;
       } else {
         responseBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000001;
-      onChanged();
+      if (response_ != null) {
+        bitField0_ |= 0x00000001;
+        onChanged();
+      }
       return this;
     }
     /**
@@ -807,8 +856,10 @@ private static final long serialVersionUID = 0L;
       } else {
         metricsBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000002;
-      onChanged();
+      if (metrics_ != null) {
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
       return this;
     }
     /**

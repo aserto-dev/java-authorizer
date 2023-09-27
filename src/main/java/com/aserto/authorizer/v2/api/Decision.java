@@ -119,7 +119,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasTimestamp() {
-    return timestamp_ != null;
+    return ((bitField0_ & 0x00000001) != 0);
   }
   /**
    * <pre>
@@ -204,7 +204,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasUser() {
-    return user_ != null;
+    return ((bitField0_ & 0x00000002) != 0);
   }
   /**
    * <pre>
@@ -242,7 +242,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasPolicy() {
-    return policy_ != null;
+    return ((bitField0_ & 0x00000004) != 0);
   }
   /**
    * <pre>
@@ -373,7 +373,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasResource() {
-    return resource_ != null;
+    return ((bitField0_ & 0x00000008) != 0);
   }
   /**
    * <pre>
@@ -507,7 +507,7 @@ java.lang.String defaultValue) {
    */
   @java.lang.Override
   public boolean hasTenantId() {
-    return ((bitField0_ & 0x00000001) != 0);
+    return ((bitField0_ & 0x00000010) != 0);
   }
   /**
    * <pre>
@@ -570,16 +570,16 @@ java.lang.String defaultValue) {
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
     }
-    if (timestamp_ != null) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(2, getTimestamp());
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(path_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, path_);
     }
-    if (user_ != null) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(4, getUser());
     }
-    if (policy_ != null) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(5, getPolicy());
     }
     com.google.protobuf.GeneratedMessageV3
@@ -588,7 +588,7 @@ java.lang.String defaultValue) {
         internalGetOutcomes(),
         OutcomesDefaultEntryHolder.defaultEntry,
         6);
-    if (resource_ != null) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       output.writeMessage(7, getResource());
     }
     com.google.protobuf.GeneratedMessageV3
@@ -597,7 +597,7 @@ java.lang.String defaultValue) {
         internalGetAnnotations(),
         AnnotationsDefaultEntryHolder.defaultEntry,
         8);
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 9, tenantId_);
     }
     getUnknownFields().writeTo(output);
@@ -612,18 +612,18 @@ java.lang.String defaultValue) {
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
     }
-    if (timestamp_ != null) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, getTimestamp());
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(path_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, path_);
     }
-    if (user_ != null) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(4, getUser());
     }
-    if (policy_ != null) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(5, getPolicy());
     }
@@ -637,7 +637,7 @@ java.lang.String defaultValue) {
       size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(6, outcomes__);
     }
-    if (resource_ != null) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(7, getResource());
     }
@@ -651,7 +651,7 @@ java.lang.String defaultValue) {
       size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(8, annotations__);
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, tenantId_);
     }
     size += getUnknownFields().getSerializedSize();
@@ -794,11 +794,13 @@ java.lang.String defaultValue) {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
+
   public static com.aserto.authorizer.v2.api.Decision parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
+
   public static com.aserto.authorizer.v2.api.Decision parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -892,13 +894,22 @@ java.lang.String defaultValue) {
 
     // Construct using com.aserto.authorizer.v2.api.Decision.newBuilder()
     private Builder() {
-
+      maybeForceBuilderInitialization();
     }
 
     private Builder(
         com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-
+      maybeForceBuilderInitialization();
+    }
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3
+              .alwaysUseFieldBuilders) {
+        getTimestampFieldBuilder();
+        getUserFieldBuilder();
+        getPolicyFieldBuilder();
+        getResourceFieldBuilder();
+      }
     }
     @java.lang.Override
     public Builder clear() {
@@ -965,10 +976,12 @@ java.lang.String defaultValue) {
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.id_ = id_;
       }
+      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.timestamp_ = timestampBuilder_ == null
             ? timestamp_
             : timestampBuilder_.build();
+        to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.path_ = path_;
@@ -977,11 +990,13 @@ java.lang.String defaultValue) {
         result.user_ = userBuilder_ == null
             ? user_
             : userBuilder_.build();
+        to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.policy_ = policyBuilder_ == null
             ? policy_
             : policyBuilder_.build();
+        to_bitField0_ |= 0x00000004;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.outcomes_ = internalGetOutcomes();
@@ -991,19 +1006,51 @@ java.lang.String defaultValue) {
         result.resource_ = resourceBuilder_ == null
             ? resource_
             : resourceBuilder_.build();
+        to_bitField0_ |= 0x00000008;
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
         result.annotations_ = internalGetAnnotations();
         result.annotations_.makeImmutable();
       }
-      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000100) != 0)) {
         result.tenantId_ = tenantId_;
-        to_bitField0_ |= 0x00000001;
+        to_bitField0_ |= 0x00000010;
       }
       result.bitField0_ |= to_bitField0_;
     }
 
+    @java.lang.Override
+    public Builder clone() {
+      return super.clone();
+    }
+    @java.lang.Override
+    public Builder setField(
+        com.google.protobuf.Descriptors.FieldDescriptor field,
+        java.lang.Object value) {
+      return super.setField(field, value);
+    }
+    @java.lang.Override
+    public Builder clearField(
+        com.google.protobuf.Descriptors.FieldDescriptor field) {
+      return super.clearField(field);
+    }
+    @java.lang.Override
+    public Builder clearOneof(
+        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+      return super.clearOneof(oneof);
+    }
+    @java.lang.Override
+    public Builder setRepeatedField(
+        com.google.protobuf.Descriptors.FieldDescriptor field,
+        int index, java.lang.Object value) {
+      return super.setRepeatedField(field, index, value);
+    }
+    @java.lang.Override
+    public Builder addRepeatedField(
+        com.google.protobuf.Descriptors.FieldDescriptor field,
+        java.lang.Object value) {
+      return super.addRepeatedField(field, value);
+    }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.aserto.authorizer.v2.api.Decision) {
@@ -1331,8 +1378,10 @@ java.lang.String defaultValue) {
       } else {
         timestampBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000002;
-      onChanged();
+      if (timestamp_ != null) {
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
       return this;
     }
     /**
@@ -1578,8 +1627,10 @@ java.lang.String defaultValue) {
       } else {
         userBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000008;
-      onChanged();
+      if (user_ != null) {
+        bitField0_ |= 0x00000008;
+        onChanged();
+      }
       return this;
     }
     /**
@@ -1733,8 +1784,10 @@ java.lang.String defaultValue) {
       } else {
         policyBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000010;
-      onChanged();
+      if (policy_ != null) {
+        bitField0_ |= 0x00000010;
+        onChanged();
+      }
       return this;
     }
     /**
@@ -2041,8 +2094,10 @@ java.lang.String defaultValue) {
       } else {
         resourceBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000040;
-      onChanged();
+      if (resource_ != null) {
+        bitField0_ |= 0x00000040;
+        onChanged();
+      }
       return this;
     }
     /**

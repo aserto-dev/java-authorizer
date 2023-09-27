@@ -91,6 +91,7 @@ private static final long serialVersionUID = 0L;
             com.grpc.gateway.protoc_gen_openapiv2.options.Operation.class, com.grpc.gateway.protoc_gen_openapiv2.options.Operation.Builder.class);
   }
 
+  private int bitField0_;
   public static final int TAGS_FIELD_NUMBER = 1;
   @SuppressWarnings("serial")
   private com.google.protobuf.LazyStringArrayList tags_ =
@@ -258,7 +259,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasExternalDocs() {
-    return externalDocs_ != null;
+    return ((bitField0_ & 0x00000001) != 0);
   }
   /**
    * <pre>
@@ -860,7 +861,7 @@ com.google.protobuf.Value defaultValue) {
    */
   @java.lang.Override
   public boolean hasParameters() {
-    return parameters_ != null;
+    return ((bitField0_ & 0x00000002) != 0);
   }
   /**
    * <pre>
@@ -914,7 +915,7 @@ com.google.protobuf.Value defaultValue) {
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, description_);
     }
-    if (externalDocs_ != null) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(4, getExternalDocs());
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(operationId_)) {
@@ -951,7 +952,7 @@ com.google.protobuf.Value defaultValue) {
         internalGetExtensions(),
         ExtensionsDefaultEntryHolder.defaultEntry,
         13);
-    if (parameters_ != null) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(14, getParameters());
     }
     getUnknownFields().writeTo(output);
@@ -977,7 +978,7 @@ com.google.protobuf.Value defaultValue) {
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, description_);
     }
-    if (externalDocs_ != null) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(4, getExternalDocs());
     }
@@ -1040,7 +1041,7 @@ com.google.protobuf.Value defaultValue) {
       size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(13, extensions__);
     }
-    if (parameters_ != null) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(14, getParameters());
     }
@@ -1195,11 +1196,13 @@ com.google.protobuf.Value defaultValue) {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
+
   public static com.grpc.gateway.protoc_gen_openapiv2.options.Operation parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
+
   public static com.grpc.gateway.protoc_gen_openapiv2.options.Operation parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1317,13 +1320,21 @@ com.google.protobuf.Value defaultValue) {
 
     // Construct using com.grpc.gateway.protoc_gen_openapiv2.options.Operation.newBuilder()
     private Builder() {
-
+      maybeForceBuilderInitialization();
     }
 
     private Builder(
         com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-
+      maybeForceBuilderInitialization();
+    }
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3
+              .alwaysUseFieldBuilders) {
+        getExternalDocsFieldBuilder();
+        getSecurityFieldBuilder();
+        getParametersFieldBuilder();
+      }
     }
     @java.lang.Override
     public Builder clear() {
@@ -1421,10 +1432,12 @@ com.google.protobuf.Value defaultValue) {
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.description_ = description_;
       }
+      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.externalDocs_ = externalDocsBuilder_ == null
             ? externalDocs_
             : externalDocsBuilder_.build();
+        to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.operationId_ = operationId_;
@@ -1452,9 +1465,43 @@ com.google.protobuf.Value defaultValue) {
         result.parameters_ = parametersBuilder_ == null
             ? parameters_
             : parametersBuilder_.build();
+        to_bitField0_ |= 0x00000002;
       }
+      result.bitField0_ |= to_bitField0_;
     }
 
+    @java.lang.Override
+    public Builder clone() {
+      return super.clone();
+    }
+    @java.lang.Override
+    public Builder setField(
+        com.google.protobuf.Descriptors.FieldDescriptor field,
+        java.lang.Object value) {
+      return super.setField(field, value);
+    }
+    @java.lang.Override
+    public Builder clearField(
+        com.google.protobuf.Descriptors.FieldDescriptor field) {
+      return super.clearField(field);
+    }
+    @java.lang.Override
+    public Builder clearOneof(
+        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+      return super.clearOneof(oneof);
+    }
+    @java.lang.Override
+    public Builder setRepeatedField(
+        com.google.protobuf.Descriptors.FieldDescriptor field,
+        int index, java.lang.Object value) {
+      return super.setRepeatedField(field, index, value);
+    }
+    @java.lang.Override
+    public Builder addRepeatedField(
+        com.google.protobuf.Descriptors.FieldDescriptor field,
+        java.lang.Object value) {
+      return super.addRepeatedField(field, value);
+    }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.grpc.gateway.protoc_gen_openapiv2.options.Operation) {
@@ -2142,8 +2189,10 @@ com.google.protobuf.Value defaultValue) {
       } else {
         externalDocsBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000008;
-      onChanged();
+      if (externalDocs_ != null) {
+        bitField0_ |= 0x00000008;
+        onChanged();
+      }
       return this;
     }
     /**
@@ -3718,8 +3767,10 @@ com.google.protobuf.Value defaultValue) {
       } else {
         parametersBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00001000;
-      onChanged();
+      if (parameters_ != null) {
+        bitField0_ |= 0x00001000;
+        onChanged();
+      }
       return this;
     }
     /**

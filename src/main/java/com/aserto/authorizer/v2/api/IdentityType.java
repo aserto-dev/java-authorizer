@@ -44,6 +44,14 @@ public enum IdentityType
    * <code>IDENTITY_TYPE_JWT = 3;</code>
    */
   IDENTITY_TYPE_JWT(3),
+  /**
+   * <pre>
+   * Manual, propagates thw identity field as-is, without validation, into the input object.
+   * </pre>
+   *
+   * <code>IDENTITY_TYPE_MANUAL = 4;</code>
+   */
+  IDENTITY_TYPE_MANUAL(4),
   UNRECOGNIZED(-1),
   ;
 
@@ -79,6 +87,14 @@ public enum IdentityType
    * <code>IDENTITY_TYPE_JWT = 3;</code>
    */
   public static final int IDENTITY_TYPE_JWT_VALUE = 3;
+  /**
+   * <pre>
+   * Manual, propagates thw identity field as-is, without validation, into the input object.
+   * </pre>
+   *
+   * <code>IDENTITY_TYPE_MANUAL = 4;</code>
+   */
+  public static final int IDENTITY_TYPE_MANUAL_VALUE = 4;
 
 
   public final int getNumber() {
@@ -109,6 +125,7 @@ public enum IdentityType
       case 1: return IDENTITY_TYPE_NONE;
       case 2: return IDENTITY_TYPE_SUB;
       case 3: return IDENTITY_TYPE_JWT;
+      case 4: return IDENTITY_TYPE_MANUAL;
       default: return null;
     }
   }

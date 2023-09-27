@@ -488,11 +488,13 @@ private static final long serialVersionUID = 0L;
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
+
     public static com.grpc.gateway.protoc_gen_openapiv2.options.JSONSchema.FieldConfiguration parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
+
     public static com.grpc.gateway.protoc_gen_openapiv2.options.JSONSchema.FieldConfiguration parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -612,6 +614,38 @@ private static final long serialVersionUID = 0L;
         }
       }
 
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.grpc.gateway.protoc_gen_openapiv2.options.JSONSchema.FieldConfiguration) {
@@ -847,6 +881,7 @@ private static final long serialVersionUID = 0L;
 
   }
 
+  private int bitField0_;
   public static final int REF_FIELD_NUMBER = 3;
   @SuppressWarnings("serial")
   private volatile java.lang.Object ref_ = "";
@@ -1540,7 +1575,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasFieldConfiguration() {
-    return fieldConfiguration_ != null;
+    return ((bitField0_ & 0x00000001) != 0);
   }
   /**
    * <pre>
@@ -1766,7 +1801,7 @@ com.google.protobuf.Value defaultValue) {
         internalGetExtensions(),
         ExtensionsDefaultEntryHolder.defaultEntry,
         48);
-    if (fieldConfiguration_ != null) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(1001, getFieldConfiguration());
     }
     getUnknownFields().writeTo(output);
@@ -1897,7 +1932,7 @@ com.google.protobuf.Value defaultValue) {
       size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(48, extensions__);
     }
-    if (fieldConfiguration_ != null) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1001, getFieldConfiguration());
     }
@@ -2110,11 +2145,13 @@ com.google.protobuf.Value defaultValue) {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
+
   public static com.grpc.gateway.protoc_gen_openapiv2.options.JSONSchema parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
+
   public static com.grpc.gateway.protoc_gen_openapiv2.options.JSONSchema parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -2230,13 +2267,19 @@ com.google.protobuf.Value defaultValue) {
 
     // Construct using com.grpc.gateway.protoc_gen_openapiv2.options.JSONSchema.newBuilder()
     private Builder() {
-
+      maybeForceBuilderInitialization();
     }
 
     private Builder(
         com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-
+      maybeForceBuilderInitialization();
+    }
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3
+              .alwaysUseFieldBuilders) {
+        getFieldConfigurationFieldBuilder();
+      }
     }
     @java.lang.Override
     public Builder clear() {
@@ -2390,17 +2433,52 @@ com.google.protobuf.Value defaultValue) {
         enum_.makeImmutable();
         result.enum_ = enum_;
       }
+      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x01000000) != 0)) {
         result.fieldConfiguration_ = fieldConfigurationBuilder_ == null
             ? fieldConfiguration_
             : fieldConfigurationBuilder_.build();
+        to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x02000000) != 0)) {
         result.extensions_ = internalGetExtensions();
         result.extensions_.makeImmutable();
       }
+      result.bitField0_ |= to_bitField0_;
     }
 
+    @java.lang.Override
+    public Builder clone() {
+      return super.clone();
+    }
+    @java.lang.Override
+    public Builder setField(
+        com.google.protobuf.Descriptors.FieldDescriptor field,
+        java.lang.Object value) {
+      return super.setField(field, value);
+    }
+    @java.lang.Override
+    public Builder clearField(
+        com.google.protobuf.Descriptors.FieldDescriptor field) {
+      return super.clearField(field);
+    }
+    @java.lang.Override
+    public Builder clearOneof(
+        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+      return super.clearOneof(oneof);
+    }
+    @java.lang.Override
+    public Builder setRepeatedField(
+        com.google.protobuf.Descriptors.FieldDescriptor field,
+        int index, java.lang.Object value) {
+      return super.setRepeatedField(field, index, value);
+    }
+    @java.lang.Override
+    public Builder addRepeatedField(
+        com.google.protobuf.Descriptors.FieldDescriptor field,
+        java.lang.Object value) {
+      return super.addRepeatedField(field, value);
+    }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.grpc.gateway.protoc_gen_openapiv2.options.JSONSchema) {
@@ -4443,8 +4521,10 @@ com.google.protobuf.Value defaultValue) {
       } else {
         fieldConfigurationBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x01000000;
-      onChanged();
+      if (fieldConfiguration_ != null) {
+        bitField0_ |= 0x01000000;
+        onChanged();
+      }
       return this;
     }
     /**

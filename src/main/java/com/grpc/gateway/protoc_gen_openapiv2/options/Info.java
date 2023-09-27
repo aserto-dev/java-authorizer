@@ -23,7 +23,7 @@ package com.grpc.gateway.protoc_gen_openapiv2.options;
  *      };
  *      license: {
  *        name: "BSD 3-Clause License";
- *        url: "https://github.com/grpc-ecosystem/grpc-gateway/blob/main/LICENSE.txt";
+ *        url: "https://github.com/grpc-ecosystem/grpc-gateway/blob/main/LICENSE";
  *      };
  *    };
  *    ...
@@ -80,6 +80,7 @@ private static final long serialVersionUID = 0L;
             com.grpc.gateway.protoc_gen_openapiv2.options.Info.class, com.grpc.gateway.protoc_gen_openapiv2.options.Info.Builder.class);
   }
 
+  private int bitField0_;
   public static final int TITLE_FIELD_NUMBER = 1;
   @SuppressWarnings("serial")
   private volatile java.lang.Object title_ = "";
@@ -235,7 +236,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasContact() {
-    return contact_ != null;
+    return ((bitField0_ & 0x00000001) != 0);
   }
   /**
    * <pre>
@@ -273,7 +274,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasLicense() {
-    return license_ != null;
+    return ((bitField0_ & 0x00000002) != 0);
   }
   /**
    * <pre>
@@ -474,10 +475,10 @@ com.google.protobuf.Value defaultValue) {
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(termsOfService_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, termsOfService_);
     }
-    if (contact_ != null) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(4, getContact());
     }
-    if (license_ != null) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(5, getLicense());
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(version_)) {
@@ -507,11 +508,11 @@ com.google.protobuf.Value defaultValue) {
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(termsOfService_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, termsOfService_);
     }
-    if (contact_ != null) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(4, getContact());
     }
-    if (license_ != null) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(5, getLicense());
     }
@@ -643,11 +644,13 @@ com.google.protobuf.Value defaultValue) {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
+
   public static com.grpc.gateway.protoc_gen_openapiv2.options.Info parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
+
   public static com.grpc.gateway.protoc_gen_openapiv2.options.Info parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -709,7 +712,7 @@ com.google.protobuf.Value defaultValue) {
    *      };
    *      license: {
    *        name: "BSD 3-Clause License";
-   *        url: "https://github.com/grpc-ecosystem/grpc-gateway/blob/main/LICENSE.txt";
+   *        url: "https://github.com/grpc-ecosystem/grpc-gateway/blob/main/LICENSE";
    *      };
    *    };
    *    ...
@@ -759,13 +762,20 @@ com.google.protobuf.Value defaultValue) {
 
     // Construct using com.grpc.gateway.protoc_gen_openapiv2.options.Info.newBuilder()
     private Builder() {
-
+      maybeForceBuilderInitialization();
     }
 
     private Builder(
         com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-
+      maybeForceBuilderInitialization();
+    }
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3
+              .alwaysUseFieldBuilders) {
+        getContactFieldBuilder();
+        getLicenseFieldBuilder();
+      }
     }
     @java.lang.Override
     public Builder clear() {
@@ -828,15 +838,18 @@ com.google.protobuf.Value defaultValue) {
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.termsOfService_ = termsOfService_;
       }
+      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.contact_ = contactBuilder_ == null
             ? contact_
             : contactBuilder_.build();
+        to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.license_ = licenseBuilder_ == null
             ? license_
             : licenseBuilder_.build();
+        to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.version_ = version_;
@@ -845,8 +858,41 @@ com.google.protobuf.Value defaultValue) {
         result.extensions_ = internalGetExtensions();
         result.extensions_.makeImmutable();
       }
+      result.bitField0_ |= to_bitField0_;
     }
 
+    @java.lang.Override
+    public Builder clone() {
+      return super.clone();
+    }
+    @java.lang.Override
+    public Builder setField(
+        com.google.protobuf.Descriptors.FieldDescriptor field,
+        java.lang.Object value) {
+      return super.setField(field, value);
+    }
+    @java.lang.Override
+    public Builder clearField(
+        com.google.protobuf.Descriptors.FieldDescriptor field) {
+      return super.clearField(field);
+    }
+    @java.lang.Override
+    public Builder clearOneof(
+        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+      return super.clearOneof(oneof);
+    }
+    @java.lang.Override
+    public Builder setRepeatedField(
+        com.google.protobuf.Descriptors.FieldDescriptor field,
+        int index, java.lang.Object value) {
+      return super.setRepeatedField(field, index, value);
+    }
+    @java.lang.Override
+    public Builder addRepeatedField(
+        com.google.protobuf.Descriptors.FieldDescriptor field,
+        java.lang.Object value) {
+      return super.addRepeatedField(field, value);
+    }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.grpc.gateway.protoc_gen_openapiv2.options.Info) {
@@ -1341,8 +1387,10 @@ com.google.protobuf.Value defaultValue) {
       } else {
         contactBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000008;
-      onChanged();
+      if (contact_ != null) {
+        bitField0_ |= 0x00000008;
+        onChanged();
+      }
       return this;
     }
     /**
@@ -1496,8 +1544,10 @@ com.google.protobuf.Value defaultValue) {
       } else {
         licenseBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000010;
-      onChanged();
+      if (license_ != null) {
+        bitField0_ |= 0x00000010;
+        onChanged();
+      }
       return this;
     }
     /**

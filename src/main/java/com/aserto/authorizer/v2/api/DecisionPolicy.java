@@ -46,6 +46,7 @@ private static final long serialVersionUID = 0L;
             com.aserto.authorizer.v2.api.DecisionPolicy.class, com.aserto.authorizer.v2.api.DecisionPolicy.Builder.class);
   }
 
+  private int bitField0_;
   public static final int CONTEXT_FIELD_NUMBER = 1;
   private com.aserto.authorizer.v2.api.PolicyContext context_;
   /**
@@ -58,7 +59,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasContext() {
-    return context_ != null;
+    return ((bitField0_ & 0x00000001) != 0);
   }
   /**
    * <pre>
@@ -284,7 +285,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasPolicyInstance() {
-    return policyInstance_ != null;
+    return ((bitField0_ & 0x00000002) != 0);
   }
   /**
    * <pre>
@@ -324,7 +325,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (context_ != null) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(1, getContext());
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(registryService_)) {
@@ -339,7 +340,7 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(registryDigest_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, registryDigest_);
     }
-    if (policyInstance_ != null) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(6, getPolicyInstance());
     }
     getUnknownFields().writeTo(output);
@@ -351,7 +352,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (context_ != null) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getContext());
     }
@@ -367,7 +368,7 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(registryDigest_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, registryDigest_);
     }
-    if (policyInstance_ != null) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(6, getPolicyInstance());
     }
@@ -480,11 +481,13 @@ private static final long serialVersionUID = 0L;
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
+
   public static com.aserto.authorizer.v2.api.DecisionPolicy parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
+
   public static com.aserto.authorizer.v2.api.DecisionPolicy parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -552,13 +555,20 @@ private static final long serialVersionUID = 0L;
 
     // Construct using com.aserto.authorizer.v2.api.DecisionPolicy.newBuilder()
     private Builder() {
-
+      maybeForceBuilderInitialization();
     }
 
     private Builder(
         com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-
+      maybeForceBuilderInitialization();
+    }
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3
+              .alwaysUseFieldBuilders) {
+        getContextFieldBuilder();
+        getPolicyInstanceFieldBuilder();
+      }
     }
     @java.lang.Override
     public Builder clear() {
@@ -611,10 +621,12 @@ private static final long serialVersionUID = 0L;
 
     private void buildPartial0(com.aserto.authorizer.v2.api.DecisionPolicy result) {
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.context_ = contextBuilder_ == null
             ? context_
             : contextBuilder_.build();
+        to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.registryService_ = registryService_;
@@ -632,9 +644,43 @@ private static final long serialVersionUID = 0L;
         result.policyInstance_ = policyInstanceBuilder_ == null
             ? policyInstance_
             : policyInstanceBuilder_.build();
+        to_bitField0_ |= 0x00000002;
       }
+      result.bitField0_ |= to_bitField0_;
     }
 
+    @java.lang.Override
+    public Builder clone() {
+      return super.clone();
+    }
+    @java.lang.Override
+    public Builder setField(
+        com.google.protobuf.Descriptors.FieldDescriptor field,
+        java.lang.Object value) {
+      return super.setField(field, value);
+    }
+    @java.lang.Override
+    public Builder clearField(
+        com.google.protobuf.Descriptors.FieldDescriptor field) {
+      return super.clearField(field);
+    }
+    @java.lang.Override
+    public Builder clearOneof(
+        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+      return super.clearOneof(oneof);
+    }
+    @java.lang.Override
+    public Builder setRepeatedField(
+        com.google.protobuf.Descriptors.FieldDescriptor field,
+        int index, java.lang.Object value) {
+      return super.setRepeatedField(field, index, value);
+    }
+    @java.lang.Override
+    public Builder addRepeatedField(
+        com.google.protobuf.Descriptors.FieldDescriptor field,
+        java.lang.Object value) {
+      return super.addRepeatedField(field, value);
+    }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.aserto.authorizer.v2.api.DecisionPolicy) {
@@ -836,8 +882,10 @@ private static final long serialVersionUID = 0L;
       } else {
         contextBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000001;
-      onChanged();
+      if (context_ != null) {
+        bitField0_ |= 0x00000001;
+        onChanged();
+      }
       return this;
     }
     /**
@@ -1359,8 +1407,10 @@ private static final long serialVersionUID = 0L;
       } else {
         policyInstanceBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000020;
-      onChanged();
+      if (policyInstance_ != null) {
+        bitField0_ |= 0x00000020;
+        onChanged();
+      }
       return this;
     }
     /**

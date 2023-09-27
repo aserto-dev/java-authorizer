@@ -23,7 +23,7 @@ package com.grpc.gateway.protoc_gen_openapiv2.options;
  *      };
  *      license: {
  *        name: "BSD 3-Clause License";
- *        url: "https://github.com/grpc-ecosystem/grpc-gateway/blob/main/LICENSE.txt";
+ *        url: "https://github.com/grpc-ecosystem/grpc-gateway/blob/main/LICENSE";
  *      };
  *    };
  *    schemes: HTTPS;
@@ -90,6 +90,7 @@ private static final long serialVersionUID = 0L;
             com.grpc.gateway.protoc_gen_openapiv2.options.Swagger.class, com.grpc.gateway.protoc_gen_openapiv2.options.Swagger.Builder.class);
   }
 
+  private int bitField0_;
   public static final int SWAGGER_FIELD_NUMBER = 1;
   @SuppressWarnings("serial")
   private volatile java.lang.Object swagger_ = "";
@@ -154,7 +155,7 @@ private static final long serialVersionUID = 0L;
    */
   @java.lang.Override
   public boolean hasInfo() {
-    return info_ != null;
+    return ((bitField0_ & 0x00000001) != 0);
   }
   /**
    * <pre>
@@ -619,7 +620,7 @@ com.grpc.gateway.protoc_gen_openapiv2.options.Response defaultValue) {
    */
   @java.lang.Override
   public boolean hasSecurityDefinitions() {
-    return securityDefinitions_ != null;
+    return ((bitField0_ & 0x00000002) != 0);
   }
   /**
    * <pre>
@@ -799,7 +800,7 @@ com.grpc.gateway.protoc_gen_openapiv2.options.Response defaultValue) {
    */
   @java.lang.Override
   public boolean hasExternalDocs() {
-    return externalDocs_ != null;
+    return ((bitField0_ & 0x00000004) != 0);
   }
   /**
    * <pre>
@@ -946,7 +947,7 @@ com.google.protobuf.Value defaultValue) {
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(swagger_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, swagger_);
     }
-    if (info_ != null) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(2, getInfo());
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(host_)) {
@@ -974,7 +975,7 @@ com.google.protobuf.Value defaultValue) {
         internalGetResponses(),
         ResponsesDefaultEntryHolder.defaultEntry,
         10);
-    if (securityDefinitions_ != null) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(11, getSecurityDefinitions());
     }
     for (int i = 0; i < security_.size(); i++) {
@@ -983,7 +984,7 @@ com.google.protobuf.Value defaultValue) {
     for (int i = 0; i < tags_.size(); i++) {
       output.writeMessage(13, tags_.get(i));
     }
-    if (externalDocs_ != null) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(14, getExternalDocs());
     }
     com.google.protobuf.GeneratedMessageV3
@@ -1004,7 +1005,7 @@ com.google.protobuf.Value defaultValue) {
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(swagger_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, swagger_);
     }
-    if (info_ != null) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, getInfo());
     }
@@ -1052,7 +1053,7 @@ com.google.protobuf.Value defaultValue) {
       size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(10, responses__);
     }
-    if (securityDefinitions_ != null) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(11, getSecurityDefinitions());
     }
@@ -1064,7 +1065,7 @@ com.google.protobuf.Value defaultValue) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(13, tags_.get(i));
     }
-    if (externalDocs_ != null) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(14, getExternalDocs());
     }
@@ -1233,11 +1234,13 @@ com.google.protobuf.Value defaultValue) {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
+
   public static com.grpc.gateway.protoc_gen_openapiv2.options.Swagger parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
+
   public static com.grpc.gateway.protoc_gen_openapiv2.options.Swagger parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1299,7 +1302,7 @@ com.google.protobuf.Value defaultValue) {
    *      };
    *      license: {
    *        name: "BSD 3-Clause License";
-   *        url: "https://github.com/grpc-ecosystem/grpc-gateway/blob/main/LICENSE.txt";
+   *        url: "https://github.com/grpc-ecosystem/grpc-gateway/blob/main/LICENSE";
    *      };
    *    };
    *    schemes: HTTPS;
@@ -1355,13 +1358,23 @@ com.google.protobuf.Value defaultValue) {
 
     // Construct using com.grpc.gateway.protoc_gen_openapiv2.options.Swagger.newBuilder()
     private Builder() {
-
+      maybeForceBuilderInitialization();
     }
 
     private Builder(
         com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-
+      maybeForceBuilderInitialization();
+    }
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3
+              .alwaysUseFieldBuilders) {
+        getInfoFieldBuilder();
+        getSecurityDefinitionsFieldBuilder();
+        getSecurityFieldBuilder();
+        getTagsFieldBuilder();
+        getExternalDocsFieldBuilder();
+      }
     }
     @java.lang.Override
     public Builder clear() {
@@ -1470,10 +1483,12 @@ com.google.protobuf.Value defaultValue) {
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.swagger_ = swagger_;
       }
+      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.info_ = infoBuilder_ == null
             ? info_
             : infoBuilder_.build();
+        to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.host_ = host_;
@@ -1497,18 +1512,53 @@ com.google.protobuf.Value defaultValue) {
         result.securityDefinitions_ = securityDefinitionsBuilder_ == null
             ? securityDefinitions_
             : securityDefinitionsBuilder_.build();
+        to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000800) != 0)) {
         result.externalDocs_ = externalDocsBuilder_ == null
             ? externalDocs_
             : externalDocsBuilder_.build();
+        to_bitField0_ |= 0x00000004;
       }
       if (((from_bitField0_ & 0x00001000) != 0)) {
         result.extensions_ = internalGetExtensions();
         result.extensions_.makeImmutable();
       }
+      result.bitField0_ |= to_bitField0_;
     }
 
+    @java.lang.Override
+    public Builder clone() {
+      return super.clone();
+    }
+    @java.lang.Override
+    public Builder setField(
+        com.google.protobuf.Descriptors.FieldDescriptor field,
+        java.lang.Object value) {
+      return super.setField(field, value);
+    }
+    @java.lang.Override
+    public Builder clearField(
+        com.google.protobuf.Descriptors.FieldDescriptor field) {
+      return super.clearField(field);
+    }
+    @java.lang.Override
+    public Builder clearOneof(
+        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+      return super.clearOneof(oneof);
+    }
+    @java.lang.Override
+    public Builder setRepeatedField(
+        com.google.protobuf.Descriptors.FieldDescriptor field,
+        int index, java.lang.Object value) {
+      return super.setRepeatedField(field, index, value);
+    }
+    @java.lang.Override
+    public Builder addRepeatedField(
+        com.google.protobuf.Descriptors.FieldDescriptor field,
+        java.lang.Object value) {
+      return super.addRepeatedField(field, value);
+    }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.grpc.gateway.protoc_gen_openapiv2.options.Swagger) {
@@ -1978,8 +2028,10 @@ com.google.protobuf.Value defaultValue) {
       } else {
         infoBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000002;
-      onChanged();
+      if (info_ != null) {
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
       return this;
     }
     /**
@@ -3080,8 +3132,10 @@ com.grpc.gateway.protoc_gen_openapiv2.options.Response defaultValue) {
       } else {
         securityDefinitionsBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000100;
-      onChanged();
+      if (securityDefinitions_ != null) {
+        bitField0_ |= 0x00000100;
+        onChanged();
+      }
       return this;
     }
     /**
@@ -3931,8 +3985,10 @@ com.grpc.gateway.protoc_gen_openapiv2.options.Response defaultValue) {
       } else {
         externalDocsBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000800;
-      onChanged();
+      if (externalDocs_ != null) {
+        bitField0_ |= 0x00000800;
+        onChanged();
+      }
       return this;
     }
     /**
