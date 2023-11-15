@@ -34,12 +34,12 @@
     </scm>
 
     <properties>
-        <maven.compiler.source>8</maven.compiler.source>
-        <maven.compiler.target>8</maven.compiler.target>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-        <grpc.version>1.53.0</grpc.version>
-        <protobuf.version>3.22.0</protobuf.version>
+        <grpc.version>1.59.0</grpc.version>
+        <protobuf.version>3.25.0</protobuf.version>
         <tomcat.annotation.api.version>6.0.53</tomcat.annotation.api.version>
     </properties>
 
