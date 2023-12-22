@@ -6,7 +6,7 @@
 
     <groupId>com.aserto</groupId>
     <artifactId>java-authorizer</artifactId>
-    <version>0.20.8</version>
+    <version>0.20.9</version>
 
     <name>${project.groupId}:${project.artifactId}</name>
     <description>A lowe level client generated from the GRPC bindings</description>
