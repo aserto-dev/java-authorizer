@@ -39,7 +39,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
         <grpc.version>1.60.0</grpc.version>
-        <protobuf.version>3.25.0</protobuf.version>
+        <protobuf.version>3.25.1</protobuf.version>
         <tomcat.annotation.api.version>6.0.53</tomcat.annotation.api.version>
     </properties>
 
