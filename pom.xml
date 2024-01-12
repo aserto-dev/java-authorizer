@@ -9,7 +9,7 @@
     <version>0.20.9</version>
 
     <name>${project.groupId}:${project.artifactId}</name>
-    <description>A lowe level client generated from the GRPC bindings</description>
+    <description>Java GRPC bindings for aserto-authorizer. Those are raw bindings, for a better developer experience we recommend you use aserto-java or aserto-spring if your project already uses Spring.</description>
     <url>https://github.com/aserto-dev/java-authorizer</url>
 
     <licenses>
