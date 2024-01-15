@@ -2,7 +2,7 @@
 
 [![slack](https://img.shields.io/badge/slack-Aserto%20Community-brightgreen)](https://asertocommunity.slack.com)
 
-Java GRPC bindings for aserto-authorizer
+Java GRPC bindings for aserto-authorizer. Those are raw bindings, for a better developer experience we recommend you use [aserto-java](https://github.com/aserto-dev/aserto-java) or [aserto-spring](https://github.com/aserto-dev/aserto-spring) if your project already uses Spring.
 
 > **Warning**
 >
