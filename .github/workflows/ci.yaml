@@ -65,6 +65,8 @@ jobs:
             kv/data/MavenCentral  "PASSWORD" | MAVEN_CENTRAL_TOKEN;
             kv/data/MavenCentral  "GPG_PASSPHRASE" | MAVEN_GPG_PASSPHRASE;
             kv/data/MavenCentral  "PRIVATE_GPG_KEY" | MAVEN_GPG_PRIVATE_KEY;
+            kv/data/MavenCentral  "TOKEN_USERNAME" | TOKEN_USERNAME;
+            kv/data/MavenCentral  "TOKEN_PASSWORD" | TOKEN_PASSWORD;
 
       - name: Checkout
         uses: actions/checkout@v4
@@ -77,8 +79,8 @@ jobs:
           java-version: 8
           distribution: temurin
           server-id: ossrh
-          server-username: MAVEN_USERNAME
-          server-password: MAVEN_CENTRAL_TOKEN
+          server-username: TOKEN_USERNAME
+          server-password: TOKEN_PASSWORD
           gpg-private-key: ${{ env.MAVEN_GPG_PRIVATE_KEY }}
           gpg-passphrase: MAVEN_GPG_PASSPHRASE
 
