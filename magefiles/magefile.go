@@ -10,18 +10,16 @@ import (
 
 	"github.com/aserto-dev/clui"
 	"github.com/aserto-dev/mage-loot/buf"
+	"github.com/aserto-dev/mage-loot/common"
 	"github.com/aserto-dev/mage-loot/deps"
 	"github.com/aserto-dev/mage-loot/mage"
-	"github.com/aserto-dev/mage-loot/common"
 	"github.com/magefile/mage/sh"
 )
 
-var (
-	ui = clui.NewUI()
-)
+var ui = clui.NewUI()
 
 func init() {
-	os.Setenv("GO_VERSION", "1.19")
+	os.Setenv("GO_VERSION", "1.22")
 	os.Setenv("GOPRIVATE", "github.com/aserto-dev")
 }
 
@@ -44,8 +42,10 @@ func Deps() {
 }
 
 func Generate() error {
-	bufImages := []string{ "buf.build/aserto-dev/authorizer",
-		"buf.build/grpc-ecosystem/grpc-gateway" }
+	bufImages := []string{
+		"buf.build/aserto-dev/authorizer",
+		"buf.build/grpc-ecosystem/grpc-gateway",
+	}
 
 	for _, bufImage := range bufImages {
 		buffImgWithTag, err := addLatestTag(bufImage)
@@ -104,7 +104,7 @@ func Bump(next string) error {
 	fmt.Println("Bumping version to", nextVersion)
 
 	// write version to maven pom
-	err = sh.RunV("mvn", "versions:set", "-DnewVersion=" + nextVersion)
+	err = sh.RunV("mvn", "versions:set", "-DnewVersion="+nextVersion)
 
 	return err
 }

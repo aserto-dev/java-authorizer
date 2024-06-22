@@ -2,7 +2,7 @@
 go:
   buf:
     importPath: "github.com/bufbuild/buf/cmd/buf"
-    version: "v1.28.0"
+    version: "v1.30.0"
   sver:
     importPath: "github.com/aserto-dev/sver/cmd/sver"
     version: "v1.3.13"
