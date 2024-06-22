@@ -62,9 +62,9 @@ jobs:
           token: ${{ secrets.VAULT_TOKEN }}
           secrets: |
             kv/data/MavenCentral  "USERNAME" | MAVEN_USERNAME;
-            kv/data/MavenCentral  "PASSWORD" | MAVEN_PASSWORD;
+            kv/data/MavenCentral  "PASSWORD" | MAVEN_CENTRAL_TOKEN;
             kv/data/MavenCentral  "GPG_PASSPHRASE" | MAVEN_GPG_PASSPHRASE;
-            kv/data/MavenCentral  "PRIVATE_GPG_KEY" | GPG_PRIVATE_KEY;
+            kv/data/MavenCentral  "PRIVATE_GPG_KEY" | MAVEN_GPG_PRIVATE_KEY;
 
       - name: Checkout
         uses: actions/checkout@v4
@@ -77,10 +77,10 @@ jobs:
           java-version: 8
           distribution: temurin
           server-id: ossrh
-          server-username: ${{ env.MAVEN_USERNAME }}
-          server-password: ${{ env.MAVEN_PASSWORD }}
-          gpg-private-key: ${{ env.GPG_PRIVATE_KEY }}
-          gpg-passphrase: ${{ env.MAVEN_GPG_PASSPHRASE }}
+          server-username: MAVEN_USERNAME
+          server-password: MAVEN_CENTRAL_TOKEN
+          gpg-private-key: ${{ env.MAVEN_GPG_PRIVATE_KEY }}
+          gpg-passphrase: MAVEN_GPG_PASSPHRASE
 
       - name: build artifact
         run: mvn clean package
@@ -93,11 +93,11 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Publish to the Maven Central Repository
-        run: |
-          mvn \
-            --no-transfer-progress \
-            --batch-mode \
-            deploy
+        run: mvn --no-transfer-progress --batch-mode deploy
+        env:
+          MAVEN_USERNAME: ${{ env.MAVEN_USERNAME }}
+          MAVEN_CENTRAL_TOKEN: ${{ env.MAVEN_CENTRAL_TOKEN }}
+          MAVEN_GPG_PASSPHRASE: ${{ env.MAVEN_GPG_PASSPHRASE }}
 
       - name: Bump to the next version
         run: go run mage.go bump patch
