@@ -96,10 +96,6 @@ jobs:
 
       - name: Publish to the Maven Central Repository
         run: mvn --no-transfer-progress --batch-mode deploy
-        env:
-          MAVEN_USERNAME: ${{ env.MAVEN_USERNAME }}
-          MAVEN_CENTRAL_TOKEN: ${{ env.MAVEN_CENTRAL_TOKEN }}
-          MAVEN_GPG_PASSPHRASE: ${{ env.MAVEN_GPG_PASSPHRASE }}
 
       - name: Bump to the next version
         run: go run mage.go bump patch
