@@ -6,10 +6,10 @@
 
     <groupId>com.aserto</groupId>
     <artifactId>java-authorizer</artifactId>
-    <version>0.20.10</version>
+    <version>0.20.11</version>
 
     <name>${project.groupId}:${project.artifactId}</name>
-    <description>Java GRPC bindings for aserto-authorizer. Those are raw bindings, for a better developer experience we recommend you use aserto-java or aserto-spring if your project already uses Spring.</description>
+    <description>Generated Java gRPC bindings for the Topaz and Aserto Authorizer Service; these are low-level bindings. For a more idiomatic development experience, we advise using the aserto-java and/or aserto-spring packages.</description>
     <url>https://github.com/aserto-dev/java-authorizer</url>
 
     <licenses>
@@ -39,7 +39,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
         <grpc.version>1.64.0</grpc.version>
-        <protobuf.version>4.27.1</protobuf.version>
+        <protobuf.version>3.25.3</protobuf.version>
         <tomcat.annotation.api.version>6.0.53</tomcat.annotation.api.version>
     </properties>
 
