@@ -81,7 +81,7 @@ func BuildDev() error {
 
 // Builds the java project
 func Build() error {
-	err := sh.RunV("mvn", "clean", "package")
+	err := sh.RunV("mvn", "--no-transfer-progress", "clean", "package")
 
 	return err
 }
