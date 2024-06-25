@@ -1,0 +1,20 @@
+version: v1
+
+deps:
+  - buf.build/aserto-dev/aserto
+
+lint:
+  use:
+    - DEFAULT
+  except:
+    - PACKAGE_DIRECTORY_MATCH
+    - SERVICE_SUFFIX
+    - PACKAGE_VERSION_SUFFIX
+  enum_zero_value_suffix: _UNKNOWN
+
+breaking:
+  use:
+    - FILE
+    - PACKAGE
+    - WIRE
+    - WIRE_JSON
