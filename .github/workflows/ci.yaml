@@ -129,7 +129,7 @@ jobs:
         name: Run examples
         working-directory: examples
         run: |
-          cp assets/examples/assets/.env.topaz-authorizer.example .env
+          cp assets/.env.topaz-authorizer.example .env
           java -jar target/examples-1.0.0-SNAPSHOT-shaded.jar
         
   release:
