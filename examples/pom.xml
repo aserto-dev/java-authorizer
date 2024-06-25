@@ -18,7 +18,7 @@
         <dependency>
             <groupId>com.aserto</groupId>
             <artifactId>java-authorizer</artifactId>
-            <version>0.20.11</version>
+            <version>[0.20.11,)</version>
         </dependency>
 
         <!-- Used to load .env files -->
