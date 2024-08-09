@@ -30,16 +30,16 @@ public final class PolicyInstanceProto {
   static {
     java.lang.String[] descriptorData = {
       "\n.aserto/authorizer/v2/api/policy_instan" +
-      "ce.proto\022\030aserto.authorizer.v2.api\"K\n\016Po" +
-      "licyInstance\022\022\n\004name\030\001 \001(\tR\004name\022%\n\016inst" +
-      "ance_label\030\002 \001(\tR\rinstanceLabelB\371\001\n\034com." +
-      "aserto.authorizer.v2.apiB\023PolicyInstance" +
-      "ProtoP\001Z@github.com/aserto-dev/go-author" +
-      "izer/aserto/authorizer/v2/api;api\242\002\004AAVA" +
-      "\252\002\030Aserto.Authorizer.V2.Api\312\002\030Aserto\\Aut" +
-      "horizer\\V2\\Api\342\002$Aserto\\Authorizer\\V2\\Ap" +
-      "i\\GPBMetadata\352\002\033Aserto::Authorizer::V2::" +
-      "Apib\006proto3"
+      "ce.proto\022\030aserto.authorizer.v2.api\"O\n\016Po" +
+      "licyInstance\022\022\n\004name\030\001 \001(\tR\004name\022)\n\016inst" +
+      "ance_label\030\002 \001(\tB\002\030\001R\rinstanceLabelB\371\001\n\034" +
+      "com.aserto.authorizer.v2.apiB\023PolicyInst" +
+      "anceProtoP\001Z@github.com/aserto-dev/go-au" +
+      "thorizer/aserto/authorizer/v2/api;api\242\002\004" +
+      "AAVA\252\002\030Aserto.Authorizer.V2.Api\312\002\030Aserto" +
+      "\\Authorizer\\V2\\Api\342\002$Aserto\\Authorizer\\V" +
+      "2\\Api\\GPBMetadata\352\002\033Aserto::Authorizer::" +
+      "V2::Apib\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

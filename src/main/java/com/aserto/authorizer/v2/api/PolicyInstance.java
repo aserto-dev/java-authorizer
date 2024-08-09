@@ -96,11 +96,13 @@ private static final long serialVersionUID = 0L;
    * label identifying the instance of the policy
    * </pre>
    *
-   * <code>string instance_label = 2 [json_name = "instanceLabel"];</code>
+   * <code>string instance_label = 2 [json_name = "instanceLabel", deprecated = true];</code>
+   * @deprecated aserto.authorizer.v2.api.PolicyInstance.instance_label is deprecated.
+   *     See aserto/authorizer/v2/api/policy_instance.proto;l=11
    * @return The instanceLabel.
    */
   @java.lang.Override
-  public java.lang.String getInstanceLabel() {
+  @java.lang.Deprecated public java.lang.String getInstanceLabel() {
     java.lang.Object ref = instanceLabel_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
@@ -117,11 +119,13 @@ private static final long serialVersionUID = 0L;
    * label identifying the instance of the policy
    * </pre>
    *
-   * <code>string instance_label = 2 [json_name = "instanceLabel"];</code>
+   * <code>string instance_label = 2 [json_name = "instanceLabel", deprecated = true];</code>
+   * @deprecated aserto.authorizer.v2.api.PolicyInstance.instance_label is deprecated.
+   *     See aserto/authorizer/v2/api/policy_instance.proto;l=11
    * @return The bytes for instanceLabel.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString
+  @java.lang.Deprecated public com.google.protobuf.ByteString
       getInstanceLabelBytes() {
     java.lang.Object ref = instanceLabel_;
     if (ref instanceof java.lang.String) {
@@ -583,10 +587,12 @@ private static final long serialVersionUID = 0L;
      * label identifying the instance of the policy
      * </pre>
      *
-     * <code>string instance_label = 2 [json_name = "instanceLabel"];</code>
+     * <code>string instance_label = 2 [json_name = "instanceLabel", deprecated = true];</code>
+     * @deprecated aserto.authorizer.v2.api.PolicyInstance.instance_label is deprecated.
+     *     See aserto/authorizer/v2/api/policy_instance.proto;l=11
      * @return The instanceLabel.
      */
-    public java.lang.String getInstanceLabel() {
+    @java.lang.Deprecated public java.lang.String getInstanceLabel() {
       java.lang.Object ref = instanceLabel_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
@@ -603,10 +609,12 @@ private static final long serialVersionUID = 0L;
      * label identifying the instance of the policy
      * </pre>
      *
-     * <code>string instance_label = 2 [json_name = "instanceLabel"];</code>
+     * <code>string instance_label = 2 [json_name = "instanceLabel", deprecated = true];</code>
+     * @deprecated aserto.authorizer.v2.api.PolicyInstance.instance_label is deprecated.
+     *     See aserto/authorizer/v2/api/policy_instance.proto;l=11
      * @return The bytes for instanceLabel.
      */
-    public com.google.protobuf.ByteString
+    @java.lang.Deprecated public com.google.protobuf.ByteString
         getInstanceLabelBytes() {
       java.lang.Object ref = instanceLabel_;
       if (ref instanceof String) {
@@ -624,11 +632,13 @@ private static final long serialVersionUID = 0L;
      * label identifying the instance of the policy
      * </pre>
      *
-     * <code>string instance_label = 2 [json_name = "instanceLabel"];</code>
+     * <code>string instance_label = 2 [json_name = "instanceLabel", deprecated = true];</code>
+     * @deprecated aserto.authorizer.v2.api.PolicyInstance.instance_label is deprecated.
+     *     See aserto/authorizer/v2/api/policy_instance.proto;l=11
      * @param value The instanceLabel to set.
      * @return This builder for chaining.
      */
-    public Builder setInstanceLabel(
+    @java.lang.Deprecated public Builder setInstanceLabel(
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
       instanceLabel_ = value;
@@ -641,10 +651,12 @@ private static final long serialVersionUID = 0L;
      * label identifying the instance of the policy
      * </pre>
      *
-     * <code>string instance_label = 2 [json_name = "instanceLabel"];</code>
+     * <code>string instance_label = 2 [json_name = "instanceLabel", deprecated = true];</code>
+     * @deprecated aserto.authorizer.v2.api.PolicyInstance.instance_label is deprecated.
+     *     See aserto/authorizer/v2/api/policy_instance.proto;l=11
      * @return This builder for chaining.
      */
-    public Builder clearInstanceLabel() {
+    @java.lang.Deprecated public Builder clearInstanceLabel() {
       instanceLabel_ = getDefaultInstance().getInstanceLabel();
       bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
@@ -655,11 +667,13 @@ private static final long serialVersionUID = 0L;
      * label identifying the instance of the policy
      * </pre>
      *
-     * <code>string instance_label = 2 [json_name = "instanceLabel"];</code>
+     * <code>string instance_label = 2 [json_name = "instanceLabel", deprecated = true];</code>
+     * @deprecated aserto.authorizer.v2.api.PolicyInstance.instance_label is deprecated.
+     *     See aserto/authorizer/v2/api/policy_instance.proto;l=11
      * @param value The bytes for instanceLabel to set.
      * @return This builder for chaining.
      */
-    public Builder setInstanceLabelBytes(
+    @java.lang.Deprecated public Builder setInstanceLabelBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);

@@ -33,18 +33,22 @@ public interface PolicyInstanceOrBuilder extends
    * label identifying the instance of the policy
    * </pre>
    *
-   * <code>string instance_label = 2 [json_name = "instanceLabel"];</code>
+   * <code>string instance_label = 2 [json_name = "instanceLabel", deprecated = true];</code>
+   * @deprecated aserto.authorizer.v2.api.PolicyInstance.instance_label is deprecated.
+   *     See aserto/authorizer/v2/api/policy_instance.proto;l=11
    * @return The instanceLabel.
    */
-  java.lang.String getInstanceLabel();
+  @java.lang.Deprecated java.lang.String getInstanceLabel();
   /**
    * <pre>
    * label identifying the instance of the policy
    * </pre>
    *
-   * <code>string instance_label = 2 [json_name = "instanceLabel"];</code>
+   * <code>string instance_label = 2 [json_name = "instanceLabel", deprecated = true];</code>
+   * @deprecated aserto.authorizer.v2.api.PolicyInstance.instance_label is deprecated.
+   *     See aserto/authorizer/v2/api/policy_instance.proto;l=11
    * @return The bytes for instanceLabel.
    */
-  com.google.protobuf.ByteString
+  @java.lang.Deprecated com.google.protobuf.ByteString
       getInstanceLabelBytes();
 }
