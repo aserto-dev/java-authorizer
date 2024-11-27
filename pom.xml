@@ -6,7 +6,7 @@
 
     <groupId>com.aserto</groupId>
     <artifactId>java-authorizer</artifactId>
-    <version>0.20.13</version>
+    <version>0.20.14</version>
 
     <name>${project.groupId}:${project.artifactId}</name>
     <description>Generated Java gRPC bindings for the Topaz and Aserto Authorizer Service; these are low-level bindings. For a more idiomatic development experience, we advise using the aserto-java and/or aserto-spring packages.</description>
