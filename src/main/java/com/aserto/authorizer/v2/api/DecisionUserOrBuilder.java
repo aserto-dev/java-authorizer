@@ -37,7 +37,7 @@ public interface DecisionUserOrBuilder extends
 
   /**
    * <pre>
-   * id of the user the identity resolved to    
+   * id of the user the identity resolved to
    * </pre>
    *
    * <code>string id = 2 [json_name = "id"];</code>
@@ -46,7 +46,7 @@ public interface DecisionUserOrBuilder extends
   java.lang.String getId();
   /**
    * <pre>
-   * id of the user the identity resolved to    
+   * id of the user the identity resolved to
    * </pre>
    *
    * <code>string id = 2 [json_name = "id"];</code>

@@ -89,7 +89,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object id_ = "";
   /**
    * <pre>
-   * id of the user the identity resolved to    
+   * id of the user the identity resolved to
    * </pre>
    *
    * <code>string id = 2 [json_name = "id"];</code>
@@ -110,7 +110,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * id of the user the identity resolved to    
+   * id of the user the identity resolved to
    * </pre>
    *
    * <code>string id = 2 [json_name = "id"];</code>
@@ -737,7 +737,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object id_ = "";
     /**
      * <pre>
-     * id of the user the identity resolved to    
+     * id of the user the identity resolved to
      * </pre>
      *
      * <code>string id = 2 [json_name = "id"];</code>
@@ -757,7 +757,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * id of the user the identity resolved to    
+     * id of the user the identity resolved to
      * </pre>
      *
      * <code>string id = 2 [json_name = "id"];</code>
@@ -778,7 +778,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * id of the user the identity resolved to    
+     * id of the user the identity resolved to
      * </pre>
      *
      * <code>string id = 2 [json_name = "id"];</code>
@@ -795,7 +795,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * id of the user the identity resolved to    
+     * id of the user the identity resolved to
      * </pre>
      *
      * <code>string id = 2 [json_name = "id"];</code>
@@ -809,7 +809,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * id of the user the identity resolved to    
+     * id of the user the identity resolved to
      * </pre>
      *
      * <code>string id = 2 [json_name = "id"];</code>

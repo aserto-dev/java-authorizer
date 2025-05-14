@@ -235,7 +235,7 @@ private static final long serialVersionUID = 0L;
   private com.aserto.authorizer.v2.api.DecisionPolicy policy_;
   /**
    * <pre>
-   * info about policy used for the decision    
+   * info about policy used for the decision
    * </pre>
    *
    * <code>.aserto.authorizer.v2.api.DecisionPolicy policy = 5 [json_name = "policy"];</code>
@@ -247,7 +247,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * info about policy used for the decision    
+   * info about policy used for the decision
    * </pre>
    *
    * <code>.aserto.authorizer.v2.api.DecisionPolicy policy = 5 [json_name = "policy"];</code>
@@ -259,7 +259,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * info about policy used for the decision    
+   * info about policy used for the decision
    * </pre>
    *
    * <code>.aserto.authorizer.v2.api.DecisionPolicy policy = 5 [json_name = "policy"];</code>
@@ -428,7 +428,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * annotations that may be added to a decision    
+   * annotations that may be added to a decision
    * </pre>
    *
    * <code>map&lt;string, string&gt; annotations = 8 [json_name = "annotations"];</code>
@@ -449,7 +449,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * annotations that may be added to a decision    
+   * annotations that may be added to a decision
    * </pre>
    *
    * <code>map&lt;string, string&gt; annotations = 8 [json_name = "annotations"];</code>
@@ -460,7 +460,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * annotations that may be added to a decision    
+   * annotations that may be added to a decision
    * </pre>
    *
    * <code>map&lt;string, string&gt; annotations = 8 [json_name = "annotations"];</code>
@@ -478,7 +478,7 @@ java.lang.String defaultValue) {
   }
   /**
    * <pre>
-   * annotations that may be added to a decision    
+   * annotations that may be added to a decision
    * </pre>
    *
    * <code>map&lt;string, string&gt; annotations = 8 [json_name = "annotations"];</code>
@@ -1704,7 +1704,7 @@ java.lang.String defaultValue) {
         com.aserto.authorizer.v2.api.DecisionPolicy, com.aserto.authorizer.v2.api.DecisionPolicy.Builder, com.aserto.authorizer.v2.api.DecisionPolicyOrBuilder> policyBuilder_;
     /**
      * <pre>
-     * info about policy used for the decision    
+     * info about policy used for the decision
      * </pre>
      *
      * <code>.aserto.authorizer.v2.api.DecisionPolicy policy = 5 [json_name = "policy"];</code>
@@ -1715,7 +1715,7 @@ java.lang.String defaultValue) {
     }
     /**
      * <pre>
-     * info about policy used for the decision    
+     * info about policy used for the decision
      * </pre>
      *
      * <code>.aserto.authorizer.v2.api.DecisionPolicy policy = 5 [json_name = "policy"];</code>
@@ -1730,7 +1730,7 @@ java.lang.String defaultValue) {
     }
     /**
      * <pre>
-     * info about policy used for the decision    
+     * info about policy used for the decision
      * </pre>
      *
      * <code>.aserto.authorizer.v2.api.DecisionPolicy policy = 5 [json_name = "policy"];</code>
@@ -1750,7 +1750,7 @@ java.lang.String defaultValue) {
     }
     /**
      * <pre>
-     * info about policy used for the decision    
+     * info about policy used for the decision
      * </pre>
      *
      * <code>.aserto.authorizer.v2.api.DecisionPolicy policy = 5 [json_name = "policy"];</code>
@@ -1768,7 +1768,7 @@ java.lang.String defaultValue) {
     }
     /**
      * <pre>
-     * info about policy used for the decision    
+     * info about policy used for the decision
      * </pre>
      *
      * <code>.aserto.authorizer.v2.api.DecisionPolicy policy = 5 [json_name = "policy"];</code>
@@ -1793,7 +1793,7 @@ java.lang.String defaultValue) {
     }
     /**
      * <pre>
-     * info about policy used for the decision    
+     * info about policy used for the decision
      * </pre>
      *
      * <code>.aserto.authorizer.v2.api.DecisionPolicy policy = 5 [json_name = "policy"];</code>
@@ -1810,7 +1810,7 @@ java.lang.String defaultValue) {
     }
     /**
      * <pre>
-     * info about policy used for the decision    
+     * info about policy used for the decision
      * </pre>
      *
      * <code>.aserto.authorizer.v2.api.DecisionPolicy policy = 5 [json_name = "policy"];</code>
@@ -1822,7 +1822,7 @@ java.lang.String defaultValue) {
     }
     /**
      * <pre>
-     * info about policy used for the decision    
+     * info about policy used for the decision
      * </pre>
      *
      * <code>.aserto.authorizer.v2.api.DecisionPolicy policy = 5 [json_name = "policy"];</code>
@@ -1837,7 +1837,7 @@ java.lang.String defaultValue) {
     }
     /**
      * <pre>
-     * info about policy used for the decision    
+     * info about policy used for the decision
      * </pre>
      *
      * <code>.aserto.authorizer.v2.api.DecisionPolicy policy = 5 [json_name = "policy"];</code>
@@ -2194,7 +2194,7 @@ java.lang.String defaultValue) {
     }
     /**
      * <pre>
-     * annotations that may be added to a decision    
+     * annotations that may be added to a decision
      * </pre>
      *
      * <code>map&lt;string, string&gt; annotations = 8 [json_name = "annotations"];</code>
@@ -2215,7 +2215,7 @@ java.lang.String defaultValue) {
     }
     /**
      * <pre>
-     * annotations that may be added to a decision    
+     * annotations that may be added to a decision
      * </pre>
      *
      * <code>map&lt;string, string&gt; annotations = 8 [json_name = "annotations"];</code>
@@ -2226,7 +2226,7 @@ java.lang.String defaultValue) {
     }
     /**
      * <pre>
-     * annotations that may be added to a decision    
+     * annotations that may be added to a decision
      * </pre>
      *
      * <code>map&lt;string, string&gt; annotations = 8 [json_name = "annotations"];</code>
@@ -2244,7 +2244,7 @@ java.lang.String defaultValue) {
     }
     /**
      * <pre>
-     * annotations that may be added to a decision    
+     * annotations that may be added to a decision
      * </pre>
      *
      * <code>map&lt;string, string&gt; annotations = 8 [json_name = "annotations"];</code>
@@ -2268,7 +2268,7 @@ java.lang.String defaultValue) {
     }
     /**
      * <pre>
-     * annotations that may be added to a decision    
+     * annotations that may be added to a decision
      * </pre>
      *
      * <code>map&lt;string, string&gt; annotations = 8 [json_name = "annotations"];</code>
@@ -2291,7 +2291,7 @@ java.lang.String defaultValue) {
     }
     /**
      * <pre>
-     * annotations that may be added to a decision    
+     * annotations that may be added to a decision
      * </pre>
      *
      * <code>map&lt;string, string&gt; annotations = 8 [json_name = "annotations"];</code>
@@ -2308,7 +2308,7 @@ java.lang.String defaultValue) {
     }
     /**
      * <pre>
-     * annotations that may be added to a decision    
+     * annotations that may be added to a decision
      * </pre>
      *
      * <code>map&lt;string, string&gt; annotations = 8 [json_name = "annotations"];</code>

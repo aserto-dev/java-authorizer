@@ -1,12 +1,14 @@
-version: v1
+version: v2
 
 managed:
   enabled: true
-  java_package_prefix: com
-  
+  override:
+    - file_option: java_package_prefix
+      value: com
+ 
 plugins:
-  - plugin: buf.build/grpc/java:v1.64.0
+  - remote: buf.build/grpc/java:v1.64.0
     out: src/main/java
 
-  - plugin: buf.build/protocolbuffers/java:v25.3
+  - remote: buf.build/protocolbuffers/java:v25.3
     out: src/main/java

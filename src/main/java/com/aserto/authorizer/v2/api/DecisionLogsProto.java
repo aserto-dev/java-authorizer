@@ -50,12 +50,12 @@ public final class DecisionLogsProto {
   static {
     java.lang.String[] descriptorData = {
       "\n,aserto/authorizer/v2/api/decision_logs" +
-      ".proto\022\030aserto.authorizer.v2.api\032\034google" +
-      "/protobuf/struct.proto\032\037google/protobuf/" +
-      "timestamp.proto\032-aserto/authorizer/v2/ap" +
-      "i/policy_context.proto\032/aserto/authorize" +
-      "r/v2/api/identity_context.proto\032.aserto/" +
-      "authorizer/v2/api/policy_instance.proto\"" +
+      ".proto\022\030aserto.authorizer.v2.api\032/aserto" +
+      "/authorizer/v2/api/identity_context.prot" +
+      "o\032-aserto/authorizer/v2/api/policy_conte" +
+      "xt.proto\032.aserto/authorizer/v2/api/polic" +
+      "y_instance.proto\032\034google/protobuf/struct" +
+      ".proto\032\037google/protobuf/timestamp.proto\"" +
       "\355\004\n\010Decision\022\016\n\002id\030\001 \001(\tR\002id\0228\n\ttimestam" +
       "p\030\002 \001(\0132\032.google.protobuf.TimestampR\ttim" +
       "estamp\022\022\n\004path\030\003 \001(\tR\004path\022:\n\004user\030\004 \001(\013" +
@@ -94,11 +94,11 @@ public final class DecisionLogsProto {
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
+          com.aserto.authorizer.v2.api.IdentityContextProto.getDescriptor(),
+          com.aserto.authorizer.v2.api.PolicyContextProto.getDescriptor(),
+          com.aserto.authorizer.v2.api.PolicyInstanceProto.getDescriptor(),
           com.google.protobuf.StructProto.getDescriptor(),
           com.google.protobuf.TimestampProto.getDescriptor(),
-          com.aserto.authorizer.v2.api.PolicyContextProto.getDescriptor(),
-          com.aserto.authorizer.v2.api.IdentityContextProto.getDescriptor(),
-          com.aserto.authorizer.v2.api.PolicyInstanceProto.getDescriptor(),
         });
     internal_static_aserto_authorizer_v2_api_Decision_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -130,11 +130,11 @@ public final class DecisionLogsProto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_aserto_authorizer_v2_api_DecisionPolicy_descriptor,
         new java.lang.String[] { "Context", "RegistryService", "RegistryImage", "RegistryTag", "RegistryDigest", "PolicyInstance", });
+    com.aserto.authorizer.v2.api.IdentityContextProto.getDescriptor();
+    com.aserto.authorizer.v2.api.PolicyContextProto.getDescriptor();
+    com.aserto.authorizer.v2.api.PolicyInstanceProto.getDescriptor();
     com.google.protobuf.StructProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
-    com.aserto.authorizer.v2.api.PolicyContextProto.getDescriptor();
-    com.aserto.authorizer.v2.api.IdentityContextProto.getDescriptor();
-    com.aserto.authorizer.v2.api.PolicyInstanceProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

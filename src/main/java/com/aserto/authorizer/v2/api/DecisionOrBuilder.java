@@ -104,7 +104,7 @@ public interface DecisionOrBuilder extends
 
   /**
    * <pre>
-   * info about policy used for the decision    
+   * info about policy used for the decision
    * </pre>
    *
    * <code>.aserto.authorizer.v2.api.DecisionPolicy policy = 5 [json_name = "policy"];</code>
@@ -113,7 +113,7 @@ public interface DecisionOrBuilder extends
   boolean hasPolicy();
   /**
    * <pre>
-   * info about policy used for the decision    
+   * info about policy used for the decision
    * </pre>
    *
    * <code>.aserto.authorizer.v2.api.DecisionPolicy policy = 5 [json_name = "policy"];</code>
@@ -122,7 +122,7 @@ public interface DecisionOrBuilder extends
   com.aserto.authorizer.v2.api.DecisionPolicy getPolicy();
   /**
    * <pre>
-   * info about policy used for the decision    
+   * info about policy used for the decision
    * </pre>
    *
    * <code>.aserto.authorizer.v2.api.DecisionPolicy policy = 5 [json_name = "policy"];</code>
@@ -210,7 +210,7 @@ public interface DecisionOrBuilder extends
 
   /**
    * <pre>
-   * annotations that may be added to a decision    
+   * annotations that may be added to a decision
    * </pre>
    *
    * <code>map&lt;string, string&gt; annotations = 8 [json_name = "annotations"];</code>
@@ -218,7 +218,7 @@ public interface DecisionOrBuilder extends
   int getAnnotationsCount();
   /**
    * <pre>
-   * annotations that may be added to a decision    
+   * annotations that may be added to a decision
    * </pre>
    *
    * <code>map&lt;string, string&gt; annotations = 8 [json_name = "annotations"];</code>
@@ -233,7 +233,7 @@ public interface DecisionOrBuilder extends
   getAnnotations();
   /**
    * <pre>
-   * annotations that may be added to a decision    
+   * annotations that may be added to a decision
    * </pre>
    *
    * <code>map&lt;string, string&gt; annotations = 8 [json_name = "annotations"];</code>
@@ -242,7 +242,7 @@ public interface DecisionOrBuilder extends
   getAnnotationsMap();
   /**
    * <pre>
-   * annotations that may be added to a decision    
+   * annotations that may be added to a decision
    * </pre>
    *
    * <code>map&lt;string, string&gt; annotations = 8 [json_name = "annotations"];</code>
@@ -254,7 +254,7 @@ java.lang.String getAnnotationsOrDefault(
 java.lang.String defaultValue);
   /**
    * <pre>
-   * annotations that may be added to a decision    
+   * annotations that may be added to a decision
    * </pre>
    *
    * <code>map&lt;string, string&gt; annotations = 8 [json_name = "annotations"];</code>

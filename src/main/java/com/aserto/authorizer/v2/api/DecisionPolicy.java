@@ -232,7 +232,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object registryDigest_ = "";
   /**
    * <pre>
-   * digest of the policy image 
+   * digest of the policy image
    * </pre>
    *
    * <code>string registry_digest = 5 [json_name = "registryDigest"];</code>
@@ -253,7 +253,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * digest of the policy image 
+   * digest of the policy image
    * </pre>
    *
    * <code>string registry_digest = 5 [json_name = "registryDigest"];</code>
@@ -1233,7 +1233,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object registryDigest_ = "";
     /**
      * <pre>
-     * digest of the policy image 
+     * digest of the policy image
      * </pre>
      *
      * <code>string registry_digest = 5 [json_name = "registryDigest"];</code>
@@ -1253,7 +1253,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * digest of the policy image 
+     * digest of the policy image
      * </pre>
      *
      * <code>string registry_digest = 5 [json_name = "registryDigest"];</code>
@@ -1274,7 +1274,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * digest of the policy image 
+     * digest of the policy image
      * </pre>
      *
      * <code>string registry_digest = 5 [json_name = "registryDigest"];</code>
@@ -1291,7 +1291,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * digest of the policy image 
+     * digest of the policy image
      * </pre>
      *
      * <code>string registry_digest = 5 [json_name = "registryDigest"];</code>
@@ -1305,7 +1305,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * digest of the policy image 
+     * digest of the policy image
      * </pre>
      *
      * <code>string registry_digest = 5 [json_name = "registryDigest"];</code>
