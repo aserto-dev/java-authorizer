@@ -110,15 +110,15 @@ public final class AuthorizerProto {
   static {
     java.lang.String[] descriptorData = {
       "\n%aserto/authorizer/v2/authorizer.proto\022" +
-      "\024aserto.authorizer.v2\032\034google/api/annota" +
-      "tions.proto\032.protoc-gen-openapiv2/option" +
-      "s/annotations.proto\032\034google/protobuf/str" +
-      "uct.proto\032 google/protobuf/field_mask.pr" +
-      "oto\032/aserto/authorizer/v2/api/identity_c" +
-      "ontext.proto\032-aserto/authorizer/v2/api/p" +
-      "olicy_context.proto\032%aserto/authorizer/v" +
-      "2/api/module.proto\032.aserto/authorizer/v2" +
-      "/api/policy_instance.proto\"\r\n\013InfoReques" +
+      "\024aserto.authorizer.v2\032/aserto/authorizer" +
+      "/v2/api/identity_context.proto\032%aserto/a" +
+      "uthorizer/v2/api/module.proto\032-aserto/au" +
+      "thorizer/v2/api/policy_context.proto\032.as" +
+      "erto/authorizer/v2/api/policy_instance.p" +
+      "roto\032\034google/api/annotations.proto\032 goog" +
+      "le/protobuf/field_mask.proto\032\034google/pro" +
+      "tobuf/struct.proto\032.protoc-gen-openapiv2" +
+      "/options/annotations.proto\"\r\n\013InfoReques" +
       "t\"x\n\014InfoResponse\022\030\n\007version\030\001 \001(\tR\007vers" +
       "ion\022\026\n\006commit\030\002 \001(\tR\006commit\022\022\n\004date\030\003 \001(" +
       "\tR\004date\022\016\n\002os\030\004 \001(\tR\002os\022\022\n\004arch\030\005 \001(\tR\004a" +
@@ -273,14 +273,14 @@ public final class AuthorizerProto {
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.api.AnnotationsProto.getDescriptor(),
-          com.grpc.gateway.protoc_gen_openapiv2.options.AnnotationsProto.getDescriptor(),
-          com.google.protobuf.StructProto.getDescriptor(),
-          com.google.protobuf.FieldMaskProto.getDescriptor(),
           com.aserto.authorizer.v2.api.IdentityContextProto.getDescriptor(),
-          com.aserto.authorizer.v2.api.PolicyContextProto.getDescriptor(),
           com.aserto.authorizer.v2.api.ModuleProto.getDescriptor(),
+          com.aserto.authorizer.v2.api.PolicyContextProto.getDescriptor(),
           com.aserto.authorizer.v2.api.PolicyInstanceProto.getDescriptor(),
+          com.google.api.AnnotationsProto.getDescriptor(),
+          com.google.protobuf.FieldMaskProto.getDescriptor(),
+          com.google.protobuf.StructProto.getDescriptor(),
+          com.grpc.gateway.protoc_gen_openapiv2.options.AnnotationsProto.getDescriptor(),
         });
     internal_static_aserto_authorizer_v2_InfoRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -391,14 +391,14 @@ public final class AuthorizerProto {
     registry.add(com.grpc.gateway.protoc_gen_openapiv2.options.AnnotationsProto.openapiv2Swagger);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
-    com.google.api.AnnotationsProto.getDescriptor();
-    com.grpc.gateway.protoc_gen_openapiv2.options.AnnotationsProto.getDescriptor();
-    com.google.protobuf.StructProto.getDescriptor();
-    com.google.protobuf.FieldMaskProto.getDescriptor();
     com.aserto.authorizer.v2.api.IdentityContextProto.getDescriptor();
-    com.aserto.authorizer.v2.api.PolicyContextProto.getDescriptor();
     com.aserto.authorizer.v2.api.ModuleProto.getDescriptor();
+    com.aserto.authorizer.v2.api.PolicyContextProto.getDescriptor();
     com.aserto.authorizer.v2.api.PolicyInstanceProto.getDescriptor();
+    com.google.api.AnnotationsProto.getDescriptor();
+    com.google.protobuf.FieldMaskProto.getDescriptor();
+    com.google.protobuf.StructProto.getDescriptor();
+    com.grpc.gateway.protoc_gen_openapiv2.options.AnnotationsProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

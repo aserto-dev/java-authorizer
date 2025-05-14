@@ -97,7 +97,7 @@ public interface DecisionPolicyOrBuilder extends
 
   /**
    * <pre>
-   * digest of the policy image 
+   * digest of the policy image
    * </pre>
    *
    * <code>string registry_digest = 5 [json_name = "registryDigest"];</code>
@@ -106,7 +106,7 @@ public interface DecisionPolicyOrBuilder extends
   java.lang.String getRegistryDigest();
   /**
    * <pre>
-   * digest of the policy image 
+   * digest of the policy image
    * </pre>
    *
    * <code>string registry_digest = 5 [json_name = "registryDigest"];</code>
